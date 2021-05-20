@@ -75,6 +75,23 @@ struct DayView: View {
         return (Int(temp[1])!, Int(temp[2])!)
     }
     
+    var timeFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "h:mm a"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
+        return formatter
+    }
+    
+    func timeString(date: Date) -> String {
+        let time = timeFormat.string(from: date)
+        return time
+    }
+    
+    @State var currentDate = Date()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
         ZStack {
             VStack {
@@ -83,7 +100,7 @@ struct DayView: View {
                     
                     HStack(alignment: .lastTextBaseline) {
                         Text(dailyText)
-                            .font(.custom("SourceHanSerif-SemiBold", size: 48))
+                            .font(.custom("SourceHanSerif-SemiBold", size: 42))
 
                         VStack {
                             Image(systemName: "circle.righthalf.fill")
@@ -99,7 +116,7 @@ struct DayView: View {
                         .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 30)
                     .padding(.trailing, 20)
                     .onTapGesture(perform: {
                         self.showDayList.toggle()
@@ -109,29 +126,43 @@ struct DayView: View {
                 Spacer()
             }
             
-            VStack(alignment: .center) {
+            VStack(alignment: .center, spacing: 15) {
                 VStack {
                     LottieView(isWeather: true, weatherDesc: weatherDesc)
-                        .frame(width: 200, height: 200)
-                        .padding()
+                        .frame(width: 180, height: 180)
+                        .padding(.bottom, 20)
                 }
                 
-                VStack(alignment: .center) {
-                    Text(weatherDesc)
+                VStack(alignment: .center, spacing: 15) {
+                    Text("\(weatherDesc)")
                         .font(.custom("ZhuoJianGanLanJianTi-Regular", size: 66))
                     
                     if activeDay == 0 {
-                        Text("\(nowWeather.temp)°")
-                            .font(.custom("SourceHanSerif-Medium", size: 58))
-                            .padding(.top, 15)
-                            .offset(x: 10)
+                        ZStack(alignment: .bottom) {
+                            Text("\(nowWeather.temp)°")
+                                .font(.custom("SourceHanSerif-SemiBold", size: 66))
+                                .offset(x: 10)
+                            
+                            Text("\(timeString(date: currentDate))")
+                                .onReceive(timer) { input in
+                                    currentDate = input
+                                }
+                                .font(.system(size: 14))
+                                .offset(x: 80, y: -15)
+                        }
                     }
                     
-                    Text("最低 \(dailyWeather.low)° 最高 \(dailyWeather.high)°")
-                        .font(.custom("SourceHanSerif-Medium", size: 18))
-                        .padding(.top,15)
+                    HStack(alignment: .center, spacing: 20) {
+                        Text("最低 \(dailyWeather.low)°")
+                        Text("最高 \(dailyWeather.high)°")
+                    }
+                    .font(.custom("SourceHanSerif-SemiBold", size: 18))
+                    .padding(.top, 30)
+                    .offset(x: 5)
                 }
             }
+            .offset(y: -20)
+            
 
             VStack {
                 Spacer()

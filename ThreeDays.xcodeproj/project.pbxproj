@@ -34,7 +34,6 @@
 		44BD8DDA2643A44200FD0A72 /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DD02643A44200FD0A72 /* weather-night-mist.json */; };
 		44BD8DDB2643A44200FD0A72 /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DD12643A44200FD0A72 /* weather-day-rain.json */; };
 		44BD8DF42643B8A500FD0A72 /* SourceHanSerif-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DDF2643B8A500FD0A72 /* SourceHanSerif-SemiBold.otf */; };
-		44BD8DFA2643B8A500FD0A72 /* SourceHanSerif-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DE52643B8A500FD0A72 /* SourceHanSerif-Medium.otf */; };
 		44C727E026463FF600F83303 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727DF26463FF600F83303 /* LocationService.swift */; };
 		44C727E226465FF100F83303 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727E126465FF100F83303 /* NetworkService.swift */; };
 		44F99909265262F100F6D646 /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F99907265262F100F6D646 /* weather-night-scattered-clouds.json */; };
@@ -79,7 +78,6 @@
 		44BD8DD02643A44200FD0A72 /* weather-night-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-mist.json"; sourceTree = "<group>"; };
 		44BD8DD12643A44200FD0A72 /* weather-day-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-rain.json"; sourceTree = "<group>"; };
 		44BD8DDF2643B8A500FD0A72 /* SourceHanSerif-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerif-SemiBold.otf"; sourceTree = "<group>"; };
-		44BD8DE52643B8A500FD0A72 /* SourceHanSerif-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerif-Medium.otf"; sourceTree = "<group>"; };
 		44C727DF26463FF600F83303 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		44C727E126465FF100F83303 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		44F99907265262F100F6D646 /* weather-night-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-scattered-clouds.json"; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				44F999192653637000F6D646 /* ZhuoJianGanLanJianTi-Regular.ttf */,
-				44BD8DE52643B8A500FD0A72 /* SourceHanSerif-Medium.otf */,
 				44BD8DDF2643B8A500FD0A72 /* SourceHanSerif-SemiBold.otf */,
 			);
 			path = Fonts;
@@ -328,7 +325,6 @@
 				44845B8826525DBA0076991C /* weather-day-thunderstorm.json in Resources */,
 				44F9990C265265ED00F6D646 /* weather-day-wind.json in Resources */,
 				44BD8DD92643A44200FD0A72 /* weather-night-rain.json in Resources */,
-				44BD8DFA2643B8A500FD0A72 /* SourceHanSerif-Medium.otf in Resources */,
 				44F9991626526C5800F6D646 /* loading2-day.json in Resources */,
 				44BD8DD52643A44200FD0A72 /* weather-day-snow.json in Resources */,
 				44F9990A265262F100F6D646 /* weather-day-scattered-clouds.json in Resources */,

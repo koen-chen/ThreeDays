@@ -11,6 +11,8 @@ import Lottie
 struct LottieView: UIViewRepresentable {
     @EnvironmentObject var theme: Theme
     
+    static var cacheName = ""
+    
     var name: String = ""
     var isWeather: Bool = false
     var weatherDesc: String = ""
@@ -47,6 +49,8 @@ struct LottieView: UIViewRepresentable {
     }
     
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
+        LottieView.cacheName = isWeather ? weatherName : name
+        
         let view = UIView(frame: .zero)
         animationView.animation = Animation.named(isWeather ? weatherName : name)
         animationView.contentMode = .scaleAspectFit
@@ -67,7 +71,8 @@ struct LottieView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
-        if isWeather {
+        if isWeather && LottieView.cacheName != weatherName {
+            LottieView.cacheName = weatherName
             context.coordinator.parent.animationView.animation = Animation.named(weatherName)
         }
         context.coordinator.parent.animationView.play()
