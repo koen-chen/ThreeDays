@@ -38,7 +38,7 @@ struct ContentView: View {
                 .cornerRadius(30)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .offset(y: showDayList ? 200 : 0)
-                .offset(y: showCityList ? -300 : 0)
+                .offset(y: showCityList ? -360 : 0)
                 .padding(.horizontal, showDayList ? 10 : 0)
                 .padding(.horizontal, showCityList ? 10 : 0)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
@@ -54,6 +54,9 @@ struct ContentView: View {
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
 
             CityListView(showCityList: $showCityList, activeCity: $activeCity)
+                .onReceive(weatherStore.$placeLocality, perform: { value in
+                    self.activeCity = value
+                })
                 .offset(y: showCityList ? 10 : screen.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
         }

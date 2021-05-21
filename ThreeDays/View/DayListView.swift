@@ -23,7 +23,7 @@ struct DayListView: View {
                     }) {
                         Text(dayList[index])
                     }
-                    .foregroundColor(activeDay == index ? theme.textColor : Color.gray.opacity(0.6))
+                    .foregroundColor(activeDay == index ? theme.textColor : theme.inactiveColor)
                     
                     if index == 0 || index == 1 {
                         Divider().background(theme.backgroundColor).padding(.vertical, 30)
