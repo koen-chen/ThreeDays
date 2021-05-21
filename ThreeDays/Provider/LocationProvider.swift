@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 import Combine
 
-class LocationService: NSObject, CLLocationManagerDelegate, ObservableObject {
+class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
    
     @Published var authorizationStatus: CLAuthorizationStatus?

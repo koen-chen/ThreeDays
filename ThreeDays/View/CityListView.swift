@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CityListView: View {
     @EnvironmentObject var theme: Theme
@@ -95,6 +96,7 @@ struct CityListView: View {
                             .font(.custom("SourceHanSerif-SemiBold", size: 28))
                             .foregroundColor(activeCity == item.name ? theme.textColor : theme.inactiveColor)
                             .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
+                            .animation(.easeInOut)
                         }
                     }
                 }
@@ -108,7 +110,6 @@ struct CityListView: View {
             .padding(.horizontal, 10)
             .padding(.bottom, 30)
             .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
-            .animation(.easeInOut)
         }
     }
     

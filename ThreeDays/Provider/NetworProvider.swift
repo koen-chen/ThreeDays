@@ -12,7 +12,7 @@ enum ConnectionType {
     case wifi, ethernet, cellular, unknown
 }
 
-class NetworkService: ObservableObject {
+class NetworProvider: ObservableObject {
     @Published var connected = false
     @Published var type: ConnectionType = .wifi
     

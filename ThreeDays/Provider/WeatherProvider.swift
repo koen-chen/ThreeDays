@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class WeatherService {
+class WeatherProvider {
     static let ak = "sRTP3Lzp3BB6qI6GPCXnpuquksrow2CM"
     
     enum Error: LocalizedError, Identifiable {
@@ -50,7 +50,7 @@ class WeatherService {
                     components.queryItems = [
                         .init(name: "district_id", value: String(districtId)),
                         .init(name: "data_type", value: "all"),
-                        .init(name: "ak", value: WeatherService.ak),
+                        .init(name: "ak", value: WeatherProvider.ak),
                         .init(name: "Cache-Control", value: "no-cache")
                     ]
                     component = components
@@ -61,7 +61,7 @@ class WeatherService {
                     components.queryItems = [
                         .init(name: "query", value: keyword),
                         .init(name: "region", value: keyword),
-                        .init(name: "ak", value: WeatherService.ak),
+                        .init(name: "ak", value: WeatherProvider.ak),
                         .init(name: "output", value: "json"),
                         .init(name: "extensions_adcode", value: String(true))
                     ]

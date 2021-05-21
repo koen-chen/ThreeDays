@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct ThreeDaysApp: App {
     // let network = NetworkService()
+    let persistenceProvider = PersistenceProvider.shared
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceProvider.container.viewContext)
                 .environmentObject(Theme())
                 .environmentObject(WeatherViewModel())
         }

@@ -14,16 +14,15 @@ class WeatherViewModel: ObservableObject {
     @Published var placeCountry = "未知"
     @Published var placeLocality = "未知"
     @Published var adcode = ""
-    @ObservedObject var locationStore: LocationService
+    @ObservedObject var locationProvider: LocationProvider
     
-    private var subscription: AnyCancellable?
-    private let service = WeatherService()
+    private let weatherProvider = WeatherProvider()
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        locationStore = LocationService()
-        locationStore.startLocation()
-        locationStore.locationPublisher.sink { completion in
+        locationProvider = LocationProvider()
+        locationProvider.startLocation()
+        locationProvider.locationPublisher.sink { completion in
             self.getDistrictId()
         } receiveValue: { (placeName, placeLocality, placeCountry) in
             self.placeName = placeName
@@ -33,11 +32,10 @@ class WeatherViewModel: ObservableObject {
     }
     
     func getDistrictId () {
-        service
+        weatherProvider
             .getDistrict(keyword: self.placeLocality)
             .receive(on: DispatchQueue.main)
             .sink { completion in
-               print("Finished getDistrictId API")
             } receiveValue: { location in
                 self.getWeather(districtId: location.results[0].adcode)
             }
@@ -45,11 +43,10 @@ class WeatherViewModel: ObservableObject {
     }
     
     func getWeather (districtId: String) {
-        service
+        weatherProvider
             .getWeather(districtId: districtId)
             .receive(on: DispatchQueue.main)
             .sink { completion in
-                print("Finished getWeather API")
             } receiveValue: { weather in
                 print(weather)
                 self.weather = weather

@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 let screen = UIScreen.main.bounds
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(
+        entity: City.entity(),
+        sortDescriptors: []
+    ) var citys: FetchedResults<City>
+    
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var weatherStore: WeatherViewModel
     
@@ -37,10 +45,10 @@ struct ContentView: View {
                 .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
                 .cornerRadius(30)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
-                .offset(y: showDayList ? 200 : 0)
-                .offset(y: showCityList ? -360 : 0)
-                .padding(.horizontal, showDayList ? 10 : 0)
-                .padding(.horizontal, showCityList ? 10 : 0)
+                .offset(y: showDayList ? CGFloat(200) : 0)
+                .offset(y: showCityList ? CGFloat(-360) : 0)
+                .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
+                .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             } else {
                 LottieView(name: "loading2-\(theme.iconText)")
@@ -67,6 +75,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceProvider.preview.container.viewContext)
             .environmentObject(Theme())
             .environmentObject(WeatherViewModel())
     }
