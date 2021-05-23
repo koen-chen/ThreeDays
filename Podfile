@@ -8,5 +8,6 @@ target 'ThreeDays' do
   # Pods for ThreeDays
 
   pod 'lottie-ios'
+  pod 'CodableCSV', '~> 0.6.6'
 end
 

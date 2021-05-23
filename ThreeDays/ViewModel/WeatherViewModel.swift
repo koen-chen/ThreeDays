@@ -1,5 +1,5 @@
 //
-//  WeatherStore.swift
+//  WeatherViewModel.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/9.
@@ -10,10 +10,9 @@ import Combine
 
 class WeatherViewModel: ObservableObject {
     @Published var weather = WeatherModel()
-    @Published var placeName = "未知"
-    @Published var placeCountry = "未知"
     @Published var placeLocality = "未知"
-    @Published var adcode = ""
+    @Published var placeSubLocality = ""
+    
     @ObservedObject var locationProvider: LocationProvider
     
     private let weatherProvider = WeatherProvider()
@@ -23,23 +22,13 @@ class WeatherViewModel: ObservableObject {
         locationProvider = LocationProvider()
         locationProvider.startLocation()
         locationProvider.locationPublisher.sink { completion in
-            self.getDistrictId()
-        } receiveValue: { (placeName, placeLocality, placeCountry) in
-            self.placeName = placeName
-            self.placeCountry = placeCountry
-            self.placeLocality = placeLocality
-        }.store(in: &subscriptions)
-    }
-    
-    func getDistrictId () {
-        weatherProvider
-            .getDistrict(keyword: self.placeLocality)
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-            } receiveValue: { location in
-                self.getWeather(districtId: location.results[0].adcode)
+            if let adcode = CitySource.getCityCode(self.placeLocality) {
+                self.getWeather(districtId: String(adcode))
             }
-            .store(in: &subscriptions)
+        } receiveValue: { (placeLocality, placeSubLocality) in
+            self.placeLocality = placeLocality
+            self.placeSubLocality = placeSubLocality
+        }.store(in: &subscriptions)
     }
     
     func getWeather (districtId: String) {
@@ -48,11 +37,8 @@ class WeatherViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { completion in
             } receiveValue: { weather in
-                print(weather)
                 self.weather = weather
             }
             .store(in: &subscriptions)
     }
-    
-    
 }

@@ -1,5 +1,5 @@
 //
-//  Weather.swift
+//  WeatherModel.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/7.
@@ -8,14 +8,6 @@
 import Foundation
 
 struct WeatherModel: Codable {
-    struct Location: Codable {
-        var country: String
-        var province: String
-        var city: String
-        var name: String
-        var id: String
-    }
-    
     struct Now: Codable {
         var text: String = ""
         var temp: Int = 0
@@ -36,7 +28,6 @@ struct WeatherModel: Codable {
     }
     
     struct Result: Codable {
-        var location: Location?
         var now: Now?
         var forecasts: [Forecasts]?
     }

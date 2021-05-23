@@ -1,16 +1,20 @@
 PODS:
+  - CodableCSV (0.6.6)
   - lottie-ios (3.2.3)
 
 DEPENDENCIES:
+  - CodableCSV (~> 0.6.6)
   - lottie-ios
 
 SPEC REPOS:
   trunk:
+    - CodableCSV
     - lottie-ios
 
 SPEC CHECKSUMS:
+  CodableCSV: 1050e7edbc866b99bc1c6856835ee7070039ef41
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
 
-PODFILE CHECKSUM: e8272e0e4e2d68e18b8fdc6570d481276ed2a4b2
+PODFILE CHECKSUM: 49a1bb96f8b00713efc64a0f755c2b115689e1ca
 
 COCOAPODS: 1.10.1

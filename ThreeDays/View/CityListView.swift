@@ -1,5 +1,5 @@
 //
-//  CityView.swift
+//  CityListView.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/17.
@@ -32,15 +32,21 @@ struct CityListView: View {
         City(name: "齐齐哈答复答复到市", adcode: "230203")
     ]
     
+    @State var showCitySearchView = false
     var body: some View {
         VStack {
             Spacer()
             
             VStack {
                 HStack {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.showCitySearchView.toggle()
+                    }, label: {
                         Image(systemName: "plus.circle")
                     })
+                    .fullScreenCover(isPresented: $showCitySearchView) {
+                        CitySearchView()
+                    }
 
                     Spacer()
 

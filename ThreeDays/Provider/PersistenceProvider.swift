@@ -1,5 +1,5 @@
 //
-//  PersistenceService.swift
+//  PersistenceProvider.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/21.
@@ -10,25 +10,23 @@ import CoreData
 struct PersistenceProvider {
     static let shared = PersistenceProvider()
     
-    static var preview: PersistenceProvider = {
-        let result = PersistenceProvider(inMemory: true)
-        let viewContext = result.container.viewContext
-        
-        let item = City(context: viewContext)
-        item.name = "长沙市"
-        item.adcode = "430104"
-        item.id = UUID()
-        item.timestamp = Date()
-        
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        
-        return result
-    }()
+//    static var preview: PersistenceProvider = {
+//        let result = PersistenceProvider(inMemory: true)
+//        let viewContext = result.container.viewContext
+//
+//        let item = City(context: viewContext)
+//        item.adcode = 430104
+//        item.name = "长沙市"
+//
+//        do {
+//            try viewContext.save()
+//        } catch {
+//            let nsError = error as NSError
+//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//        }
+//
+//        return result
+//    }()
     
     let container: NSPersistentContainer
     
