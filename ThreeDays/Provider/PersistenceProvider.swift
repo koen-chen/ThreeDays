@@ -5,42 +5,65 @@
 //  Created by koen.chen on 2021/5/21.
 //
 
+import SwiftUI
 import CoreData
 
-struct PersistenceProvider {
+class PersistenceProvider {
     static let shared = PersistenceProvider()
     
-//    static var preview: PersistenceProvider = {
-//        let result = PersistenceProvider(inMemory: true)
-//        let viewContext = result.container.viewContext
-//
-//        let item = City(context: viewContext)
-//        item.adcode = 430104
-//        item.name = "长沙市"
-//
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            let nsError = error as NSError
-//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//        }
-//
-//        return result
-//    }()
+    var managedObjectContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
     
-    let container: NSPersistentContainer
-    
-    init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "ThreeDays")
-        
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
-        
-        container.loadPersistentStores { storeDescription, error in
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "ThreeDays")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
+        })
+        return container
+    }()
+    
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    func clearEntity (_ entity: String = "City") {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try persistentContainer.viewContext.execute(deleteRequest)
+        } catch let error as NSError {
+            print("Failed Clear. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func checkEntityHasData (_ predicate: NSPredicate, entity: String = "City") -> Bool {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = predicate
+       
+        do {
+            let count = try persistentContainer.viewContext.count(for: fetchRequest)
+            
+            if count > 0 {
+                return true
+            } else {
+                return false
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return false
         }
     }
 }

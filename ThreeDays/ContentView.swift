@@ -11,15 +11,17 @@ import CoreData
 let screen = UIScreen.main.bounds
 
 struct ContentView: View {
-   // @Environment(\.managedObjectContext) private var viewContext
+    private let context = PersistenceProvider.shared.managedObjectContext
+    
+    //@Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var weatherStore: WeatherViewModel
     
 //    @FetchRequest(
 //        entity: City.entity(),
 //        sortDescriptors: []
-//    ) var citys: FetchedResults<City>
-    
+//    ) var cityList: FetchedResults<City>
+//
     @State var showDayList = false
     @State var activeDay = 0
     @State var showCityList = false
@@ -64,11 +66,9 @@ struct ContentView: View {
                 .onReceive(weatherStore.$placeLocality, perform: { value in
                     self.activeCity = value
                 })
-                .onAppear(perform: {
-                    print(CitySource.cityCodeList)
-                })
                 .offset(y: showCityList ? 10 : screen.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
+                .environment(\.managedObjectContext, context)
         }
         .ignoresSafeArea()
     }
@@ -77,7 +77,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            //.environment(\.managedObjectContext, PersistenceProvider.preview.container.viewContext)
             .environmentObject(Theme())
             .environmentObject(WeatherViewModel())
     }

@@ -23,6 +23,15 @@ class WeatherViewModel: ObservableObject {
         locationProvider.startLocation()
         locationProvider.locationPublisher.sink { completion in
             if let adcode = CitySource.getCityCode(self.placeLocality) {
+                if !PersistenceProvider.shared.checkEntityHasData(NSPredicate(format: "adcode == %d", adcode)) {
+                    let city = City(context: PersistenceProvider.shared.managedObjectContext)
+                    city.adcode = Int64(adcode)
+                    city.name = self.placeLocality
+                    PersistenceProvider.shared.saveContext()
+                } else {
+                    print("has adcode \(adcode)")
+                }
+                
                 self.getWeather(districtId: String(adcode))
             }
         } receiveValue: { (placeLocality, placeSubLocality) in

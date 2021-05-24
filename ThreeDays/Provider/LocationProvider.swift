@@ -65,7 +65,7 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
         let gecoder = CLGeocoder()
         if let location = location {
             gecoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "zh_CN")) { (placeMarks, error) in
-                let placeMark = placeMarks?.first
+                let placeMark = placeMarks?.last
                 if let placeMark = placeMark {
                     let placeLocality = placeMark.locality ?? ""
                     let placeSubLocality = placeMark.subLocality ?? ""

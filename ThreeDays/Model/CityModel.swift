@@ -11,3 +11,4 @@ struct CityModel: Codable {
     var adcode: Int
     var name: String
 }
+
