@@ -12,11 +12,15 @@ struct CityListView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(
         entity: Place.entity(),
-        sortDescriptors: []
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Place.isAppLocation, ascending: false),
+            NSSortDescriptor(keyPath: \Place.createdAt, ascending: false)
+        ]
     ) var placeList: FetchedResults<Place>
     
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var placeStore: PlaceViewModel
+    @EnvironmentObject var weatherStore: WeatherViewModel
     
     @Binding var showCityList: Bool
     @State var showRemoveBtn: Bool = false
@@ -34,7 +38,7 @@ struct CityListView: View {
                         Image(systemName: "plus.circle")
                     })
                     .fullScreenCover(isPresented: $showCitySearchView) {
-                       //CitySearchView()
+                       CitySearchView()
                     }
 
                     Spacer()
@@ -57,11 +61,11 @@ struct CityListView: View {
                             VStack {
                                 if showRemoveBtn {
                                     Button(action: {
-                                        if placeStore.activeCity != item.city {
+                                        if !item.isAppLocation {
                                             self.removeCity(item)
                                         }
                                     }, label: {
-                                        Image(systemName: placeStore.activeCity == item.city ? "circle.lefthalf.fill" : "xmark.circle")
+                                        Image(systemName: item.isAppLocation ? "location.circle" : "xmark.circle")
                                     })
                                     .font(.system(size: 20))
                                     .padding(.bottom, 2)
@@ -96,20 +100,21 @@ struct CityListView: View {
         }
     }
     
-    func chooseCity (_ city: Place) {
-//        if showRemoveBtn == false {
-//            activeCity = city.name
-//            weatherStore.getWeather(districtId: String(city.adcode))
-//            showCityList.toggle()
-//        } else if showRemoveBtn && activeCity != city.name {
-//            self.removeCity(city)
-//        }
+    func chooseCity (_ item: Place) {
+        if showRemoveBtn == false {
+            placeStore.activeCity = item.city
+            weatherStore.getWeather(districtId: String(item.districtCode))
+            showCityList.toggle()
+        } else if showRemoveBtn && !item.isAppLocation {
+            self.removeCity(item)
+        }
     }
     
-    func removeCity (_ city: Place) {
-//        cityList = cityList.filter({ item in
-//            return item.city != chosen.city
-//        })
+    func removeCity (_ item: Place) {
+        if placeStore.activeCity == item.city {
+            placeStore.activeCity = placeList[0].city
+        }
+        placeStore.removePlace(item)
     }
 }
 

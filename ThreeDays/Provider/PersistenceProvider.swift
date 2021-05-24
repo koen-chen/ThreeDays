@@ -66,4 +66,23 @@ class PersistenceProvider {
             return false
         }
     }
+    
+    func fetchDataForEntity (_ predicate: NSPredicate, entity: String = "Place") -> [Place] {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
+        fetchRequest.predicate = predicate
+        
+        var result = [Place]()
+        
+        do {
+            let records = try persistentContainer.viewContext.fetch(fetchRequest)
+            
+            if let records = records as? [Place] {
+                result = records
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        return result
+    }
 }

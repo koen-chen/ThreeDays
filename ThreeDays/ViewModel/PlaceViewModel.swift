@@ -26,9 +26,9 @@ class PlaceViewModel: ObservableObject {
         locationProvider.locationPublisher.sink { completion in
             self.districtCode = self.getDistrictCode(self.placeCity)
             self.activeCity = self.placeCity
-            
+            //PersistenceProvider.shared.clearEntity()
             if let code = self.districtCode {
-                self.saveLocationPlace(code)
+                self.saveAppLocation(code)
             }
         } receiveValue: { (placeProvince, placeCity, placeDistrict) in
             self.placeProvince = placeProvince
@@ -45,15 +45,36 @@ class PlaceViewModel: ObservableObject {
         }
     }
     
-    func saveLocationPlace (_ districtCode: Int64) -> Void {
-        if !PersistenceProvider.shared.checkEntityHasData(NSPredicate(format: "districtCode == %d", districtCode)) {
+    func saveAppLocation(_ districtCode: Int64) -> Void {
+        let result = PersistenceProvider.shared.fetchDataForEntity(NSPredicate(format: "isAppLocation == %d", true))
+        
+        let place = result.count == 0 ? Place(context: PersistenceProvider.shared.managedObjectContext) : result[0]
+        place.districtCode = districtCode
+        place.city = self.placeCity
+        place.province = self.placeProvince
+        place.district = self.placeDistrict
+        place.createdAt = Date()
+        place.isAppLocation = true
+        
+        PersistenceProvider.shared.saveContext()
+    }
+    
+    func removePlace(_ item: Place) {
+        PersistenceProvider.shared.managedObjectContext.delete(item)
+        PersistenceProvider.shared.saveContext()
+    }
+    
+    func addPlace(_ item: PlaceModel) {
+        if !PersistenceProvider.shared.checkEntityHasData(NSPredicate(format: "districtCode == %d", item.districtCode)) {
             let place = Place(context: PersistenceProvider.shared.managedObjectContext)
-            place.districtCode = districtCode
-            place.city = self.placeCity
-            place.province = self.placeProvince
-            place.district = self.placeDistrict
+            
+            place.districtCode = item.districtCode
+            place.city = item.city
+            place.province = item.province
+            place.district = item.district
             place.createdAt = Date()
-           
+            place.isAppLocation = false
+            
             PersistenceProvider.shared.saveContext()
         }
     }

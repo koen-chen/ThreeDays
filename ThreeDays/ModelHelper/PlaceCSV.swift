@@ -35,8 +35,14 @@ class PlaceCSV: ObservableObject {
         return city.districtCode
     }
     
-    func searchPlace() {
-        
+    func searchPlace(_ name: String) -> [PlaceModel] {
+        return self.placeList.filter { item in
+            if item.district.contains(name) {
+                return true
+            } else {
+                return false
+            }
+        }
     }
     
     func getPlaceList() -> [PlaceModel] {

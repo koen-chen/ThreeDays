@@ -19,12 +19,8 @@ struct ContentView: View {
     
     @State var showDayList = false
     @State var activeDay = 0
-    
     @State var showCityList = false
-//    var activeCity: String? {
-//        return placeStore.activeCity
-//    }
-    
+
     var body: some View {
         ZStack {
             BlurView(style: .systemMaterial).background(theme.backgroundColor)

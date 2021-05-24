@@ -69,7 +69,7 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
                 if let placeMark = placeMark {
                     let placeProvince = placeMark.administrativeArea ?? ""
                     let placeCity = placeMark.locality ?? ""
-                    let placeDistrict = placeMark.subLocality ?? ""
+                    let placeDistrict = placeMark.subLocality ?? placeCity
                    
                     print("place:", (placeProvince, placeCity, placeDistrict))
                     self.locationSubject.send((placeProvince, placeCity, placeDistrict))

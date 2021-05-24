@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct PlaceModel: Codable {
+struct PlaceModel: Codable, Hashable {
     var districtCode: Int64
     var city: String
-    var district: String?
-    var province: String?
+    var district: String
+    var province: String
+    var isAppLocation: Bool?
     var createdAt: Date?
 }
 
