@@ -1,5 +1,5 @@
 //
-//  DayView.swift
+//  WeatherView.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/14.
@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct DayView: View {
+struct WeatherView: View {
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var weatherStore: WeatherViewModel
     
     var activeDay: Int
-    var placeCity: String
-    
     @Binding var showDayList: Bool
     @Binding var showCityList: Bool
     
@@ -94,37 +92,11 @@ struct DayView: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    HStack(alignment: .lastTextBaseline) {
-                        Text(dailyText)
-                            .font(.custom("SourceHanSerif-SemiBold", size: 42))
-
-                        VStack {
-                            Image(systemName: "circle.righthalf.fill")
-                                .padding(.bottom, 2)
-                               
-                            Text("\(dateText.0)")
-                            Text("月")
-                            Text("\(dateText.1)")
-                            Text("日")
-                        }
-                        .font(.custom("SourceHanSerif-SemiBold", size: 14))
-                        .offset(y: 40)
-                        .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        
-                    }
-                    .padding(.top, 30)
-                    .padding(.trailing, 20)
-                    .onTapGesture(perform: {
-                        self.showDayList.toggle()
-                    })
-                }
-                
-                Spacer()
-            }
+            DayView(
+                dailyText: dailyText,
+                dateText: dateText,
+                showDayList: $showDayList
+            )
             
             VStack(alignment: .center, spacing: 15) {
                 VStack {
@@ -163,24 +135,7 @@ struct DayView: View {
             }
             .offset(y: -20)
             
-
-            VStack {
-                Spacer()
-                
-                Button(action: {
-                    showCityList.toggle()
-                }, label: {
-                    HStack {
-                        Image(systemName: "circle.lefthalf.fill")
-                        Text(placeCity)
-                            .font(.custom("SourceHanSerif-SemiBold", size: 24))
-                        
-                        Spacer()
-                    }
-                })
-               
-            }
-            .padding(30)
+            CityView(showCityList: $showCityList)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(theme.textColor)
@@ -188,10 +143,75 @@ struct DayView: View {
     }
 }
 
-struct TodayView_Previews: PreviewProvider {
+struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        DayView(activeDay: 0, placeCity: "长沙市", showDayList: .constant(false), showCityList: .constant(false))
+        WeatherView(activeDay: 0, showDayList: .constant(false), showCityList: .constant(false))
             .environmentObject(Theme())
             .environmentObject(WeatherViewModel())
+    }
+}
+
+struct DayView: View {
+    var dailyText: String
+    var dateText: (Int, Int)
+    @Binding var showDayList: Bool
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                
+                HStack(alignment: .lastTextBaseline) {
+                    Text(dailyText)
+                        .font(.custom("SourceHanSerif-SemiBold", size: 42))
+                    
+                    VStack {
+                        Image(systemName: "circle.righthalf.fill")
+                            .padding(.bottom, 2)
+                        
+                        Text("\(dateText.0)")
+                        Text("月")
+                        Text("\(dateText.1)")
+                        Text("日")
+                    }
+                    .font(.custom("SourceHanSerif-SemiBold", size: 14))
+                    .offset(y: 40)
+                    .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    
+                }
+                .padding(.top, 30)
+                .padding(.trailing, 20)
+                .onTapGesture(perform: {
+                    self.showDayList.toggle()
+                })
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+struct CityView: View {
+    @EnvironmentObject var placeStore: PlaceViewModel
+    @Binding var showCityList: Bool
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            
+            Button(action: {
+                showCityList.toggle()
+            }, label: {
+                HStack {
+                    Image(systemName: "circle.lefthalf.fill")
+                    Text(placeStore.activeCity ?? "未知")
+                        .font(.custom("SourceHanSerif-SemiBold", size: 24))
+                    
+                    Spacer()
+                }
+            })
+            
+        }
+        .padding(30)
     }
 }

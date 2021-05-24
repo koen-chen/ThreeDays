@@ -1,5 +1,5 @@
 //
-//  WeatherProvider.swift
+//  APIProvider.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/6.
@@ -8,8 +8,9 @@
 import SwiftUI
 import Combine
 
-class WeatherProvider {
+class APIProvider {
     static let ak = "sRTP3Lzp3BB6qI6GPCXnpuquksrow2CM"
+    static var shared = APIProvider()
     
     enum Error: LocalizedError, Identifiable {
         var id: String {
@@ -31,7 +32,7 @@ class WeatherProvider {
     
     enum EndPoint {
         case getWeather(_ districtId: String)
-        //case getDistrict(_ keyword: String)
+//        case getPlace(_ name: String)
         
         func getBaseUrl () -> URLComponents {
             var components = URLComponents()
@@ -50,18 +51,18 @@ class WeatherProvider {
                     components.queryItems = [
                         .init(name: "district_id", value: String(districtId)),
                         .init(name: "data_type", value: "all"),
-                        .init(name: "ak", value: WeatherProvider.ak),
+                        .init(name: "ak", value: APIProvider.ak),
                         .init(name: "Cache-Control", value: "no-cache")
                     ]
                     component = components
                     
-//                case .getDistrict(let keyword):
+//                case .getPlace(let name):
 //                    var components = getBaseUrl()
 //                    components.path = "/place/v2/search"
 //                    components.queryItems = [
-//                        .init(name: "query", value: keyword),
+//                        .init(name: "query", value: name),
 //                        .init(name: "region", value: "全国"),
-//                        .init(name: "ak", value: WeatherProvider.ak),
+//                        .init(name: "ak", value: APIProvider.ak),
 //                        .init(name: "output", value: "json"),
 //                        .init(name: "extensions_adcode", value: String(true))
 //                    ]
@@ -75,17 +76,17 @@ class WeatherProvider {
     private let decoder = JSONDecoder()
     private let queue = DispatchQueue(label: "WeatherService", qos: .default)
     
-//    func getDistrict(keyword: String) -> AnyPublisher<LocationModel, Error> {
-//        print("District URI",  EndPoint.getDistrict(keyword).url)
+//    func getPlace(name: String) -> AnyPublisher<LocationModel, Error> {
+//        print("District URI",  EndPoint.getPlace(name).url)
 //        return URLSession.shared
-//            .dataTaskPublisher(for: EndPoint.getDistrict(keyword).url)
+//            .dataTaskPublisher(for: EndPoint.getPlace(name).url)
 //            .receive(on: queue)
 //            .map { $0.0 }
 //            .decode(type: LocationModel.self, decoder: decoder)
 //            .mapError { error in
 //                switch error {
 //                    case is URLError:
-//                        return Error.urlError(EndPoint.getDistrict(keyword).url)
+//                        return Error.urlError(EndPoint.getPlace(name).url)
 //                    default:
 //                        return Error.invalidResponse
 //                }

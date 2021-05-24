@@ -10,38 +10,40 @@ import Combine
 
 class WeatherViewModel: ObservableObject {
     @Published var weather = WeatherModel()
-    @Published var placeLocality = "未知"
-    @Published var placeSubLocality = ""
+//    @Published var placeProvince = ""
+//    @Published var placeCity = "未知"
+//    @Published var placeDistrict = ""
     
-    @ObservedObject var locationProvider: LocationProvider
+//    @ObservedObject var locationProvider: LocationProvider
     
-    private let weatherProvider = WeatherProvider()
+    private let apiProvider = APIProvider()
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        locationProvider = LocationProvider()
-        locationProvider.startLocation()
-        locationProvider.locationPublisher.sink { completion in
-            if let adcode = CitySource.getCityCode(self.placeLocality) {
-                if !PersistenceProvider.shared.checkEntityHasData(NSPredicate(format: "adcode == %d", adcode)) {
-                    let city = City(context: PersistenceProvider.shared.managedObjectContext)
-                    city.adcode = Int64(adcode)
-                    city.name = self.placeLocality
-                    PersistenceProvider.shared.saveContext()
-                } else {
-                    print("has adcode \(adcode)")
-                }
-                
-                self.getWeather(districtId: String(adcode))
-            }
-        } receiveValue: { (placeLocality, placeSubLocality) in
-            self.placeLocality = placeLocality
-            self.placeSubLocality = placeSubLocality
-        }.store(in: &subscriptions)
+//        locationProvider = LocationProvider()
+//        locationProvider.startLocation()
+//        locationProvider.locationPublisher.sink { completion in
+//            if let districtcode = PlaceCSV.shared.getCityCode(self.placeCity) {
+//                if !PersistenceProvider.shared.checkEntityHasData(NSPredicate(format: "districtcode == %d", districtcode)) {
+//                    let city = City(context: PersistenceProvider.shared.managedObjectContext)
+//                    city.adcode = adcode
+//                    city.name = self.placeLocality
+//                    city.createdAt = Date()
+//                    city.region = self.placeSubLocality
+//                    PersistenceProvider.shared.saveContext()
+//                }
+//
+//                self.getWeather(districtId: String(districtcode))
+//            }
+//        } receiveValue: { (placeProvince, placeCity, placeDistrict) in
+//            self.placeProvince = placeProvince
+//            self.placeCity = placeCity
+//            self.placeDistrict = placeDistrict
+//        }.store(in: &subscriptions)
     }
     
     func getWeather (districtId: String) {
-        weatherProvider
+        apiProvider
             .getWeather(districtId: districtId)
             .receive(on: DispatchQueue.main)
             .sink { completion in

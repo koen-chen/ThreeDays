@@ -11,18 +11,15 @@ import CoreData
 struct CityListView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(
-        entity: City.entity(),
+        entity: Place.entity(),
         sortDescriptors: []
-    ) var cityList: FetchedResults<City>
+    ) var placeList: FetchedResults<Place>
     
     @EnvironmentObject var theme: Theme
-    @EnvironmentObject var weatherStore: WeatherViewModel
+    @EnvironmentObject var placeStore: PlaceViewModel
     
     @Binding var showCityList: Bool
-    @Binding var activeCity: String?
-    
     @State var showRemoveBtn: Bool = false
-
     @State var showCitySearchView = false
     
     var body: some View {
@@ -37,7 +34,7 @@ struct CityListView: View {
                         Image(systemName: "plus.circle")
                     })
                     .fullScreenCover(isPresented: $showCitySearchView) {
-                       // CitySearchView()
+                       //CitySearchView()
                     }
 
                     Spacer()
@@ -56,46 +53,33 @@ struct CityListView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .firstTextBaseline, spacing: 38) {
-                        ForEach(cityList) { item in
-                            Text("\(item.adcode) \(item.name!)")
-//                            VStack {
-//                                if showRemoveBtn {
-//                                    Button(action: {
-//                                        if activeCity != item.name {
-//                                            //self.removeCity(item)
-//                                        }
-//                                    }, label: {
-//                                        Image(systemName: activeCity == item.name ? "circle.lefthalf.fill" : "xmark.circle")
-//                                    })
-//                                    .font(.system(size: 20))
-//                                    .padding(.bottom, 2)
-//                                }
-//
-//                                if item.name.count > 5 {
-//                                    Button(action: {
-//                                        //chooseCity(item)
-//                                    }, label: {
-//                                        HStack(alignment: .firstTextBaseline, spacing: 2) {
-//                                            Text(item.name[item.name.index(item.name.startIndex, offsetBy: 6)...])
-//                                                .frame(width: 35)
-//                                            Text(item.name[..<item.name.index(item.name.startIndex, offsetBy: 6)])
-//                                                .frame(width: 35)
-//                                        }
-//                                    })
-//                                } else {
-//                                    Button(action: {
-//                                        //chooseCity(item)
-//                                    }, label: {
-//                                        Text(item.name)
-//                                            .frame(width: 35)
-//                                    })
-//                                }
-//                            }
-//                            .frame(maxHeight: .infinity, alignment: .top)
-//                            .font(.custom("SourceHanSerif-SemiBold", size: 28))
-//                            .foregroundColor(activeCity == item.name ? theme.textColor : theme.inactiveColor)
-//                            .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
-//                            .animation(.easeInOut)
+                        ForEach(placeList) { item in
+                            VStack {
+                                if showRemoveBtn {
+                                    Button(action: {
+                                        if placeStore.activeCity != item.city {
+                                            self.removeCity(item)
+                                        }
+                                    }, label: {
+                                        Image(systemName: placeStore.activeCity == item.city ? "circle.lefthalf.fill" : "xmark.circle")
+                                    })
+                                    .font(.system(size: 20))
+                                    .padding(.bottom, 2)
+                                }
+
+                                Button(action: {
+                                    chooseCity(item)
+                                }, label: {
+                                    Text(item.city ?? "")
+                                        .frame(width: 35)
+                                })
+                                
+                            }
+                            .frame(maxHeight: .infinity, alignment: .top)
+                            .font(.custom("SourceHanSerif-SemiBold", size: 28))
+                            .foregroundColor(placeStore.activeCity == item.city ? theme.textColor : theme.inactiveColor)
+                            .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
+                            .animation(.easeInOut)
                         }
                     }
                 }
@@ -112,7 +96,7 @@ struct CityListView: View {
         }
     }
     
-//    func chooseCity (_ city: City) {
+    func chooseCity (_ city: Place) {
 //        if showRemoveBtn == false {
 //            activeCity = city.name
 //            weatherStore.getWeather(districtId: String(city.adcode))
@@ -120,22 +104,21 @@ struct CityListView: View {
 //        } else if showRemoveBtn && activeCity != city.name {
 //            self.removeCity(city)
 //        }
-//    }
+    }
     
-//    func removeCity (_ city: City) {
+    func removeCity (_ city: Place) {
 //        cityList = cityList.filter({ item in
-//            return item.name != city.name
+//            return item.city != chosen.city
 //        })
-//    }
+    }
 }
 
 struct CityView_Previews: PreviewProvider {
     static var previews: some View {
         CityListView(
-            showCityList: .constant(true),
-            activeCity: .constant("长沙市")
+            showCityList: .constant(true)
         )
         .environmentObject(Theme())
-        .environmentObject(WeatherViewModel())
+        .environmentObject(PlaceViewModel())
     }
 }

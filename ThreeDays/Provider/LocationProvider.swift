@@ -13,8 +13,8 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
    
     @Published var authorizationStatus: CLAuthorizationStatus?
-    let locationSubject: PassthroughSubject<(String, String), Never>
-    var locationPublisher: AnyPublisher<(String, String), Never>
+    let locationSubject: PassthroughSubject<(String, String, String), Never>
+    var locationPublisher: AnyPublisher<(String, String, String), Never>
     
     func requestAuthorization () {
         manager.requestWhenInUseAuthorization()
@@ -44,7 +44,7 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.allowsBackgroundLocationUpdates = true
         
-        locationSubject = PassthroughSubject<(String, String), Never>()
+        locationSubject = PassthroughSubject<(String, String, String), Never>()
         locationPublisher = locationSubject.eraseToAnyPublisher()
         
         super.init()
@@ -67,11 +67,13 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
             gecoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "zh_CN")) { (placeMarks, error) in
                 let placeMark = placeMarks?.last
                 if let placeMark = placeMark {
-                    let placeLocality = placeMark.locality ?? ""
-                    let placeSubLocality = placeMark.subLocality ?? ""
+                    let placeProvince = placeMark.administrativeArea ?? ""
+                    let placeCity = placeMark.locality ?? ""
+                    let placeDistrict = placeMark.subLocality ?? ""
+                   
+                    print("place:", (placeProvince, placeCity, placeDistrict))
+                    self.locationSubject.send((placeProvince, placeCity, placeDistrict))
                     
-                    print("place:", (placeLocality, placeSubLocality))
-                    self.locationSubject.send((placeLocality, placeSubLocality))
                     self.locationSubject.send(completion: .finished)
                 }
             }

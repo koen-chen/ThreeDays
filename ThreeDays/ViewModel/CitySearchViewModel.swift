@@ -1,5 +1,5 @@
 //
-//  CityViewModel.swift
+//  CitySearchViewModel.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/21.
@@ -8,11 +8,11 @@
 import SwiftUI
 import Combine
 
-class CityViewModel: ObservableObject {
+class CitySearchViewModel: ObservableObject {
     @EnvironmentObject var weatherStore: WeatherViewModel
     private var subscriptions = Set<AnyCancellable>()
     
-    @Published private (set) var searchCitys: [CityModel] = []
+    @Published private (set) var searchCitys: [PlaceModel] = []
     @Published var searchText: String = ""
     
     init() {

@@ -37,7 +37,7 @@ class PersistenceProvider {
         }
     }
     
-    func clearEntity (_ entity: String = "City") {
+    func clearEntity (_ entity: String = "Place") {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
@@ -48,7 +48,7 @@ class PersistenceProvider {
         }
     }
     
-    func checkEntityHasData (_ predicate: NSPredicate, entity: String = "City") -> Bool {
+    func checkEntityHasData (_ predicate: NSPredicate, entity: String = "Place") -> Bool {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
         fetchRequest.fetchLimit = 1
         fetchRequest.predicate = predicate

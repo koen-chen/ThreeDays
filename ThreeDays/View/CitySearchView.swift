@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CitySearchView: View {
-    @ObservedObject var cityViewModel = CityViewModel()
+    @ObservedObject var cityViewModel = CitySearchViewModel()
     
     @State var isSearching = false
     var body: some View {

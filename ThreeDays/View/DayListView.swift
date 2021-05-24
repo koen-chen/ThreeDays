@@ -52,5 +52,6 @@ struct DayListView: View {
 struct DailyMenu_Previews: PreviewProvider {
     static var previews: some View {
         DayListView(showDayList: .constant(false), activeDay: .constant(1))
+            .environmentObject(Theme())
     }
 }
