@@ -39,6 +39,8 @@ struct CityListView: View {
                     })
                     .fullScreenCover(isPresented: $showCitySearchView) {
                        CitySearchView()
+                        .environmentObject(theme)
+                        .environmentObject(placeStore)
                     }
 
                     Spacer()
@@ -74,7 +76,7 @@ struct CityListView: View {
                                 Button(action: {
                                     chooseCity(item)
                                 }, label: {
-                                    Text(item.city ?? "")
+                                    Text(item.district ?? "")
                                         .frame(width: 35)
                                 })
                                 

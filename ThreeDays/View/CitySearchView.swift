@@ -22,38 +22,51 @@ struct CitySearchView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(spacing: 20) {
                 Button(action: {
-                    
+                    presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .padding(.leading, 16)
+                    Image(systemName: "chevron.down.circle")
+                        .font(.system(size: 28))
                 })
-               
-                TextField("请输入城市或者市县区名称", text: $citySearchViewModel.searchText)
-                    .font(.custom("SourceHanSerif-SemiBold", size: 16))
-                    .foregroundColor(.black.opacity(0.8))
-                    .padding(.vertical, 15)
-                    .onTapGesture {
-                        self.isSearching = true
-                    }
                 
-                if isSearching {
+                HStack {
                     Button(action: {
-                        self.isSearching = false
-                        citySearchViewModel.searchText = ""
+                        
                     }, label: {
-                        Image(systemName: "xmark.circle.fill")
+                        Image(systemName: "magnifyingglass")
+                            .font(.system(size: 14))
                             .foregroundColor(.gray)
-                            .padding(.trailing, 16)
-                            .animation(.easeInOut)
+                            .padding(.leading, 16)
                     })
+                   
+                    TextField("请输入城市或者市县区名称", text: $citySearchViewModel.searchText)
+                        .font(.custom("SourceHanSerif-SemiBold", size: 16))
+                        .foregroundColor(.black.opacity(0.8))
+                        .padding(.vertical, 15)
+                        .onTapGesture {
+                            self.isSearching = true
+                        }
+                    
+                    if isSearching {
+                        Button(action: {
+                            self.isSearching = false
+                            citySearchViewModel.searchText = ""
+                        }, label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 20))
+                                .foregroundColor(.gray)
+                                .padding(.trailing, 16)
+                                .animation(.easeInOut)
+                        })
+                    }
                 }
+                .background(Color(#colorLiteral(red: 0.9921568627, green: 0.9921568627, blue: 0.9921568627, alpha: 1)).opacity(0.9))
+                .clipped()
+                .cornerRadius(15)
+                
+                
             }
-            .background(Color(#colorLiteral(red: 0.9921568627, green: 0.9921568627, blue: 0.9921568627, alpha: 1)).opacity(0.9))
-            .clipped()
-            .cornerRadius(15)
             
             if citySearchViewModel.searchCitys.count > 0 {
                 ScrollView(showsIndicators: false) {
@@ -135,7 +148,5 @@ struct ItemView: View {
                     .font(.system(size: 38))
             })
         }
-       
-        
     }
 }
