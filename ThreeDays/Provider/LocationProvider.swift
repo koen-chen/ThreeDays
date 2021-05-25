@@ -13,8 +13,8 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
    
     @Published var authorizationStatus: CLAuthorizationStatus?
-    let locationSubject: PassthroughSubject<(String, String, String), Never>
-    var locationPublisher: AnyPublisher<(String, String, String), Never>
+    let locationSubject: PassthroughSubject<PlaceCSV.Area?, Never>
+    var locationPublisher: AnyPublisher<PlaceCSV.Area?, Never>
     
     func requestAuthorization () {
         manager.requestWhenInUseAuthorization()
@@ -44,7 +44,7 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.allowsBackgroundLocationUpdates = true
         
-        locationSubject = PassthroughSubject<(String, String, String), Never>()
+        locationSubject = PassthroughSubject<PlaceCSV.Area?, Never>()
         locationPublisher = locationSubject.eraseToAnyPublisher()
         
         super.init()
@@ -61,21 +61,20 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var appPlace: PlaceCSV.Area? = nil
+        
         let location = locations.last
         let gecoder = CLGeocoder()
         if let location = location {
             gecoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "zh_CN")) { (placeMarks, error) in
                 let placeMark = placeMarks?.last
-                if let placeMark = placeMark {
-                    let placeProvince = placeMark.administrativeArea ?? ""
-                    let placeCity = placeMark.locality ?? ""
-                    let placeDistrict = placeMark.subLocality ?? placeCity
-                   
-                    print("place:", (placeProvince, placeCity, placeDistrict))
-                    self.locationSubject.send((placeProvince, placeCity, placeDistrict))
-                    
-                    self.locationSubject.send(completion: .finished)
+                if let placeMark = placeMark, let city = placeMark.locality {
+                    let result = PlaceCSV.shared.searchPlace(city, field: "city")
+                    appPlace = result.first
                 }
+                
+                self.locationSubject.send(appPlace)
+                self.locationSubject.send(completion: .finished)
             }
         }
         

@@ -64,8 +64,6 @@ struct CitySearchView: View {
                 .background(Color(#colorLiteral(red: 0.9921568627, green: 0.9921568627, blue: 0.9921568627, alpha: 1)).opacity(0.9))
                 .clipped()
                 .cornerRadius(15)
-                
-                
             }
             
             if citySearchViewModel.searchCitys.count > 0 {
@@ -113,7 +111,7 @@ struct ItemView: View {
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var placeStore: PlaceViewModel
     
-    var item: PlaceModel
+    var item: PlaceCSV.Area
     
     var body: some View {
         HStack {

@@ -204,7 +204,7 @@ struct CityView: View {
             }, label: {
                 HStack {
                     Image(systemName: "circle.lefthalf.fill")
-                    Text(placeStore.activeCity ?? "未知")
+                    Text(placeStore.activePlace?.district ?? "未知")
                         .font(.custom("SourceHanSerif-SemiBold", size: 24))
                     
                     Spacer()

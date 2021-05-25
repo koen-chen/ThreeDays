@@ -76,14 +76,29 @@ struct CityListView: View {
                                 Button(action: {
                                     chooseCity(item)
                                 }, label: {
-                                    Text(item.district ?? "")
-                                        .frame(width: 35)
+                                    if let district = item.district,
+                                       let city = item.city,
+                                       district == city.dropLast() {
+                                        HStack {
+                                            Text(district)
+                                                .frame(width: 35)
+                                            Text(item.province ?? "")
+                                                .frame(width: 35)
+                                        }
+                                    } else {
+                                        HStack {
+                                            Text(item.district ?? "")
+                                                .frame(width: 35)
+                                            Text(item.city ?? "")
+                                                .frame(width: 35)
+                                        }
+                                    }
                                 })
                                 
                             }
                             .frame(maxHeight: .infinity, alignment: .top)
                             .font(.custom("SourceHanSerif-SemiBold", size: 28))
-                            .foregroundColor(placeStore.activeCity == item.city ? theme.textColor : theme.inactiveColor)
+                            .foregroundColor(placeStore.activePlace == item ? theme.textColor : theme.inactiveColor)
                             .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
                             .animation(.easeInOut)
                         }
@@ -104,7 +119,8 @@ struct CityListView: View {
     
     func chooseCity (_ item: Place) {
         if showRemoveBtn == false {
-            placeStore.activeCity = item.city
+            UserDefaults.standard.set(item.districtCode, forKey: "activedDistrictCode")
+            placeStore.activePlace = item
             weatherStore.getWeather(districtId: String(item.districtCode))
             showCityList.toggle()
         } else if showRemoveBtn && !item.isAppLocation {
@@ -113,8 +129,9 @@ struct CityListView: View {
     }
     
     func removeCity (_ item: Place) {
-        if placeStore.activeCity == item.city {
-            placeStore.activeCity = placeList[0].city
+        if placeStore.activePlace == item {
+            placeStore.activePlace = placeList[0]
+            UserDefaults.standard.set(placeList[0].districtCode, forKey: "activedDistrictCode")
         }
         placeStore.removePlace(item)
     }

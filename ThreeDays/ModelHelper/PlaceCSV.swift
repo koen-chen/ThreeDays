@@ -10,7 +10,14 @@ import CodableCSV
 
 class PlaceCSV: ObservableObject {
     static let shared = PlaceCSV()
-    private var placeList = [PlaceModel]()
+    private var placeList = [Area]()
+    
+    struct Area: Codable, Hashable {
+        var districtCode: Int64
+        var city: String
+        var district: String
+        var province: String
+    }
     
     private init() {
         let filePath = Bundle.main.path(forResource: "full-place", ofType: "csv")
@@ -19,7 +26,7 @@ class PlaceCSV: ObservableObject {
             $0.bufferingStrategy = .sequential
         }
 
-        let content = try! decoder.decode([PlaceModel].self, from: URL(fileURLWithPath: filePath!))
+        let content = try! decoder.decode([Area].self, from: URL(fileURLWithPath: filePath!))
         self.placeList = content
     }
     
@@ -35,17 +42,27 @@ class PlaceCSV: ObservableObject {
         return city.districtCode
     }
     
-    func searchPlace(_ name: String) -> [PlaceModel] {
+    func searchPlace(_ name: String, field: String = "district") -> [Area] {
         return self.placeList.filter { item in
-            if item.district.contains(name) {
-                return true
+            if field == "city" {
+                if item.city.contains(name) {
+                    return true
+                } else {
+                    return false
+                }
             } else {
-                return false
+                if item.district.contains(name) {
+                    return true
+                } else {
+                    return false
+                }
             }
+
         }
     }
     
-    func getPlaceList() -> [PlaceModel] {
+    func getPlaceList() -> [Area] {
         return self.placeList
     }
 }
+

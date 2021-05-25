@@ -12,7 +12,7 @@ class CitySearchViewModel: ObservableObject {
     @EnvironmentObject var weatherStore: WeatherViewModel
     private var subscriptions = Set<AnyCancellable>()
     
-    @Published private (set) var searchCitys: [PlaceModel] = []
+    @Published private (set) var searchCitys: [PlaceCSV.Area] = []
     @Published var searchText: String = ""
     
     init() {
@@ -37,8 +37,6 @@ class CitySearchViewModel: ObservableObject {
     
     private func searchItems(_ seachText: String) {
         self.searchCitys = PlaceCSV.shared.searchPlace(seachText)
-        
-        print(self.searchCitys)
     }
 }
 

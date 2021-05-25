@@ -25,14 +25,16 @@ struct ContentView: View {
         ZStack {
             BlurView(style: .systemMaterial).background(theme.backgroundColor)
             
-            if placeStore.districtCode != nil {
+            if placeStore.activePlace?.districtCode != nil {
                 WeatherView(
                     activeDay: activeDay,
                     showDayList: $showDayList,
                     showCityList: $showCityList
                 )
-                .onReceive(placeStore.$districtCode, perform: { value in
-                    weatherStore.getWeather(districtId: String(value!))
+                .onReceive(placeStore.$activePlace, perform: { place in
+                    if let code = place?.districtCode {
+                        weatherStore.getWeather(districtId: String(code))
+                    }
                 })
                 .padding(.vertical, 30)
                 .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))

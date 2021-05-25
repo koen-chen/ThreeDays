@@ -9,11 +9,8 @@ import SwiftUI
 import Combine
 
 class PlaceViewModel: ObservableObject {
-    @Published var placeProvince = ""
-    @Published var placeCity = ""
-    @Published var placeDistrict = ""
-    @Published var districtCode: Int64? = nil
-    @Published var activeCity: String? = nil
+    @Published var activePlace: Place? = nil
+    @Published var appPlace: PlaceCSV.Area? = nil
     
     @ObservedObject var locationProvider: LocationProvider
     
@@ -24,22 +21,17 @@ class PlaceViewModel: ObservableObject {
         locationProvider = LocationProvider()
         locationProvider.startLocation()
         locationProvider.locationPublisher.sink { completion in
-            self.districtCode = self.getDistrictCode(self.placeCity)
-            self.activeCity = self.placeCity
-            // PersistenceProvider.shared.clearEntity()
-            if let code = self.districtCode {
+            if let code = self.appPlace?.districtCode {
                 self.saveAppLocation(code)
             }
-        } receiveValue: { (placeProvince, placeCity, placeDistrict) in
-            self.placeProvince = placeProvince
-            self.placeCity = placeCity
-            self.placeDistrict = placeDistrict
+        } receiveValue: { place in
+            self.appPlace = place
         }.store(in: &subscriptions)
     }
     
     func getDistrictCode(_ name: String) -> Int64? {
         if let districtCode = PlaceCSV.shared.getCityCode(name) {
-            return Int64(districtCode)
+            return districtCode
         } else {
             return nil
         }
@@ -50,11 +42,21 @@ class PlaceViewModel: ObservableObject {
         
         let place = result.count == 0 ? Place(context: PersistenceProvider.shared.managedObjectContext) : result[0]
         place.districtCode = districtCode
-        place.city = self.placeCity
-        place.province = self.placeProvince
-        place.district = self.placeDistrict
+        place.city = self.appPlace?.city
+        place.province = self.appPlace?.province
+        place.district = self.appPlace?.district
         place.createdAt = Date()
         place.isAppLocation = true
+        
+        let defaults = UserDefaults.standard
+        
+        if let code = defaults.string(forKey: "activedDistrictCode") {
+            let result = PersistenceProvider.shared.fetchDataForEntity(NSPredicate(format: "districtCode == %d", Int64(code)!))
+            self.activePlace = result.count == 0 ? place : result[0]
+        } else {
+            defaults.set(districtCode, forKey: "activedDistrictCode")
+            self.activePlace = place
+        }
         
         PersistenceProvider.shared.saveContext()
     }
@@ -64,7 +66,7 @@ class PlaceViewModel: ObservableObject {
         PersistenceProvider.shared.saveContext()
     }
     
-    func addPlace(_ item: PlaceModel) {
+    func addPlace(_ item: PlaceCSV.Area) {
         if !PersistenceProvider.shared.checkEntityHasData(NSPredicate(format: "districtCode == %d", item.districtCode)) {
             let place = Place(context: PersistenceProvider.shared.managedObjectContext)
             
