@@ -58,7 +58,7 @@ struct CityListView: View {
                 .padding(.bottom, 20)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .firstTextBaseline, spacing: 38) {
+                    HStack(alignment: .firstTextBaseline, spacing: 40) {
                         ForEach(placeList) { item in
                             VStack {
                                 if showRemoveBtn {
@@ -69,7 +69,7 @@ struct CityListView: View {
                                     }, label: {
                                         Image(systemName: item.isAppLocation ? "location.circle" : "xmark.circle")
                                     })
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 24))
                                     .padding(.bottom, 2)
                                 }
 
@@ -79,18 +79,24 @@ struct CityListView: View {
                                     if let district = item.district,
                                        let city = item.city,
                                        district == city.dropLast() {
-                                        HStack {
+                                        HStack(alignment: .firstTextBaseline) {
                                             Text(district)
                                                 .frame(width: 35)
                                             Text(item.province ?? "")
-                                                .frame(width: 35)
+                                                .font(.system(size: 16))
+                                                .foregroundColor(theme.textColor.opacity(0.8))
+                                                .frame(width: 20)
+                                                .offset(y: -10)
                                         }
                                     } else {
-                                        HStack {
+                                        HStack(alignment: .firstTextBaseline) {
                                             Text(item.district ?? "")
                                                 .frame(width: 35)
                                             Text(item.city ?? "")
-                                                .frame(width: 35)
+                                                .font(.system(size: 16))
+                                                .foregroundColor(theme.textColor.opacity(0.8))
+                                                .frame(width: 20)
+                                                .offset(y: -10)
                                         }
                                     }
                                 })
