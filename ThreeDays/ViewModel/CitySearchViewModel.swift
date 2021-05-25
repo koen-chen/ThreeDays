@@ -12,9 +12,7 @@ class CitySearchViewModel: ObservableObject {
     @EnvironmentObject var weatherStore: WeatherViewModel
     private var subscriptions = Set<AnyCancellable>()
     
-    //@Published private (set) var searchCitys: [PlaceModel] = [ThreeDays.PlaceModel(districtCode: 430600, city: "岳阳市", district: "岳阳", province: "湖南省", isAppLocation: nil, createdAt: nil), ThreeDays.PlaceModel(districtCode: 430602, city: "岳阳市", district: "岳阳楼区", province: "湖南省", isAppLocation: nil, createdAt: nil), ThreeDays.PlaceModel(districtCode: 430621, city: "岳阳市", district: "岳阳县", province: "湖南省", isAppLocation: nil, createdAt: nil)]
     @Published private (set) var searchCitys: [PlaceModel] = []
-
     @Published var searchText: String = ""
     
     init() {

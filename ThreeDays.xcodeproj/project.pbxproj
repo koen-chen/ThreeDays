@@ -13,6 +13,8 @@
 		440E78ED2643E60300105EB7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78EC2643E60300105EB7 /* BlurView.swift */; };
 		440E78FD26440E1E00105EB7 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FC26440E1E00105EB7 /* APIProvider.swift */; };
 		440E78FF2644CCF600105EB7 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FE2644CCF600105EB7 /* WeatherModel.swift */; };
+		441526C1265C93C200FD0700 /* PlaceCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441526C0265C93C200FD0700 /* PlaceCSV.swift */; };
+		441526C3265C93D200FD0700 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441526C2265C93D200FD0700 /* Theme.swift */; };
 		442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */; };
 		44453BA3265B62C50060EFD7 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44453BA2265B62C50060EFD7 /* PlaceViewModel.swift */; };
 		4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
@@ -22,8 +24,6 @@
 		44845B8726525DBA0076991C /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8426525DBA0076991C /* weather-day-shower-rains.json */; };
 		44845B8826525DBA0076991C /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8526525DBA0076991C /* weather-day-thunderstorm.json */; };
 		44845B8A26525E1E0076991C /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8926525E1E0076991C /* weather-night-shower-rains.json */; };
-		44867D11265A1F7100BFFA51 /* PlaceCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44867D10265A1F7100BFFA51 /* PlaceCSV.swift */; };
-		44867D13265A1F8400BFFA51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44867D12265A1F8400BFFA51 /* Theme.swift */; };
 		449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */; };
 		449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E19263AF3B10095DC12 /* ContentView.swift */; };
 		449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
@@ -64,6 +64,8 @@
 		440E78EC2643E60300105EB7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		440E78FC26440E1E00105EB7 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		440E78FE2644CCF600105EB7 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		441526C0265C93C200FD0700 /* PlaceCSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCSV.swift; sourceTree = "<group>"; };
+		441526C2265C93D200FD0700 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		44453BA2265B62C50060EFD7 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
@@ -72,8 +74,6 @@
 		44845B8426525DBA0076991C /* weather-day-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-shower-rains.json"; sourceTree = "<group>"; };
 		44845B8526525DBA0076991C /* weather-day-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-thunderstorm.json"; sourceTree = "<group>"; };
 		44845B8926525E1E0076991C /* weather-night-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-shower-rains.json"; sourceTree = "<group>"; };
-		44867D10265A1F7100BFFA51 /* PlaceCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCSV.swift; sourceTree = "<group>"; };
-		44867D12265A1F8400BFFA51 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		449D3E14263AF3B10095DC12 /* ThreeDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysApp.swift; sourceTree = "<group>"; };
 		449D3E19263AF3B10095DC12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 		44867D0F265A1F4800BFFA51 /* ModelHelper */ = {
 			isa = PBXGroup;
 			children = (
-				44867D10265A1F7100BFFA51 /* PlaceCSV.swift */,
-				44867D12265A1F8400BFFA51 /* Theme.swift */,
+				441526C0265C93C200FD0700 /* PlaceCSV.swift */,
+				441526C2265C93D200FD0700 /* Theme.swift */,
 			);
 			path = ModelHelper;
 			sourceTree = "<group>";
@@ -434,22 +434,22 @@
 			files = (
 				44B1CDE2265805FB00DC5502 /* CitySearchViewModel.swift in Sources */,
 				4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */,
-				44867D13265A1F8400BFFA51 /* Theme.swift in Sources */,
 				440E78FD26440E1E00105EB7 /* APIProvider.swift in Sources */,
 				4406D539265012C400F9183E /* DayListView.swift in Sources */,
 				449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */,
 				440E78ED2643E60300105EB7 /* BlurView.swift in Sources */,
+				441526C1265C93C200FD0700 /* PlaceCSV.swift in Sources */,
 				442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */,
 				44B1CDE4265806E100DC5502 /* PlaceModel.swift in Sources */,
 				44C727E026463FF600F83303 /* LocationProvider.swift in Sources */,
 				44C727E226465FF100F83303 /* NetworProvider.swift in Sources */,
 				440C95C5265A4C91002BB5AD /* ThreeDays.xcdatamodeld in Sources */,
-				44867D11265A1F7100BFFA51 /* PlaceCSV.swift in Sources */,
 				44453BA3265B62C50060EFD7 /* PlaceViewModel.swift in Sources */,
 				44B1CDE02657FD8700DC5502 /* CitySearchView.swift in Sources */,
 				449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */,
 				44B1CDDE2657B8E800DC5502 /* PersistenceProvider.swift in Sources */,
 				440E78FF2644CCF600105EB7 /* WeatherModel.swift in Sources */,
+				441526C3265C93D200FD0700 /* Theme.swift in Sources */,
 				44FEBAED264392EB00DD785C /* LottieView.swift in Sources */,
 				44F999182652702A00F6D646 /* CityListView.swift in Sources */,
 			);

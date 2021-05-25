@@ -18,7 +18,7 @@ class PlaceCSV: ObservableObject {
             $0.headerStrategy = .firstLine
             $0.bufferingStrategy = .sequential
         }
-        
+
         let content = try! decoder.decode([PlaceModel].self, from: URL(fileURLWithPath: filePath!))
         self.placeList = content
     }

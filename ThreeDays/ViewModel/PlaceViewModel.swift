@@ -26,7 +26,7 @@ class PlaceViewModel: ObservableObject {
         locationProvider.locationPublisher.sink { completion in
             self.districtCode = self.getDistrictCode(self.placeCity)
             self.activeCity = self.placeCity
-            //PersistenceProvider.shared.clearEntity()
+            // PersistenceProvider.shared.clearEntity()
             if let code = self.districtCode {
                 self.saveAppLocation(code)
             }
