@@ -192,6 +192,7 @@ struct DayView: View {
 }
 
 struct CityView: View {
+    @EnvironmentObject var theme: Theme
     @EnvironmentObject var placeStore: PlaceViewModel
     @Binding var showCityList: Bool
     
@@ -202,10 +203,27 @@ struct CityView: View {
             Button(action: {
                 showCityList.toggle()
             }, label: {
-                HStack {
+                HStack(alignment: .firstTextBaseline) {
                     Image(systemName: "circle.lefthalf.fill")
-                    Text(placeStore.activePlace?.district ?? "未知")
-                        .font(.custom("SourceHanSerif-SemiBold", size: 24))
+                        .offset(y: -3)
+                    
+                    if let district = placeStore.activePlace?.district,
+                       let city = placeStore.activePlace?.city,
+                       district == city.dropLast() {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(district)
+                            Text(placeStore.activePlace?.province ?? "")
+                                .font(.system(size: 14))
+                                .foregroundColor(theme.textColor.opacity(0.8))
+                        }.font(.custom("SourceHanSerif-SemiBold", size: 24))
+                    } else {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(placeStore.activePlace?.district ?? "")
+                            Text(placeStore.activePlace?.city ?? "")
+                                .font(.system(size: 14))
+                                .foregroundColor(theme.textColor.opacity(0.8))
+                        }.font(.custom("SourceHanSerif-SemiBold", size: 22))
+                    }
                     
                     Spacer()
                 }
