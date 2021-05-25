@@ -205,7 +205,7 @@ struct CityView: View {
             }, label: {
                 HStack(alignment: .firstTextBaseline) {
                     Image(systemName: "circle.lefthalf.fill")
-                        .offset(y: -3)
+                        .offset(y: -4)
                     
                     if let district = placeStore.activePlace?.district,
                        let city = placeStore.activePlace?.city,
