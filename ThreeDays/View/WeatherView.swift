@@ -92,6 +92,18 @@ struct WeatherView: View {
     
     var body: some View {
         ZStack {
+            VStack {
+                Rectangle()
+                    .frame(width: 40, height: 6)
+                    .foregroundColor(theme.textColor)
+                    .cornerRadius(3)
+                    .opacity(0.5)
+                    .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
+            
+                Spacer()
+            }
+            .opacity(showDayList ? 1 : 0)
+            
             DayView(
                 dailyText: dailyText,
                 dateText: dateText,
@@ -148,6 +160,7 @@ struct WeatherView_Previews: PreviewProvider {
         WeatherView(activeDay: 0, showDayList: .constant(false), showCityList: .constant(false))
             .environmentObject(Theme())
             .environmentObject(WeatherViewModel())
+            .environmentObject(PlaceViewModel())
     }
 }
 
@@ -166,9 +179,15 @@ struct DayView: View {
                         .font(.custom("SourceHanSerif-SemiBold", size: 42))
                     
                     VStack {
-                        Image(systemName: "circle.righthalf.fill")
-                            .padding(.bottom, 2)
+                        Button(action: {
+                            self.showDayList.toggle()
+                        }, label: {
+                            Image(systemName: "circle.righthalf.fill")
+                                .rotationEffect(Angle.degrees(self.showDayList ? 180 : 0))
+                                .padding(.bottom, 2)
+                        })
                         
+
                         Text("\(dateText.0)")
                         Text("月")
                         Text("\(dateText.1)")
@@ -205,6 +224,7 @@ struct CityView: View {
             }, label: {
                 HStack(alignment: .firstTextBaseline) {
                     Image(systemName: "circle.lefthalf.fill")
+                        .rotationEffect(Angle.degrees(self.showCityList ? 180 : 0))
                         .offset(y: -4)
                     
                     if let district = placeStore.activePlace?.district,

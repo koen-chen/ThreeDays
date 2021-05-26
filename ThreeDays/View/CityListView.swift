@@ -122,11 +122,9 @@ struct CityListView: View {
             }
             .padding(.top, 20)
             .padding(.bottom, 20)
-            //.frame(height: 320)
             .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
             .cornerRadius(30)
             .padding(.horizontal, 10)
-            //.padding(.bottom, 30)
             .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
         }
     }

@@ -23,6 +23,8 @@ struct ContentView: View {
     @State var cityListDragState = CGSize.zero
     @State var showCityListFull = false
     
+    @State var weatherDragState = CGSize.zero
+    
     var cityListShowHeight = screen.height < 800 ? screen.height / 2 : 500
     
     var body: some View {
@@ -47,10 +49,38 @@ struct ContentView: View {
                 .offset(y: showDayList ? CGFloat(200) : 0)
                 .offset(y: showCityList ? -(screen.height - cityListShowHeight) : 0)
                 .offset(y: cityListDragState.height)
+                .offset(y: weatherDragState.height)
                 .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
                 .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-               
+                .gesture(
+                    DragGesture()
+                        .onChanged({ value in
+                            if showDayList {
+                                self.weatherDragState = value.translation
+                                
+                                if self.weatherDragState.height > 50 {
+                                    self.weatherDragState.height = 50
+                                }
+                            }
+                        })
+                        .onEnded({ value in
+                            if self.weatherDragState.height < -10 {
+                                self.showDayList = false
+                            }
+                            
+                            self.weatherDragState = .zero
+                        })
+                )
+                .onChange(of: showCityList) { value in
+                    if !value {
+                        self.cityListDragState = .zero
+                        self.showCityListFull = false
+                    }
+                    
+                    print(screen.height)
+                }
+                
             } else {
                 LottieView(name: "loading2-\(theme.iconText)")
                     .frame(width: 200, height: 200)
@@ -60,8 +90,9 @@ struct ContentView: View {
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .offset(y: showDayList ? 10 : -screen.height)
+                .offset(y: weatherDragState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
-
+                
             CityListView(showCityList: $showCityList)
                 .offset(y: showCityList ? cityListShowHeight + 20 : screen.height)
                 .offset(y: cityListDragState.height)
