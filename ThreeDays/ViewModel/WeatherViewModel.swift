@@ -14,6 +14,18 @@ class WeatherViewModel: ObservableObject {
     private let apiProvider = APIProvider()
     private var subscriptions = Set<AnyCancellable>()
     
+    var districtCode: Int64?
+    
+    init() {
+        PlaceViewModel.placePublisher.sink { completion in
+            if let code = self.districtCode {
+                self.getWeather(districtId: String(code))
+            }
+        } receiveValue: { code in
+            self.districtCode = code
+        }.store(in: &subscriptions)
+    }
+    
     func getWeather (districtId: String) {
         apiProvider
             .getWeather(districtId: districtId)

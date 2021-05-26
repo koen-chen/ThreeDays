@@ -71,13 +71,10 @@ struct CityListView: View {
                             VStack {
                                 if showRemoveBtn {
                                     Button(action: {
-                                        if !item.isAppLocation {
-                                            self.removeCity(item)
-                                        }
+                                        self.removeCity(item)
                                     }, label: {
                                         Image(systemName: item.isAppLocation ? "location.circle" : "xmark.circle")
                                     })
-                                    
                                     .padding(.bottom, 2)
                                 }
 
@@ -141,10 +138,15 @@ struct CityListView: View {
     }
     
     func removeCity (_ item: Place) {
+        if item.isAppLocation {
+            return
+        }
+        
         if placeStore.activePlace == item {
             placeStore.activePlace = placeList[0]
             UserDefaults.standard.set(placeList[0].districtCode, forKey: "activedDistrictCode")
         }
+        
         placeStore.removePlace(item)
     }
 }

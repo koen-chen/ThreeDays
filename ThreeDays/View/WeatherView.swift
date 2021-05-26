@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//let screen = UIScreen.main.bounds
+
 struct WeatherView: View {
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var weatherStore: WeatherViewModel
@@ -144,7 +146,7 @@ struct WeatherView: View {
                         Text("最高 \(dailyWeather.high)°")
                     }
                     .font(.custom("SourceHanSerif-SemiBold", size: 18))
-                    .padding(.top, 30)
+                    .padding(.top, screen.height < 800 ? 0 : 30)
                     .offset(x: 5)
                 }
             }
@@ -254,6 +256,7 @@ struct CityView: View {
                 Spacer()
             }
         }
-        .padding(30)
+        .padding(.horizontal, 30)
+        .padding(.vertical, screen.height < 800 ? 10 : 30)
     }
 }

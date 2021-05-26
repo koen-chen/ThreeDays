@@ -17,6 +17,10 @@ class PlaceViewModel: ObservableObject {
     private let apiProvider = APIProvider()
     private var subscriptions = Set<AnyCancellable>()
     
+    static let placeSubject = PassthroughSubject<Int64?, Never>()
+    static var placePublisher: AnyPublisher<Int64?, Never> = placeSubject.eraseToAnyPublisher()
+    
+    
     init() {
         locationProvider = LocationProvider()
         locationProvider.startLocation()
@@ -57,6 +61,9 @@ class PlaceViewModel: ObservableObject {
             defaults.set(districtCode, forKey: "activedDistrictCode")
             self.activePlace = place
         }
+        
+        Self.placeSubject.send(self.activePlace?.districtCode)
+        Self.placeSubject.send(completion: .finished)
         
         PersistenceProvider.shared.saveContext()
     }

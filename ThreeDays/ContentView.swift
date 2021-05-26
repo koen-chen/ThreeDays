@@ -31,20 +31,15 @@ struct ContentView: View {
         ZStack {
             BlurView(style: .systemMaterial).background(theme.backgroundColor)
             
-            if placeStore.activePlace?.districtCode != nil {
+            if weatherStore.weather.result.now != nil {
                 WeatherView(
                     activeDay: activeDay,
                     showDayList: $showDayList,
                     showCityList: $showCityList
                 )
-                .onReceive(placeStore.$activePlace, perform: { place in
-                    if let code = place?.districtCode {
-                        weatherStore.getWeather(districtId: String(code))
-                    }
-                })
                 .padding(.vertical, 30)
                 .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
-                .cornerRadius(30)
+                .cornerRadius((showCityList || showDayList) ? 30 : 0)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .offset(y: showDayList ? CGFloat(200) : 0)
                 .offset(y: showCityList ? -(screen.height - cityListShowHeight) : 0)
