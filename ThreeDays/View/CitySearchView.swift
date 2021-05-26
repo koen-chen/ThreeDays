@@ -40,7 +40,7 @@ struct CitySearchView: View {
                             .padding(.leading, 16)
                     })
                    
-                    TextField("请输入城市或者市县区名称", text: $citySearchViewModel.searchText)
+                    TextField("请输入中国城市或区县名称", text: $citySearchViewModel.searchText)
                         .font(.custom("SourceHanSerif-SemiBold", size: 16))
                         .foregroundColor(.black.opacity(0.8))
                         .padding(.vertical, 15)

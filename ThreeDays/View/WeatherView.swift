@@ -233,7 +233,7 @@ struct CityView: View {
                         
                         if let district = placeStore.activePlace?.district,
                            let city = placeStore.activePlace?.city,
-                           district == city.dropLast() {
+                           (district == city.dropLast() || district == city){
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(district)
                                 Text(placeStore.activePlace?.province ?? "")
