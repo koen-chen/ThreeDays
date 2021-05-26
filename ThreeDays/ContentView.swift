@@ -77,8 +77,6 @@ struct ContentView: View {
                         self.cityListDragState = .zero
                         self.showCityListFull = false
                     }
-                    
-                    print(screen.height)
                 }
                 
             } else {
@@ -130,10 +128,7 @@ struct ContentView: View {
                         self.cityListDragState = .zero
                         self.showCityListFull = false
                     }
-                    
-                    print(screen.height)
                 }
-        
         }
         .ignoresSafeArea()
     }

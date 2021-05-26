@@ -95,7 +95,7 @@ class APIProvider {
 //    }
     
     func getWeather(districtId: String) -> AnyPublisher<WeatherModel, Error> {
-        print("Weather URI",  EndPoint.getWeather(districtId).url)
+        print("天气URI",  EndPoint.getWeather(districtId).url)
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker

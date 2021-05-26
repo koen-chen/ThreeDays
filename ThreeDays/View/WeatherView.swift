@@ -75,10 +75,10 @@ struct WeatherView: View {
     
     var timeFormat: DateFormatter {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.dateFormat = "h:mm a"
-        formatter.amSymbol = "am"
-        formatter.pmSymbol = "pm"
+       // formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "H:mm"
+//        formatter.amSymbol = "am"
+//        formatter.pmSymbol = "pm"
         return formatter
     }
     
@@ -127,12 +127,15 @@ struct WeatherView: View {
                                 .font(.custom("SourceHanSerif-SemiBold", size: 66))
                                 .offset(x: 10)
                             
-                            Text("\(timeString(date: currentDate))")
-                                .onReceive(timer) { input in
-                                    currentDate = input
-                                }
-                                .font(.system(size: 14))
-                                .offset(x: 80, y: -15)
+                            HStack(spacing: 4) {
+                                Image(systemName: "clock")
+                                Text("\(timeString(date: currentDate))")
+                            }
+                            .onReceive(timer) { input in
+                                currentDate = input
+                            }
+                            .font(.system(size: 14))
+                            .offset(x: 80, y: -15)
                         }
                     }
                     
@@ -219,36 +222,37 @@ struct CityView: View {
         VStack {
             Spacer()
             
-            Button(action: {
-                showCityList.toggle()
-            }, label: {
-                HStack(alignment: .firstTextBaseline) {
-                    Image(systemName: "circle.lefthalf.fill")
-                        .rotationEffect(Angle.degrees(self.showCityList ? 180 : 0))
-                        .offset(y: -4)
-                    
-                    if let district = placeStore.activePlace?.district,
-                       let city = placeStore.activePlace?.city,
-                       district == city.dropLast() {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text(district)
-                            Text(placeStore.activePlace?.province ?? "")
-                                .font(.system(size: 14))
-                                .foregroundColor(theme.textColor.opacity(0.8))
-                        }.font(.custom("SourceHanSerif-SemiBold", size: 24))
-                    } else {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text(placeStore.activePlace?.district ?? "")
-                            Text(placeStore.activePlace?.city ?? "")
-                                .font(.system(size: 14))
-                                .foregroundColor(theme.textColor.opacity(0.8))
-                        }.font(.custom("SourceHanSerif-SemiBold", size: 22))
+            HStack {
+                Button(action: {
+                    showCityList.toggle()
+                }, label: {
+                    HStack(alignment: .firstTextBaseline) {
+                        Image(systemName: "circle.lefthalf.fill")
+                            .rotationEffect(Angle.degrees(self.showCityList ? 180 : 0))
+                            .offset(y: -4)
+                        
+                        if let district = placeStore.activePlace?.district,
+                           let city = placeStore.activePlace?.city,
+                           district == city.dropLast() {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(district)
+                                Text(placeStore.activePlace?.province ?? "")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(theme.textColor.opacity(0.8))
+                            }.font(.custom("SourceHanSerif-SemiBold", size: 24))
+                        } else {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(placeStore.activePlace?.district ?? "")
+                                Text(placeStore.activePlace?.city ?? "")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(theme.textColor.opacity(0.8))
+                            }.font(.custom("SourceHanSerif-SemiBold", size: 22))
+                        }
                     }
-                    
-                    Spacer()
-                }
-            })
-            
+                })
+                
+                Spacer()
+            }
         }
         .padding(30)
     }

@@ -77,7 +77,7 @@ struct CityListView: View {
                                     }, label: {
                                         Image(systemName: item.isAppLocation ? "location.circle" : "xmark.circle")
                                     })
-                                    .font(.system(size: 24))
+                                    
                                     .padding(.bottom, 2)
                                 }
 
