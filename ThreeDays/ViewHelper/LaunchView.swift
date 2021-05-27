@@ -10,23 +10,24 @@ import Combine
 
 struct LaunchView: View {
     @EnvironmentObject var theme: Theme
-    
-    static let lottieSubject = PassthroughSubject<Bool, Never>()
-    static var lottiePublisher: AnyPublisher<Bool, Never> = lottieSubject.eraseToAnyPublisher()
+    @StateObject var netMonitor = NetworProvider()
     
     var body: some View {
         ZStack {
             Spacer()
             
-            LottieView(
-                name: "loading-\(theme.iconText)",
-                loopWay: .playOnce,
-                completion: { status in
-                    Self.lottieSubject.send(status)
+            VStack {
+                LottieView(name: "loading-\(theme.iconText)")
+                .frame(width: 200, height: 200)
+                    .padding()
+                
+                if netMonitor.status == .disconnected {
+                    Text("网络连接异常 \n 请检查网络后重启应用")
+                        .multilineTextAlignment(.center)
+                        .font(.custom("SourceHanSerif-SemiBold", size: 24))
+                        .foregroundColor(theme.textColor)
                 }
-            )
-            .frame(width: 200, height: 200)
-            .padding()
+            }
             
             Spacer()
         }

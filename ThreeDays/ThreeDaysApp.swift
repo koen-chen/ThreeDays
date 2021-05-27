@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct ThreeDaysApp: App {
-    // let network = NetworkService()
     let persistenceProvider = PersistenceProvider.shared
     
     var body: some Scene {

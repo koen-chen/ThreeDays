@@ -20,7 +20,6 @@ class PlaceViewModel: ObservableObject {
     static let placeSubject = PassthroughSubject<Int64?, Never>()
     static var placePublisher: AnyPublisher<Int64?, Never> = placeSubject.eraseToAnyPublisher()
     
-    
     init() {
         locationProvider = LocationProvider()
         locationProvider.startLocation()

@@ -7,11 +7,11 @@
 
 import SwiftUI
 import Lottie
+import Combine
 
 struct LottieView: UIViewRepresentable {
     @EnvironmentObject var theme: Theme
-    
-    typealias completionClosure = (_ status: Bool) -> Void
+  
     static var cacheName = ""
     
     var name: String = ""
@@ -20,8 +20,7 @@ struct LottieView: UIViewRepresentable {
     var weatherDesc: String = ""
     var loopWay: LottieLoopMode = .loop
     let animationView = AnimationView()
-    var completion: completionClosure?
-    
+   
     var weatherIcon: String {
         switch weatherDesc {
             case "晴":
@@ -59,13 +58,8 @@ struct LottieView: UIViewRepresentable {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopWay
         animationView.backgroundBehavior = .pauseAndRestore
-       
-        animationView.play { (status) in
-            if let completionFunc = completion {
-                completionFunc(status)
-            }
-        }
-        
+        animationView.play()
+    
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
         NSLayoutConstraint.activate([

@@ -12,30 +12,30 @@ enum ConnectionType {
     case wifi, ethernet, cellular, unknown
 }
 
+enum ConnectionStatus {
+    case connected, disconnected
+}
+
 class NetworProvider: ObservableObject {
-    @Published var connected = false
+    @Published var status: ConnectionStatus = .disconnected
     @Published var type: ConnectionType = .wifi
     
-    var monitor: NWPathMonitor
-    var queue: DispatchQueue
-    
+    private let monitor = NWPathMonitor()
+    private let queue = DispatchQueue(label: "Monitor")
+
     init() {
-        queue = DispatchQueue(label: "Monitor")
-        monitor = NWPathMonitor()
-        
-        monitor.start(queue: queue)
-    }
-    
-    func start(listener: @escaping () -> ()) {
         monitor.pathUpdateHandler = { path in
-            self.connected = path.status == .satisfied
-            self.type = self.checkType(path)
-            print("network: \(self.type)")
-            if (self.connected) {
-                print("fetch weather again")
-                listener()
+            DispatchQueue.main.async {
+                self.type = self.checkType(path)
+                if path.status == .satisfied {
+                    self.status = .connected
+                } else {
+                    self.status = .disconnected
+                }
             }
         }
+        
+        monitor.start(queue: queue)
     }
     
     func stop() {

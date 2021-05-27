@@ -16,7 +16,8 @@ struct ContentView: View {
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var weatherStore: WeatherViewModel
     @EnvironmentObject var placeStore: PlaceViewModel
-    
+   
+    @StateObject var netMonitor = NetworProvider()
     @State var showDayList = false
     @State var activeDay = 0
     @State var showCityList = false
@@ -24,14 +25,16 @@ struct ContentView: View {
     @State var showCityListFull = false
     @State var weatherDragState = CGSize.zero
     @State var weatherAPIDone = false
-    @State var lottieDone = false
+    
+    var isConnected: Bool {
+        return netMonitor.status == .connected ? true : false
+    }
     
     var cityListShowHeight = screen.height < 800 ? screen.height / 2 : 500
     
     var body: some View {
         ZStack {
             BlurView(style: .systemMaterial).background(theme.backgroundColor)
-            
           
             WeatherView(
                 activeDay: activeDay,
@@ -74,20 +77,15 @@ struct ContentView: View {
                     self.showCityListFull = false
                 }
             }
-                
+            
             LaunchView()
-                .opacity((weatherAPIDone && lottieDone) ? 0 : 1)
+                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
                 .onReceive(weatherStore.$weather, perform: { weather in
                     if weather.result.now != nil {
-                        withAnimation() {
-                            self.weatherAPIDone = true
-                        }
-                    }
-                })
-                .onReceive(LaunchView.lottiePublisher, perform: { status in
-                    if status == true {
-                        withAnimation() {
-                            self.lottieDone = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation() {
+                                self.weatherAPIDone = true
+                            }
                         }
                     }
                 })
