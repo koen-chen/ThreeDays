@@ -22,8 +22,9 @@ struct ContentView: View {
     @State var showCityList = false
     @State var cityListDragState = CGSize.zero
     @State var showCityListFull = false
-    
     @State var weatherDragState = CGSize.zero
+    @State var weatherAPIDone = false
+    @State var lottieDone = false
     
     var cityListShowHeight = screen.height < 800 ? screen.height / 2 : 500
     
@@ -31,54 +32,65 @@ struct ContentView: View {
         ZStack {
             BlurView(style: .systemMaterial).background(theme.backgroundColor)
             
-            if weatherStore.weather.result.now != nil {
-                WeatherView(
-                    activeDay: activeDay,
-                    showDayList: $showDayList,
-                    showCityList: $showCityList
-                )
-                .padding(.vertical, 30)
-                .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
-                .cornerRadius((showCityList || showDayList) ? 30 : 0)
-                .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
-                .offset(y: showDayList ? CGFloat(200) : 0)
-                .offset(y: showCityList ? -(screen.height - cityListShowHeight) : 0)
-                .offset(y: cityListDragState.height)
-                .offset(y: weatherDragState.height)
-                .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
-                .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-                .gesture(
-                    DragGesture()
-                        .onChanged({ value in
-                            if showDayList {
-                                self.weatherDragState = value.translation
-                                
-                                if self.weatherDragState.height > 50 {
-                                    self.weatherDragState.height = 50
-                                }
-                            }
-                        })
-                        .onEnded({ value in
-                            if self.weatherDragState.height < -10 {
-                                self.showDayList = false
-                            }
+          
+            WeatherView(
+                activeDay: activeDay,
+                showDayList: $showDayList,
+                showCityList: $showCityList
+            )
+            .padding(.vertical, 30)
+            .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
+            .cornerRadius((showCityList || showDayList) ? 30 : 0)
+            .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
+            .offset(y: showDayList ? CGFloat(200) : 0)
+            .offset(y: showCityList ? -(screen.height - cityListShowHeight) : 0)
+            .offset(y: cityListDragState.height)
+            .offset(y: weatherDragState.height)
+            .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
+            .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
+            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+            .gesture(
+                DragGesture()
+                    .onChanged({ value in
+                        if showDayList {
+                            self.weatherDragState = value.translation
                             
-                            self.weatherDragState = .zero
-                        })
-                )
-                .onChange(of: showCityList) { value in
-                    if !value {
-                        self.cityListDragState = .zero
-                        self.showCityListFull = false
-                    }
+                            if self.weatherDragState.height > 50 {
+                                self.weatherDragState.height = 50
+                            }
+                        }
+                    })
+                    .onEnded({ value in
+                        if self.weatherDragState.height < -10 {
+                            self.showDayList = false
+                        }
+                        
+                        self.weatherDragState = .zero
+                    })
+            )
+            .onChange(of: showCityList) { value in
+                if !value {
+                    self.cityListDragState = .zero
+                    self.showCityListFull = false
                 }
-                
-            } else {
-                LottieView(name: "loading2-\(theme.iconText)")
-                    .frame(width: 200, height: 200)
-                    .padding()
             }
+                
+            LaunchView()
+                .opacity((weatherAPIDone && lottieDone) ? 0 : 1)
+                .onReceive(weatherStore.$weather, perform: { weather in
+                    if weather.result.now != nil {
+                        withAnimation() {
+                            self.weatherAPIDone = true
+                        }
+                    }
+                })
+                .onReceive(LaunchView.lottiePublisher, perform: { status in
+                    if status == true {
+                        withAnimation() {
+                            self.lottieDone = true
+                        }
+                    }
+                })
             
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)

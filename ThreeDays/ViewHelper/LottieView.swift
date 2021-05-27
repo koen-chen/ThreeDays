@@ -11,13 +11,16 @@ import Lottie
 struct LottieView: UIViewRepresentable {
     @EnvironmentObject var theme: Theme
     
+    typealias completionClosure = (_ status: Bool) -> Void
     static var cacheName = ""
     
     var name: String = ""
+    var loopMode: LottieLoopMode = .loop
     var isWeather: Bool = false
     var weatherDesc: String = ""
-    var loopMode: LottieLoopMode = .loop
+    var loopWay: LottieLoopMode = .loop
     let animationView = AnimationView()
+    var completion: completionClosure?
     
     var weatherIcon: String {
         switch weatherDesc {
@@ -54,9 +57,14 @@ struct LottieView: UIViewRepresentable {
         let view = UIView(frame: .zero)
         animationView.animation = Animation.named(isWeather ? weatherName : name)
         animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = loopMode
+        animationView.loopMode = loopWay
         animationView.backgroundBehavior = .pauseAndRestore
-        animationView.play()
+       
+        animationView.play { (status) in
+            if let completionFunc = completion {
+                completionFunc(status)
+            }
+        }
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
@@ -75,7 +83,6 @@ struct LottieView: UIViewRepresentable {
             LottieView.cacheName = weatherName
             context.coordinator.parent.animationView.animation = Animation.named(weatherName)
         }
-        context.coordinator.parent.animationView.play()
     }
     
     func makeCoordinator() -> Coordinator {
