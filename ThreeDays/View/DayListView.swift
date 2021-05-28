@@ -30,7 +30,7 @@ struct DayListView: View {
                     }
                 }
             }
-            .font(.custom("SourceHanSerif-SemiBold", size: 38))
+            .font(.custom(theme.font, size: 38))
             .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
             .frame(maxWidth: .infinity)
             .frame(height: 140)

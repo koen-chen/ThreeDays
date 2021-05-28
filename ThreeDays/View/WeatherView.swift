@@ -121,12 +121,13 @@ struct WeatherView: View {
                 
                 VStack(alignment: .center, spacing: 15) {
                     Text("\(weatherDesc)")
-                        .font(.custom("ZhuoJianGanLanJianTi-Regular", size: 66))
+                        .font(.custom(theme.font, size: 66))
                     
                     if activeDay == 0 {
                         ZStack(alignment: .bottom) {
                             Text("\(nowWeather.temp)°")
-                                .font(.custom("SourceHanSerif-SemiBold", size: 66))
+                        
+                                .font(.custom(theme.font, size: 66))
                                 .offset(x: 10)
                             
                             HStack(spacing: 4) {
@@ -145,7 +146,7 @@ struct WeatherView: View {
                         Text("最低 \(dailyWeather.low)°")
                         Text("最高 \(dailyWeather.high)°")
                     }
-                    .font(.custom("SourceHanSerif-SemiBold", size: 18))
+                    .font(.custom(theme.font, size: 18))
                     .padding(.top, screen.height < 800 ? 0 : 30)
                     .offset(x: 5)
                 }
@@ -170,6 +171,8 @@ struct WeatherView_Previews: PreviewProvider {
 }
 
 struct DayView: View {
+    @EnvironmentObject var theme: Theme
+    
     var dailyText: String
     var dateText: (Int, Int)
     @Binding var showDayList: Bool
@@ -181,7 +184,7 @@ struct DayView: View {
                 
                 HStack(alignment: .lastTextBaseline) {
                     Text(dailyText)
-                        .font(.custom("SourceHanSerif-SemiBold", size: 42))
+                        .font(.custom(theme.font, size: 42))
                     
                     VStack {
                         Button(action: {
@@ -198,7 +201,7 @@ struct DayView: View {
                         Text("\(dateText.1)")
                         Text("日")
                     }
-                    .font(.custom("SourceHanSerif-SemiBold", size: 14))
+                    .font(.custom(theme.font, size: 14))
                     .offset(y: 40)
                     .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     
@@ -241,14 +244,14 @@ struct CityView: View {
                                 Text(placeStore.activePlace?.province ?? "")
                                     .font(.system(size: 14))
                                     .foregroundColor(theme.textColor.opacity(0.8))
-                            }.font(.custom("SourceHanSerif-SemiBold", size: 24))
+                            }.font(.custom(theme.font, size: 24))
                         } else {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(placeStore.activePlace?.district ?? "")
                                 Text(placeStore.activePlace?.city ?? "")
                                     .font(.system(size: 14))
                                     .foregroundColor(theme.textColor.opacity(0.8))
-                            }.font(.custom("SourceHanSerif-SemiBold", size: 22))
+                            }.font(.custom(theme.font, size: 22))
                         }
                     }
                 })

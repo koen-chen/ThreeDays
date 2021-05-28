@@ -41,7 +41,7 @@ struct CitySearchView: View {
                     })
                    
                     TextField("请输入中国城市或区县名称", text: $citySearchViewModel.searchText)
-                        .font(.custom("SourceHanSerif-SemiBold", size: 16))
+                        .font(.custom(theme.font, size: 16))
                         .foregroundColor(.black.opacity(0.8))
                         .padding(.vertical, 15)
                         .onTapGesture {
@@ -81,7 +81,7 @@ struct CitySearchView: View {
                         }
                     }
                     .padding(.vertical, 50)
-                    .font(.custom("SourceHanSerif-SemiBold", size: 28))
+                    .font(.custom(theme.font, size: 28))
                     .foregroundColor(theme.textColor)
                     .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
                     .animation(.easeInOut)

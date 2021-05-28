@@ -32,8 +32,7 @@
 	<string>请允许“3日天气”APP使用您的当前位置 </string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SourceHanSerif-Medium.otf</string>
-		<string>SourceHanSerif-SemiBold.otf</string>
+		<string>SourceHanSerifCN-SemiBold.otf</string>
 		<string>ZhuoJianGanLanJianTi-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

@@ -77,6 +77,8 @@ struct LottieView: UIViewRepresentable {
             LottieView.cacheName = weatherName
             context.coordinator.parent.animationView.animation = Animation.named(weatherName)
         }
+        
+        context.coordinator.parent.animationView.play()
     }
     
     func makeCoordinator() -> Coordinator {

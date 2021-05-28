@@ -24,7 +24,7 @@ struct LaunchView: View {
                 if netMonitor.status == .disconnected {
                     Text("网络连接异常 \n 请检查网络后重启应用")
                         .multilineTextAlignment(.center)
-                        .font(.custom("SourceHanSerif-SemiBold", size: 24))
+                        .font(.custom(theme.font, size: 24))
                         .foregroundColor(theme.textColor)
                 }
             }

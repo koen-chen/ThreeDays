@@ -8,6 +8,8 @@
 import SwiftUI
 
 class Theme: ObservableObject {
+    let font = "SourceHanSerifCN-SemiBold"
+    
     var isDaytime: Bool {
         let d = Calendar.current.dateComponents(in: TimeZone(abbreviation: "GMT+8")!, from: Date())
         return  6...18 ~= d.hour! ? true : false

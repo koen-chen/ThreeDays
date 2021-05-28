@@ -108,7 +108,7 @@ struct CityListView: View {
                                 
                             }
                             .frame(maxHeight: .infinity, alignment: .top)
-                            .font(.custom("SourceHanSerif-SemiBold", size: 28))
+                            .font(.custom(theme.font, size: 28))
                             .foregroundColor(theme.textColor)
                             .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
                             .animation(.easeInOut)
