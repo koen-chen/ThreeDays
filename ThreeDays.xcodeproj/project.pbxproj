@@ -15,20 +15,49 @@
 		440E78FF2644CCF600105EB7 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FE2644CCF600105EB7 /* WeatherModel.swift */; };
 		441526C1265C93C200FD0700 /* PlaceCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441526C0265C93C200FD0700 /* PlaceCSV.swift */; };
 		441526C3265C93D200FD0700 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441526C2265C93D200FD0700 /* Theme.swift */; };
+		441F2C6B26628232003828DB /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5826628231003828DB /* weather-day-snow.json */; };
+		441F2C6C26628232003828DB /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5926628231003828DB /* weather-day-mist.json */; };
+		441F2C6D26628232003828DB /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5A26628231003828DB /* weather-day-rain.json */; };
+		441F2C6E26628232003828DB /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5B26628231003828DB /* weather-night-scattered-clouds.json */; };
+		441F2C6F26628232003828DB /* weather-night-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5C26628231003828DB /* weather-night-snow.json */; };
+		441F2C7026628232003828DB /* weather-day-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5D26628231003828DB /* weather-day-wind.json */; };
+		441F2C7126628232003828DB /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5E26628231003828DB /* weather-day-thunderstorm.json */; };
+		441F2C7226628232003828DB /* weather-night-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5F26628231003828DB /* weather-night-thunderstorm.json */; };
+		441F2C7326628232003828DB /* loading-day.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6026628231003828DB /* loading-day.json */; };
+		441F2C7426628232003828DB /* weather-day-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6126628231003828DB /* weather-day-few-clouds.json */; };
+		441F2C7526628232003828DB /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6226628232003828DB /* weather-day-shower-rains.json */; };
+		441F2C7626628232003828DB /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6326628232003828DB /* weather-night-shower-rains.json */; };
+		441F2C7726628232003828DB /* weather-night-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6426628232003828DB /* weather-night-clear-sky.json */; };
+		441F2C7826628232003828DB /* weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6526628232003828DB /* weather-night-few-clouds.json */; };
+		441F2C7926628232003828DB /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6626628232003828DB /* weather-night-mist.json */; };
+		441F2C7A26628232003828DB /* loading-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6726628232003828DB /* loading-night.json */; };
+		441F2C7B26628232003828DB /* weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6826628232003828DB /* weather-day-scattered-clouds.json */; };
+		441F2C7C26628232003828DB /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6926628232003828DB /* weather-night-wind.json */; };
+		441F2C7D26628232003828DB /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6A26628232003828DB /* weather-day-clear-sky.json */; };
+		441F2C7E26628258003828DB /* weather-night-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6426628232003828DB /* weather-night-clear-sky.json */; };
+		441F2C7F26628258003828DB /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6A26628232003828DB /* weather-day-clear-sky.json */; };
+		441F2C8026628258003828DB /* loading-day.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6026628231003828DB /* loading-day.json */; };
+		441F2C8126628258003828DB /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5E26628231003828DB /* weather-day-thunderstorm.json */; };
+		441F2C8226628258003828DB /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6326628232003828DB /* weather-night-shower-rains.json */; };
+		441F2C8326628258003828DB /* weather-night-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5C26628231003828DB /* weather-night-snow.json */; };
+		441F2C8426628258003828DB /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5B26628231003828DB /* weather-night-scattered-clouds.json */; };
+		441F2C8526628258003828DB /* weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6826628232003828DB /* weather-day-scattered-clouds.json */; };
+		441F2C8626628258003828DB /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5926628231003828DB /* weather-day-mist.json */; };
+		441F2C8726628258003828DB /* weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6526628232003828DB /* weather-night-few-clouds.json */; };
+		441F2C8826628258003828DB /* weather-day-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6126628231003828DB /* weather-day-few-clouds.json */; };
+		441F2C8926628258003828DB /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6626628232003828DB /* weather-night-mist.json */; };
+		441F2C8A26628258003828DB /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5826628231003828DB /* weather-day-snow.json */; };
+		441F2C8B26628258003828DB /* weather-day-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5D26628231003828DB /* weather-day-wind.json */; };
+		441F2C8C26628258003828DB /* weather-night-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5F26628231003828DB /* weather-night-thunderstorm.json */; };
+		441F2C8D26628258003828DB /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5A26628231003828DB /* weather-day-rain.json */; };
+		441F2C8E26628258003828DB /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6226628232003828DB /* weather-day-shower-rains.json */; };
+		441F2C8F26628258003828DB /* loading-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6726628232003828DB /* loading-night.json */; };
+		441F2C9026628258003828DB /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6926628232003828DB /* weather-night-wind.json */; };
 		442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */; };
-		44376C38265F5B370051C145 /* loading-day.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C36265F5B370051C145 /* loading-day.json */; };
-		44376C39265F5B370051C145 /* loading-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C37265F5B370051C145 /* loading-night.json */; };
 		44376C3D2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */; };
-		44376C41266113950051C145 /* weather-night-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3F266113950051C145 /* weather-night-snow.json */; };
-		44376C43266114520051C145 /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C42266114520051C145 /* weather-day-shower-rains.json */; };
-		44376C45266115D90051C145 /* weather-day-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C44266115D90051C145 /* weather-day-wind.json */; };
-		44376C472661162D0051C145 /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C462661162D0051C145 /* weather-night-wind.json */; };
 		44453BA3265B62C50060EFD7 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44453BA2265B62C50060EFD7 /* PlaceViewModel.swift */; };
 		4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
 		44458935265B95040060D666 /* full-place.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44458934265B95040060D666 /* full-place.csv */; };
-		44845B8626525DBA0076991C /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8326525DBA0076991C /* weather-day-mist.json */; };
-		44845B8826525DBA0076991C /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8526525DBA0076991C /* weather-day-thunderstorm.json */; };
-		44845B8A26525E1E0076991C /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8926525E1E0076991C /* weather-night-shower-rains.json */; };
 		449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */; };
 		449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E19263AF3B10095DC12 /* ContentView.swift */; };
 		449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
@@ -37,55 +66,8 @@
 		44B1CDE02657FD8700DC5502 /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1CDDF2657FD8700DC5502 /* CitySearchView.swift */; };
 		44B1CDE2265805FB00DC5502 /* CitySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1CDE1265805FB00DC5502 /* CitySearchViewModel.swift */; };
 		44B4A5D4265F3F2500D9101D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5D3265F3F2500D9101D /* LaunchView.swift */; };
-		44BD8DD22643A44200FD0A72 /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DC82643A44200FD0A72 /* weather-day-clear-sky.json */; };
-		44BD8DD32643A44200FD0A72 /* weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DC92643A44200FD0A72 /* weather-night-few-clouds.json */; };
-		44BD8DD42643A44200FD0A72 /* weather-day-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCA2643A44200FD0A72 /* weather-day-few-clouds.json */; };
-		44BD8DD52643A44200FD0A72 /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCB2643A44200FD0A72 /* weather-day-snow.json */; };
-		44BD8DD72643A44200FD0A72 /* weather-night-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCD2643A44200FD0A72 /* weather-night-clear-sky.json */; };
-		44BD8DD82643A44200FD0A72 /* weather-night-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCE2643A44200FD0A72 /* weather-night-thunderstorm.json */; };
-		44BD8DDA2643A44200FD0A72 /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DD02643A44200FD0A72 /* weather-night-mist.json */; };
-		44BD8DDB2643A44200FD0A72 /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DD12643A44200FD0A72 /* weather-day-rain.json */; };
-		44BE5A8126624DAE00B9D1B5 /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A6E26624DAD00B9D1B5 /* weather-night-wind.json */; };
-		44BE5A8226624DAE00B9D1B5 /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A6E26624DAD00B9D1B5 /* weather-night-wind.json */; };
-		44BE5A8326624DAE00B9D1B5 /* weather-night-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A6F26624DAD00B9D1B5 /* weather-night-snow.json */; };
-		44BE5A8426624DAE00B9D1B5 /* weather-night-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A6F26624DAD00B9D1B5 /* weather-night-snow.json */; };
-		44BE5A8526624DAE00B9D1B5 /* loading-day.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7026624DAD00B9D1B5 /* loading-day.json */; };
-		44BE5A8626624DAE00B9D1B5 /* loading-day.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7026624DAD00B9D1B5 /* loading-day.json */; };
-		44BE5A8726624DAE00B9D1B5 /* weather-day-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7126624DAE00B9D1B5 /* weather-day-few-clouds.json */; };
-		44BE5A8826624DAE00B9D1B5 /* weather-day-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7126624DAE00B9D1B5 /* weather-day-few-clouds.json */; };
-		44BE5A8926624DAE00B9D1B5 /* weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7226624DAE00B9D1B5 /* weather-night-few-clouds.json */; };
-		44BE5A8A26624DAE00B9D1B5 /* weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7226624DAE00B9D1B5 /* weather-night-few-clouds.json */; };
-		44BE5A8B26624DAE00B9D1B5 /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7326624DAE00B9D1B5 /* weather-day-snow.json */; };
-		44BE5A8C26624DAE00B9D1B5 /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7326624DAE00B9D1B5 /* weather-day-snow.json */; };
-		44BE5A8D26624DAE00B9D1B5 /* weather-day-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7426624DAE00B9D1B5 /* weather-day-wind.json */; };
-		44BE5A8E26624DAE00B9D1B5 /* weather-day-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7426624DAE00B9D1B5 /* weather-day-wind.json */; };
-		44BE5A8F26624DAE00B9D1B5 /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7526624DAE00B9D1B5 /* weather-day-mist.json */; };
-		44BE5A9026624DAE00B9D1B5 /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7526624DAE00B9D1B5 /* weather-day-mist.json */; };
-		44BE5A9126624DAE00B9D1B5 /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7626624DAE00B9D1B5 /* weather-night-mist.json */; };
-		44BE5A9226624DAE00B9D1B5 /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7626624DAE00B9D1B5 /* weather-night-mist.json */; };
-		44BE5A9326624DAE00B9D1B5 /* weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7726624DAE00B9D1B5 /* weather-day-scattered-clouds.json */; };
-		44BE5A9426624DAE00B9D1B5 /* weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7726624DAE00B9D1B5 /* weather-day-scattered-clouds.json */; };
-		44BE5A9526624DAE00B9D1B5 /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7826624DAE00B9D1B5 /* weather-day-clear-sky.json */; };
-		44BE5A9626624DAE00B9D1B5 /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7826624DAE00B9D1B5 /* weather-day-clear-sky.json */; };
-		44BE5A9726624DAE00B9D1B5 /* weather-night-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7926624DAE00B9D1B5 /* weather-night-thunderstorm.json */; };
-		44BE5A9826624DAE00B9D1B5 /* weather-night-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7926624DAE00B9D1B5 /* weather-night-thunderstorm.json */; };
-		44BE5A9926624DAE00B9D1B5 /* loading-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7A26624DAE00B9D1B5 /* loading-night.json */; };
-		44BE5A9A26624DAE00B9D1B5 /* loading-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7A26624DAE00B9D1B5 /* loading-night.json */; };
-		44BE5A9B26624DAE00B9D1B5 /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7B26624DAE00B9D1B5 /* weather-night-shower-rains.json */; };
-		44BE5A9C26624DAE00B9D1B5 /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7B26624DAE00B9D1B5 /* weather-night-shower-rains.json */; };
-		44BE5A9D26624DAE00B9D1B5 /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7C26624DAE00B9D1B5 /* weather-day-rain.json */; };
-		44BE5A9E26624DAE00B9D1B5 /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7C26624DAE00B9D1B5 /* weather-day-rain.json */; };
-		44BE5A9F26624DAE00B9D1B5 /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7D26624DAE00B9D1B5 /* weather-day-shower-rains.json */; };
-		44BE5AA026624DAE00B9D1B5 /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7D26624DAE00B9D1B5 /* weather-day-shower-rains.json */; };
-		44BE5AA126624DAE00B9D1B5 /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7E26624DAE00B9D1B5 /* weather-night-scattered-clouds.json */; };
-		44BE5AA226624DAE00B9D1B5 /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7E26624DAE00B9D1B5 /* weather-night-scattered-clouds.json */; };
-		44BE5AA326624DAE00B9D1B5 /* weather-night-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7F26624DAE00B9D1B5 /* weather-night-clear-sky.json */; };
-		44BE5AA426624DAE00B9D1B5 /* weather-night-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A7F26624DAE00B9D1B5 /* weather-night-clear-sky.json */; };
-		44BE5AA526624DAE00B9D1B5 /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A8026624DAE00B9D1B5 /* weather-day-thunderstorm.json */; };
-		44BE5AA626624DAE00B9D1B5 /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5A8026624DAE00B9D1B5 /* weather-day-thunderstorm.json */; };
 		44C727E026463FF600F83303 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727DF26463FF600F83303 /* LocationProvider.swift */; };
 		44C727E226465FF100F83303 /* NetworProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727E126465FF100F83303 /* NetworProvider.swift */; };
-		44CEEAF926622BDC00518FEC /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CEEAF826622BDC00518FEC /* weather-day-snow.json */; };
 		44CEEAFE2662359300518FEC /* CitySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1CDE1265805FB00DC5502 /* CitySearchViewModel.swift */; };
 		44CEEAFF2662359300518FEC /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5D3265F3F2500D9101D /* LaunchView.swift */; };
 		44CEEB002662359300518FEC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
@@ -107,32 +89,10 @@
 		44CEEB102662359300518FEC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEBAEC264392EB00DD785C /* LottieView.swift */; };
 		44CEEB112662359300518FEC /* CityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F999172652702A00F6D646 /* CityListView.swift */; };
 		44CEEB132662359300518FEC /* Pods_ThreeDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A516C04DE7912FAC46D66A /* Pods_ThreeDays.framework */; };
-		44CEEB152662359300518FEC /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DC82643A44200FD0A72 /* weather-day-clear-sky.json */; };
-		44CEEB162662359300518FEC /* weather-night-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCE2643A44200FD0A72 /* weather-night-thunderstorm.json */; };
 		44CEEB172662359300518FEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1E263AF3B20095DC12 /* Preview Assets.xcassets */; };
-		44CEEB182662359300518FEC /* weather-night-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCD2643A44200FD0A72 /* weather-night-clear-sky.json */; };
-		44CEEB192662359300518FEC /* weather-night-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8926525E1E0076991C /* weather-night-shower-rains.json */; };
-		44CEEB1A2662359300518FEC /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F99907265262F100F6D646 /* weather-night-scattered-clouds.json */; };
-		44CEEB1B2662359300518FEC /* weather-day-thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8526525DBA0076991C /* weather-day-thunderstorm.json */; };
-		44CEEB1C2662359300518FEC /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCB2643A44200FD0A72 /* weather-day-snow.json */; };
-		44CEEB1D2662359300518FEC /* weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F99908265262F100F6D646 /* weather-day-scattered-clouds.json */; };
 		44CEEB1E2662359300518FEC /* full-place.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44458934265B95040060D666 /* full-place.csv */; };
-		44CEEB1F2662359300518FEC /* loading-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C37265F5B370051C145 /* loading-night.json */; };
 		44CEEB202662359300518FEC /* SourceHanSerifCN-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */; };
-		44CEEB212662359300518FEC /* loading-day.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C36265F5B370051C145 /* loading-day.json */; };
-		44CEEB222662359300518FEC /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C462661162D0051C145 /* weather-night-wind.json */; };
-		44CEEB232662359300518FEC /* weather-day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C42266114520051C145 /* weather-day-shower-rains.json */; };
-		44CEEB242662359300518FEC /* weather-night-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DD02643A44200FD0A72 /* weather-night-mist.json */; };
-		44CEEB252662359300518FEC /* weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DC92643A44200FD0A72 /* weather-night-few-clouds.json */; };
-		44CEEB262662359300518FEC /* weather-night-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3F266113950051C145 /* weather-night-snow.json */; };
-		44CEEB272662359300518FEC /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CEEAF826622BDC00518FEC /* weather-day-snow.json */; };
 		44CEEB282662359300518FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
-		44CEEB292662359300518FEC /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 44845B8326525DBA0076991C /* weather-day-mist.json */; };
-		44CEEB2A2662359300518FEC /* weather-day-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DCA2643A44200FD0A72 /* weather-day-few-clouds.json */; };
-		44CEEB2B2662359300518FEC /* weather-day-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BD8DD12643A44200FD0A72 /* weather-day-rain.json */; };
-		44CEEB2C2662359300518FEC /* weather-day-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44376C44266115D90051C145 /* weather-day-wind.json */; };
-		44F99909265262F100F6D646 /* weather-night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F99907265262F100F6D646 /* weather-night-scattered-clouds.json */; };
-		44F9990A265262F100F6D646 /* weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F99908265262F100F6D646 /* weather-day-scattered-clouds.json */; };
 		44F999182652702A00F6D646 /* CityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F999172652702A00F6D646 /* CityListView.swift */; };
 		44FEBAED264392EB00DD785C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEBAEC264392EB00DD785C /* LottieView.swift */; };
 /* End PBXBuildFile section */
@@ -146,20 +106,30 @@
 		440E78FE2644CCF600105EB7 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		441526C0265C93C200FD0700 /* PlaceCSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCSV.swift; sourceTree = "<group>"; };
 		441526C2265C93D200FD0700 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		441F2C5826628231003828DB /* weather-day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-snow.json"; sourceTree = "<group>"; };
+		441F2C5926628231003828DB /* weather-day-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-mist.json"; sourceTree = "<group>"; };
+		441F2C5A26628231003828DB /* weather-day-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-rain.json"; sourceTree = "<group>"; };
+		441F2C5B26628231003828DB /* weather-night-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-scattered-clouds.json"; sourceTree = "<group>"; };
+		441F2C5C26628231003828DB /* weather-night-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-snow.json"; sourceTree = "<group>"; };
+		441F2C5D26628231003828DB /* weather-day-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-wind.json"; sourceTree = "<group>"; };
+		441F2C5E26628231003828DB /* weather-day-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-thunderstorm.json"; sourceTree = "<group>"; };
+		441F2C5F26628231003828DB /* weather-night-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-thunderstorm.json"; sourceTree = "<group>"; };
+		441F2C6026628231003828DB /* loading-day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-day.json"; sourceTree = "<group>"; };
+		441F2C6126628231003828DB /* weather-day-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-few-clouds.json"; sourceTree = "<group>"; };
+		441F2C6226628232003828DB /* weather-day-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-shower-rains.json"; sourceTree = "<group>"; };
+		441F2C6326628232003828DB /* weather-night-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-shower-rains.json"; sourceTree = "<group>"; };
+		441F2C6426628232003828DB /* weather-night-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-clear-sky.json"; sourceTree = "<group>"; };
+		441F2C6526628232003828DB /* weather-night-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-few-clouds.json"; sourceTree = "<group>"; };
+		441F2C6626628232003828DB /* weather-night-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-mist.json"; sourceTree = "<group>"; };
+		441F2C6726628232003828DB /* loading-night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-night.json"; sourceTree = "<group>"; };
+		441F2C6826628232003828DB /* weather-day-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-scattered-clouds.json"; sourceTree = "<group>"; };
+		441F2C6926628232003828DB /* weather-night-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-wind.json"; sourceTree = "<group>"; };
+		441F2C6A26628232003828DB /* weather-day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-clear-sky.json"; sourceTree = "<group>"; };
 		442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
-		44376C36265F5B370051C145 /* loading-day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-day.json"; sourceTree = "<group>"; };
-		44376C37265F5B370051C145 /* loading-night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-night.json"; sourceTree = "<group>"; };
 		44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerifCN-SemiBold.otf"; sourceTree = "<group>"; };
-		44376C3F266113950051C145 /* weather-night-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-snow.json"; sourceTree = "<group>"; };
-		44376C42266114520051C145 /* weather-day-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-shower-rains.json"; sourceTree = "<group>"; };
-		44376C44266115D90051C145 /* weather-day-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-wind.json"; sourceTree = "<group>"; };
-		44376C462661162D0051C145 /* weather-night-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-wind.json"; sourceTree = "<group>"; };
 		44453BA2265B62C50060EFD7 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		44458934265B95040060D666 /* full-place.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "full-place.csv"; sourceTree = "<group>"; };
-		44845B8326525DBA0076991C /* weather-day-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-mist.json"; sourceTree = "<group>"; };
-		44845B8526525DBA0076991C /* weather-day-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-thunderstorm.json"; sourceTree = "<group>"; };
-		44845B8926525E1E0076991C /* weather-night-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-shower-rains.json"; sourceTree = "<group>"; };
 		449D3E14263AF3B10095DC12 /* ThreeDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysApp.swift; sourceTree = "<group>"; };
 		449D3E19263AF3B10095DC12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,40 +140,10 @@
 		44B1CDDF2657FD8700DC5502 /* CitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchView.swift; sourceTree = "<group>"; };
 		44B1CDE1265805FB00DC5502 /* CitySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewModel.swift; sourceTree = "<group>"; };
 		44B4A5D3265F3F2500D9101D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		44BD8DC82643A44200FD0A72 /* weather-day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-clear-sky.json"; sourceTree = "<group>"; };
-		44BD8DC92643A44200FD0A72 /* weather-night-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-few-clouds.json"; sourceTree = "<group>"; };
-		44BD8DCA2643A44200FD0A72 /* weather-day-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-few-clouds.json"; sourceTree = "<group>"; };
-		44BD8DCB2643A44200FD0A72 /* weather-day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-snow.json"; sourceTree = "<group>"; };
-		44BD8DCD2643A44200FD0A72 /* weather-night-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-clear-sky.json"; sourceTree = "<group>"; };
-		44BD8DCE2643A44200FD0A72 /* weather-night-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-thunderstorm.json"; sourceTree = "<group>"; };
-		44BD8DD02643A44200FD0A72 /* weather-night-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-mist.json"; sourceTree = "<group>"; };
-		44BD8DD12643A44200FD0A72 /* weather-day-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-rain.json"; sourceTree = "<group>"; };
-		44BE5A6E26624DAD00B9D1B5 /* weather-night-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-wind.json"; sourceTree = "<group>"; };
-		44BE5A6F26624DAD00B9D1B5 /* weather-night-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-snow.json"; sourceTree = "<group>"; };
-		44BE5A7026624DAD00B9D1B5 /* loading-day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-day.json"; sourceTree = "<group>"; };
-		44BE5A7126624DAE00B9D1B5 /* weather-day-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-few-clouds.json"; sourceTree = "<group>"; };
-		44BE5A7226624DAE00B9D1B5 /* weather-night-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-few-clouds.json"; sourceTree = "<group>"; };
-		44BE5A7326624DAE00B9D1B5 /* weather-day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-snow.json"; sourceTree = "<group>"; };
-		44BE5A7426624DAE00B9D1B5 /* weather-day-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-wind.json"; sourceTree = "<group>"; };
-		44BE5A7526624DAE00B9D1B5 /* weather-day-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-mist.json"; sourceTree = "<group>"; };
-		44BE5A7626624DAE00B9D1B5 /* weather-night-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-mist.json"; sourceTree = "<group>"; };
-		44BE5A7726624DAE00B9D1B5 /* weather-day-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-scattered-clouds.json"; sourceTree = "<group>"; };
-		44BE5A7826624DAE00B9D1B5 /* weather-day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-clear-sky.json"; sourceTree = "<group>"; };
-		44BE5A7926624DAE00B9D1B5 /* weather-night-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-thunderstorm.json"; sourceTree = "<group>"; };
-		44BE5A7A26624DAE00B9D1B5 /* loading-night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-night.json"; sourceTree = "<group>"; };
-		44BE5A7B26624DAE00B9D1B5 /* weather-night-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-shower-rains.json"; sourceTree = "<group>"; };
-		44BE5A7C26624DAE00B9D1B5 /* weather-day-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-rain.json"; sourceTree = "<group>"; };
-		44BE5A7D26624DAE00B9D1B5 /* weather-day-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-shower-rains.json"; sourceTree = "<group>"; };
-		44BE5A7E26624DAE00B9D1B5 /* weather-night-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-scattered-clouds.json"; sourceTree = "<group>"; };
-		44BE5A7F26624DAE00B9D1B5 /* weather-night-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-clear-sky.json"; sourceTree = "<group>"; };
-		44BE5A8026624DAE00B9D1B5 /* weather-day-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-thunderstorm.json"; sourceTree = "<group>"; };
 		44C727DF26463FF600F83303 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		44C727E126465FF100F83303 /* NetworProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworProvider.swift; sourceTree = "<group>"; };
-		44CEEAF826622BDC00518FEC /* weather-day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-snow.json"; sourceTree = "<group>"; };
 		44CEEB312662359300518FEC /* ThreeDays-Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThreeDays-Release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44CEEB322662359300518FEC /* release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = release.plist; path = "/Users/koen.chen/Documents/@ios/ThreeDays/release.plist"; sourceTree = "<absolute>"; };
-		44F99907265262F100F6D646 /* weather-night-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-scattered-clouds.json"; sourceTree = "<group>"; };
-		44F99908265262F100F6D646 /* weather-day-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-scattered-clouds.json"; sourceTree = "<group>"; };
 		44F999172652702A00F6D646 /* CityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListView.swift; sourceTree = "<group>"; };
 		44FEBAEC264392EB00DD785C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6338727A07B14A491FD6F1E3 /* Pods-ThreeDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDays.debug.xcconfig"; path = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.debug.xcconfig"; sourceTree = "<group>"; };
@@ -336,32 +276,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		44BE5A6D26624DAD00B9D1B5 /* Lottie */ = {
-			isa = PBXGroup;
-			children = (
-				44BE5A6E26624DAD00B9D1B5 /* weather-night-wind.json */,
-				44BE5A6F26624DAD00B9D1B5 /* weather-night-snow.json */,
-				44BE5A7026624DAD00B9D1B5 /* loading-day.json */,
-				44BE5A7126624DAE00B9D1B5 /* weather-day-few-clouds.json */,
-				44BE5A7226624DAE00B9D1B5 /* weather-night-few-clouds.json */,
-				44BE5A7326624DAE00B9D1B5 /* weather-day-snow.json */,
-				44BE5A7426624DAE00B9D1B5 /* weather-day-wind.json */,
-				44BE5A7526624DAE00B9D1B5 /* weather-day-mist.json */,
-				44BE5A7626624DAE00B9D1B5 /* weather-night-mist.json */,
-				44BE5A7726624DAE00B9D1B5 /* weather-day-scattered-clouds.json */,
-				44BE5A7826624DAE00B9D1B5 /* weather-day-clear-sky.json */,
-				44BE5A7926624DAE00B9D1B5 /* weather-night-thunderstorm.json */,
-				44BE5A7A26624DAE00B9D1B5 /* loading-night.json */,
-				44BE5A7B26624DAE00B9D1B5 /* weather-night-shower-rains.json */,
-				44BE5A7C26624DAE00B9D1B5 /* weather-day-rain.json */,
-				44BE5A7D26624DAE00B9D1B5 /* weather-day-shower-rains.json */,
-				44BE5A7E26624DAE00B9D1B5 /* weather-night-scattered-clouds.json */,
-				44BE5A7F26624DAE00B9D1B5 /* weather-night-clear-sky.json */,
-				44BE5A8026624DAE00B9D1B5 /* weather-day-thunderstorm.json */,
-			);
-			name = Lottie;
-			sourceTree = "<group>";
-		};
 		44C727E32647AA6500F83303 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,27 +298,25 @@
 		44FEBAEB2643929600DD785C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				44376C37265F5B370051C145 /* loading-night.json */,
-				44376C36265F5B370051C145 /* loading-day.json */,
-				44BD8DC82643A44200FD0A72 /* weather-day-clear-sky.json */,
-				44BD8DCA2643A44200FD0A72 /* weather-day-few-clouds.json */,
-				44BD8DD12643A44200FD0A72 /* weather-day-rain.json */,
-				44BD8DCB2643A44200FD0A72 /* weather-day-snow.json */,
-				44845B8326525DBA0076991C /* weather-day-mist.json */,
-				44CEEAF826622BDC00518FEC /* weather-day-snow.json */,
-				44376C42266114520051C145 /* weather-day-shower-rains.json */,
-				44376C44266115D90051C145 /* weather-day-wind.json */,
-				44376C3F266113950051C145 /* weather-night-snow.json */,
-				44F99908265262F100F6D646 /* weather-day-scattered-clouds.json */,
-				44376C462661162D0051C145 /* weather-night-wind.json */,
-				44845B8526525DBA0076991C /* weather-day-thunderstorm.json */,
-				44F99907265262F100F6D646 /* weather-night-scattered-clouds.json */,
-				44845B8926525E1E0076991C /* weather-night-shower-rains.json */,
-				44BD8DCD2643A44200FD0A72 /* weather-night-clear-sky.json */,
-				44BD8DC92643A44200FD0A72 /* weather-night-few-clouds.json */,
-				44BD8DD02643A44200FD0A72 /* weather-night-mist.json */,
-				44BD8DCE2643A44200FD0A72 /* weather-night-thunderstorm.json */,
-				44BE5A6D26624DAD00B9D1B5 /* Lottie */,
+				441F2C6026628231003828DB /* loading-day.json */,
+				441F2C6726628232003828DB /* loading-night.json */,
+				441F2C6A26628232003828DB /* weather-day-clear-sky.json */,
+				441F2C6126628231003828DB /* weather-day-few-clouds.json */,
+				441F2C5926628231003828DB /* weather-day-mist.json */,
+				441F2C5A26628231003828DB /* weather-day-rain.json */,
+				441F2C6826628232003828DB /* weather-day-scattered-clouds.json */,
+				441F2C6226628232003828DB /* weather-day-shower-rains.json */,
+				441F2C5826628231003828DB /* weather-day-snow.json */,
+				441F2C5E26628231003828DB /* weather-day-thunderstorm.json */,
+				441F2C5D26628231003828DB /* weather-day-wind.json */,
+				441F2C6426628232003828DB /* weather-night-clear-sky.json */,
+				441F2C6526628232003828DB /* weather-night-few-clouds.json */,
+				441F2C6626628232003828DB /* weather-night-mist.json */,
+				441F2C5B26628231003828DB /* weather-night-scattered-clouds.json */,
+				441F2C6326628232003828DB /* weather-night-shower-rains.json */,
+				441F2C5C26628231003828DB /* weather-night-snow.json */,
+				441F2C5F26628231003828DB /* weather-night-thunderstorm.json */,
+				441F2C6926628232003828DB /* weather-night-wind.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -505,49 +417,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44BE5A9526624DAE00B9D1B5 /* weather-day-clear-sky.json in Resources */,
-				44BD8DD22643A44200FD0A72 /* weather-day-clear-sky.json in Resources */,
-				44BE5A9726624DAE00B9D1B5 /* weather-night-thunderstorm.json in Resources */,
-				44BE5AA326624DAE00B9D1B5 /* weather-night-clear-sky.json in Resources */,
-				44BD8DD82643A44200FD0A72 /* weather-night-thunderstorm.json in Resources */,
-				44BE5A8F26624DAE00B9D1B5 /* weather-day-mist.json in Resources */,
-				449D3E1F263AF3B20095DC12 /* Preview Assets.xcassets in Resources */,
-				44BD8DD72643A44200FD0A72 /* weather-night-clear-sky.json in Resources */,
-				44BE5A9B26624DAE00B9D1B5 /* weather-night-shower-rains.json in Resources */,
-				44845B8A26525E1E0076991C /* weather-night-shower-rains.json in Resources */,
-				44F99909265262F100F6D646 /* weather-night-scattered-clouds.json in Resources */,
-				44BE5A8126624DAE00B9D1B5 /* weather-night-wind.json in Resources */,
-				44845B8826525DBA0076991C /* weather-day-thunderstorm.json in Resources */,
-				44BE5A8B26624DAE00B9D1B5 /* weather-day-snow.json in Resources */,
-				44BD8DD52643A44200FD0A72 /* weather-day-snow.json in Resources */,
-				44F9990A265262F100F6D646 /* weather-day-scattered-clouds.json in Resources */,
-				44BE5A9F26624DAE00B9D1B5 /* weather-day-shower-rains.json in Resources */,
-				44BE5A8526624DAE00B9D1B5 /* loading-day.json in Resources */,
-				44458935265B95040060D666 /* full-place.csv in Resources */,
-				44BE5A8726624DAE00B9D1B5 /* weather-day-few-clouds.json in Resources */,
-				44BE5A8926624DAE00B9D1B5 /* weather-night-few-clouds.json in Resources */,
-				44376C39265F5B370051C145 /* loading-night.json in Resources */,
-				44BE5A9326624DAE00B9D1B5 /* weather-day-scattered-clouds.json in Resources */,
-				44376C3D2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf in Resources */,
-				44BE5A9926624DAE00B9D1B5 /* loading-night.json in Resources */,
-				44376C38265F5B370051C145 /* loading-day.json in Resources */,
-				44BE5A8326624DAE00B9D1B5 /* weather-night-snow.json in Resources */,
-				44376C472661162D0051C145 /* weather-night-wind.json in Resources */,
-				44376C43266114520051C145 /* weather-day-shower-rains.json in Resources */,
-				44BD8DDA2643A44200FD0A72 /* weather-night-mist.json in Resources */,
-				44BE5AA126624DAE00B9D1B5 /* weather-night-scattered-clouds.json in Resources */,
-				44BD8DD32643A44200FD0A72 /* weather-night-few-clouds.json in Resources */,
-				44376C41266113950051C145 /* weather-night-snow.json in Resources */,
-				44CEEAF926622BDC00518FEC /* weather-day-snow.json in Resources */,
+				441F2C7526628232003828DB /* weather-day-shower-rains.json in Resources */,
+				441F2C7726628232003828DB /* weather-night-clear-sky.json in Resources */,
+				441F2C7926628232003828DB /* weather-night-mist.json in Resources */,
+				441F2C7126628232003828DB /* weather-day-thunderstorm.json in Resources */,
+				441F2C6C26628232003828DB /* weather-day-mist.json in Resources */,
+				441F2C7226628232003828DB /* weather-night-thunderstorm.json in Resources */,
 				449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */,
-				44845B8626525DBA0076991C /* weather-day-mist.json in Resources */,
-				44BD8DD42643A44200FD0A72 /* weather-day-few-clouds.json in Resources */,
-				44BE5AA526624DAE00B9D1B5 /* weather-day-thunderstorm.json in Resources */,
-				44BE5A9126624DAE00B9D1B5 /* weather-night-mist.json in Resources */,
-				44BD8DDB2643A44200FD0A72 /* weather-day-rain.json in Resources */,
-				44376C45266115D90051C145 /* weather-day-wind.json in Resources */,
-				44BE5A8D26624DAE00B9D1B5 /* weather-day-wind.json in Resources */,
-				44BE5A9D26624DAE00B9D1B5 /* weather-day-rain.json in Resources */,
+				441F2C7326628232003828DB /* loading-day.json in Resources */,
+				449D3E1F263AF3B20095DC12 /* Preview Assets.xcassets in Resources */,
+				441F2C7B26628232003828DB /* weather-day-scattered-clouds.json in Resources */,
+				44458935265B95040060D666 /* full-place.csv in Resources */,
+				441F2C6B26628232003828DB /* weather-day-snow.json in Resources */,
+				441F2C7A26628232003828DB /* loading-night.json in Resources */,
+				441F2C7D26628232003828DB /* weather-day-clear-sky.json in Resources */,
+				441F2C7026628232003828DB /* weather-day-wind.json in Resources */,
+				441F2C6E26628232003828DB /* weather-night-scattered-clouds.json in Resources */,
+				441F2C6F26628232003828DB /* weather-night-snow.json in Resources */,
+				441F2C6D26628232003828DB /* weather-day-rain.json in Resources */,
+				441F2C7C26628232003828DB /* weather-night-wind.json in Resources */,
+				441F2C7626628232003828DB /* weather-night-shower-rains.json in Resources */,
+				441F2C7426628232003828DB /* weather-day-few-clouds.json in Resources */,
+				441F2C7826628232003828DB /* weather-night-few-clouds.json in Resources */,
+				44376C3D2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,49 +447,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44BE5A9626624DAE00B9D1B5 /* weather-day-clear-sky.json in Resources */,
-				44CEEB152662359300518FEC /* weather-day-clear-sky.json in Resources */,
-				44BE5A9826624DAE00B9D1B5 /* weather-night-thunderstorm.json in Resources */,
-				44BE5AA426624DAE00B9D1B5 /* weather-night-clear-sky.json in Resources */,
-				44CEEB162662359300518FEC /* weather-night-thunderstorm.json in Resources */,
-				44BE5A9026624DAE00B9D1B5 /* weather-day-mist.json in Resources */,
+				441F2C8926628258003828DB /* weather-night-mist.json in Resources */,
 				44CEEB172662359300518FEC /* Preview Assets.xcassets in Resources */,
-				44CEEB182662359300518FEC /* weather-night-clear-sky.json in Resources */,
-				44BE5A9C26624DAE00B9D1B5 /* weather-night-shower-rains.json in Resources */,
-				44CEEB192662359300518FEC /* weather-night-shower-rains.json in Resources */,
-				44CEEB1A2662359300518FEC /* weather-night-scattered-clouds.json in Resources */,
-				44BE5A8226624DAE00B9D1B5 /* weather-night-wind.json in Resources */,
-				44CEEB1B2662359300518FEC /* weather-day-thunderstorm.json in Resources */,
-				44BE5A8C26624DAE00B9D1B5 /* weather-day-snow.json in Resources */,
-				44CEEB1C2662359300518FEC /* weather-day-snow.json in Resources */,
-				44CEEB1D2662359300518FEC /* weather-day-scattered-clouds.json in Resources */,
-				44BE5AA026624DAE00B9D1B5 /* weather-day-shower-rains.json in Resources */,
-				44BE5A8626624DAE00B9D1B5 /* loading-day.json in Resources */,
+				441F2C8226628258003828DB /* weather-night-shower-rains.json in Resources */,
+				441F2C8D26628258003828DB /* weather-day-rain.json in Resources */,
 				44CEEB1E2662359300518FEC /* full-place.csv in Resources */,
-				44BE5A8826624DAE00B9D1B5 /* weather-day-few-clouds.json in Resources */,
-				44BE5A8A26624DAE00B9D1B5 /* weather-night-few-clouds.json in Resources */,
-				44CEEB1F2662359300518FEC /* loading-night.json in Resources */,
-				44BE5A9426624DAE00B9D1B5 /* weather-day-scattered-clouds.json in Resources */,
+				441F2C8026628258003828DB /* loading-day.json in Resources */,
+				441F2C9026628258003828DB /* weather-night-wind.json in Resources */,
+				441F2C8326628258003828DB /* weather-night-snow.json in Resources */,
 				44CEEB202662359300518FEC /* SourceHanSerifCN-SemiBold.otf in Resources */,
-				44BE5A9A26624DAE00B9D1B5 /* loading-night.json in Resources */,
-				44CEEB212662359300518FEC /* loading-day.json in Resources */,
-				44BE5A8426624DAE00B9D1B5 /* weather-night-snow.json in Resources */,
-				44CEEB222662359300518FEC /* weather-night-wind.json in Resources */,
-				44CEEB232662359300518FEC /* weather-day-shower-rains.json in Resources */,
-				44CEEB242662359300518FEC /* weather-night-mist.json in Resources */,
-				44BE5AA226624DAE00B9D1B5 /* weather-night-scattered-clouds.json in Resources */,
-				44CEEB252662359300518FEC /* weather-night-few-clouds.json in Resources */,
-				44CEEB262662359300518FEC /* weather-night-snow.json in Resources */,
-				44CEEB272662359300518FEC /* weather-day-snow.json in Resources */,
+				441F2C8726628258003828DB /* weather-night-few-clouds.json in Resources */,
+				441F2C8126628258003828DB /* weather-day-thunderstorm.json in Resources */,
+				441F2C8626628258003828DB /* weather-day-mist.json in Resources */,
+				441F2C7F26628258003828DB /* weather-day-clear-sky.json in Resources */,
+				441F2C8B26628258003828DB /* weather-day-wind.json in Resources */,
 				44CEEB282662359300518FEC /* Assets.xcassets in Resources */,
-				44CEEB292662359300518FEC /* weather-day-mist.json in Resources */,
-				44CEEB2A2662359300518FEC /* weather-day-few-clouds.json in Resources */,
-				44BE5AA626624DAE00B9D1B5 /* weather-day-thunderstorm.json in Resources */,
-				44BE5A9226624DAE00B9D1B5 /* weather-night-mist.json in Resources */,
-				44CEEB2B2662359300518FEC /* weather-day-rain.json in Resources */,
-				44CEEB2C2662359300518FEC /* weather-day-wind.json in Resources */,
-				44BE5A8E26624DAE00B9D1B5 /* weather-day-wind.json in Resources */,
-				44BE5A9E26624DAE00B9D1B5 /* weather-day-rain.json in Resources */,
+				441F2C8526628258003828DB /* weather-day-scattered-clouds.json in Resources */,
+				441F2C8A26628258003828DB /* weather-day-snow.json in Resources */,
+				441F2C7E26628258003828DB /* weather-night-clear-sky.json in Resources */,
+				441F2C8426628258003828DB /* weather-night-scattered-clouds.json in Resources */,
+				441F2C8E26628258003828DB /* weather-day-shower-rains.json in Resources */,
+				441F2C8F26628258003828DB /* loading-night.json in Resources */,
+				441F2C8826628258003828DB /* weather-day-few-clouds.json in Resources */,
+				441F2C8C26628258003828DB /* weather-night-thunderstorm.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
