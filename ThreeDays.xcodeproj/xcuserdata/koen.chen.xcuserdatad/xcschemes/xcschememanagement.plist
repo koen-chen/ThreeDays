@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ThreeDays.xcscheme_^#shared#^_</key>
+		<key>ThreeDays-Release.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>ThreeDays.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +17,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>444461022662291500DBF7D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>449D3E13263AF3B10095DC12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44CEEAFB2662359300518FEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44CEEB332662466100518FEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

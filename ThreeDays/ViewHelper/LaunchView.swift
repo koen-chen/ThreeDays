@@ -17,6 +17,11 @@ struct LaunchView: View {
             Spacer()
             
             VStack {
+                #if DEBUG
+                Text("Develop Version")
+                    .font(.system(size: 14))
+                #endif
+                
                 LottieView(name: "loading-\(theme.iconText)")
                 .frame(width: 200, height: 200)
                     .padding()

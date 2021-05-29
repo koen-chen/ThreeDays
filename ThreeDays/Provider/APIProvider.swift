@@ -12,6 +12,14 @@ class APIProvider {
     static let ak = "sRTP3Lzp3BB6qI6GPCXnpuquksrow2CM"
     static var shared = APIProvider()
     
+    init () {
+        #if RELEASE
+            print("this is release")
+        #elseif DEBUG
+            print("this is debug")
+        #endif
+    }
+    
     enum Error: LocalizedError, Identifiable {
         var id: String {
             localizedDescription
@@ -75,24 +83,6 @@ class APIProvider {
     
     private let decoder = JSONDecoder()
     private let queue = DispatchQueue(label: "WeatherService", qos: .default)
-    
-//    func getPlace(name: String) -> AnyPublisher<LocationModel, Error> {
-//        print("District URI",  EndPoint.getPlace(name).url)
-//        return URLSession.shared
-//            .dataTaskPublisher(for: EndPoint.getPlace(name).url)
-//            .receive(on: queue)
-//            .map { $0.0 }
-//            .decode(type: LocationModel.self, decoder: decoder)
-//            .mapError { error in
-//                switch error {
-//                    case is URLError:
-//                        return Error.urlError(EndPoint.getPlace(name).url)
-//                    default:
-//                        return Error.invalidResponse
-//                }
-//            }
-//            .eraseToAnyPublisher()
-//    }
     
     func getWeather(districtId: String) -> AnyPublisher<WeatherModel, Error> {
         print("天气URI",  EndPoint.getWeather(districtId).url)
