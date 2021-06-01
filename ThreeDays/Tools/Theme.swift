@@ -8,6 +8,7 @@
 import SwiftUI
 
 class Theme: ObservableObject {
+    let screen = UIScreen.main.bounds
     let font = "SourceHanSerifCN-SemiBold"
     
     var isDaytime: Bool {

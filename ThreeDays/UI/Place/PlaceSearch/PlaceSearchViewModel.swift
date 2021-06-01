@@ -1,5 +1,5 @@
 //
-//  CitySearchViewModel.swift
+//  PlaceSearchViewModel.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/21.
@@ -8,16 +8,15 @@
 import SwiftUI
 import Combine
 
-class CitySearchViewModel: ObservableObject {
-    @EnvironmentObject var weatherStore: WeatherViewModel
+class PlaceSearchViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
     
-    @Published private (set) var searchCitys: [PlaceCSV.Area] = []
+    @Published private (set) var searchCitys: [ChinaPlace.Place] = []
     @Published var searchText: String = ""
     
     init() {
         $searchText
-            .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .removeDuplicates()
             .map { (string) -> String? in
                 if string.count < 1 {
@@ -36,7 +35,7 @@ class CitySearchViewModel: ObservableObject {
     }
     
     private func searchItems(_ seachText: String) {
-        self.searchCitys = PlaceCSV.shared.searchPlace(seachText)
+        self.searchCitys = ChinaPlace.shared.searchPlace(seachText)
     }
 }
 

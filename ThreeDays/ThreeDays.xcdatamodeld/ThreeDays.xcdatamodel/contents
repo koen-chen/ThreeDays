@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
-        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="cityCN" optional="YES" attributeType="String"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="district" optional="YES" attributeType="String"/>
-        <attribute name="districtCode" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isAppLocation" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="province" optional="YES" attributeType="String"/>
+        <attribute name="placeID" optional="YES" attributeType="String"/>
+        <attribute name="provinceCN" optional="YES" attributeType="String"/>
+        <attribute name="regionCN" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="-18" width="128" height="119"/>

@@ -1,5 +1,5 @@
 //
-//  CitySearchView.swift
+//  PlaceSearchView.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/21.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct CitySearchView: View {
+struct PlaceSearchView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var theme: Theme
-    @EnvironmentObject var placeStore: PlaceViewModel
+    @EnvironmentObject var viewModel: PlaceListViewModel
     
-    @ObservedObject var citySearchViewModel = CitySearchViewModel()
+    @ObservedObject var citySearchViewModel = PlaceSearchViewModel()
     
     @State var isSearching = false
     
@@ -73,7 +73,7 @@ struct CitySearchView: View {
                             ItemView(item: item)
                                 .environmentObject(Theme())
                                 .onTapGesture {
-                                    placeStore.addPlace(item)
+                                    viewModel.addPlace(item)
                                     presentationMode.wrappedValue.dismiss()
                                 }
                             
@@ -98,37 +98,30 @@ struct CitySearchView: View {
     }
 }
 
-struct CitySearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        CitySearchView()
-            .environmentObject(Theme())
-            .environmentObject(PlaceViewModel())
-    }
-}
 
 struct ItemView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var theme: Theme
-    @EnvironmentObject var placeStore: PlaceViewModel
+    @EnvironmentObject var viewModel: PlaceListViewModel
     
-    var item: PlaceCSV.Area
+    var item: ChinaPlace.Place
     
     var body: some View {
         HStack {
-            if item.district == item.city.dropLast() {
+            if item.regionCN == item.cityCN {
                 VStack(alignment: .leading) {
-                    Text(item.city)
-                    Text(item.province)
+                    Text(item.cityCN)
+                    Text(item.provinceCN)
                         .font(.system(size: 16))
                         .padding(.top, 5)
                         .foregroundColor(theme.textColor.opacity(0.8))
                 }
             } else {
                 VStack(alignment: .leading) {
-                    Text(item.district)
+                    Text(item.regionCN)
                     HStack {
-                        Text(item.province)
-                        Text(item.city)
+                        Text(item.provinceCN)
+                        Text(item.cityCN)
                     }
                     .font(.system(size: 16))
                     .padding(.top, 5)
@@ -139,12 +132,20 @@ struct ItemView: View {
             Spacer()
             
             Button(action: {
-                placeStore.addPlace(item)
+                viewModel.addPlace(item)
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "plus")
                     .font(.system(size: 38))
             })
         }
+    }
+}
+
+struct PlaceSearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlaceSearchView()
+            .environmentObject(Theme())
+            .environmentObject(PlaceListViewModel())
     }
 }

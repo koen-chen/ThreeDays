@@ -10,7 +10,7 @@ import Combine
 
 struct LaunchView: View {
     @EnvironmentObject var theme: Theme
-    @StateObject var netMonitor = NetworProvider()
+    @StateObject var netMonitor = NetworkService()
     
     var body: some View {
         ZStack {
@@ -36,7 +36,7 @@ struct LaunchView: View {
             
             Spacer()
         }
-        .frame(width: screen.width, height: screen.height)
+        .frame(width: theme.screen.width, height: theme.screen.height)
         .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
         .ignoresSafeArea()
     }

@@ -1,5 +1,5 @@
 //
-//  CityListView.swift
+//  PlaceListView.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/17.
@@ -8,19 +8,19 @@
 import SwiftUI
 import CoreData
 
-struct CityListView: View {
+struct PlaceListView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @EnvironmentObject var theme: Theme
+    @EnvironmentObject var viewModel: PlaceListViewModel
+    
     @FetchRequest(
         entity: Place.entity(),
         sortDescriptors: [
             NSSortDescriptor(keyPath: \Place.isAppLocation, ascending: false),
             NSSortDescriptor(keyPath: \Place.createdAt, ascending: false)
         ]
-    ) var placeList: FetchedResults<Place>
-    
-    @EnvironmentObject var theme: Theme
-    @EnvironmentObject var placeStore: PlaceViewModel
-    @EnvironmentObject var weatherStore: WeatherViewModel
+    )  var dbPlaceList: FetchedResults<Place>
     
     @Binding var showCityList: Bool
     @State var showRemoveBtn: Bool = false
@@ -45,9 +45,9 @@ struct CityListView: View {
                         Image(systemName: "plus.circle")
                     })
                     .fullScreenCover(isPresented: $showCitySearchView) {
-                       CitySearchView()
+                       PlaceSearchView()
                         .environmentObject(theme)
-                        .environmentObject(placeStore)
+                        .environmentObject(viewModel)
                     }
 
                     Spacer()
@@ -65,9 +65,10 @@ struct CityListView: View {
                 .padding(.bottom, 20)
                 .padding(.top, 10)
                 
+              
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .firstTextBaseline, spacing: 40) {
-                        ForEach(placeList) { item in
+                        ForEach(dbPlaceList) { item in
                             VStack {
                                 if showRemoveBtn {
                                     Button(action: {
@@ -81,13 +82,13 @@ struct CityListView: View {
                                 Button(action: {
                                     chooseCity(item)
                                 }, label: {
-                                    if let district = item.district,
-                                       let city = item.city,
-                                       district == city.dropLast() {
+                                    if let regionCN = item.regionCN,
+                                       let cityCN = item.cityCN,
+                                       regionCN == cityCN {
                                         HStack(alignment: .firstTextBaseline) {
-                                            Text(district)
+                                            Text(regionCN)
                                                 .frame(width: 35)
-                                            Text(item.province ?? "")
+                                            Text(item.provinceCN ?? "")
                                                 .font(.system(size: 16))
                                                 .foregroundColor(theme.textColor.opacity(0.8))
                                                 .frame(width: 20)
@@ -95,9 +96,9 @@ struct CityListView: View {
                                         }
                                     } else {
                                         HStack(alignment: .firstTextBaseline) {
-                                            Text(item.district ?? "")
+                                            Text(item.regionCN ?? "")
                                                 .frame(width: 35)
-                                            Text(item.city ?? "")
+                                            Text(item.cityCN ?? "")
                                                 .font(.system(size: 16))
                                                 .foregroundColor(theme.textColor.opacity(0.8))
                                                 .frame(width: 20)
@@ -128,9 +129,8 @@ struct CityListView: View {
     
     func chooseCity (_ item: Place) {
         if showRemoveBtn == false {
-            UserDefaults.standard.set(item.districtCode, forKey: "activedDistrictCode")
-            placeStore.activePlace = item
-            weatherStore.getWeather(districtId: String(item.districtCode))
+            UserDefaults.standard.set(item.placeID, forKey: "activedPlaceID")
+            viewModel.changeActivePlace(item)
             showCityList.toggle()
         } else if showRemoveBtn && !item.isAppLocation {
             self.removeCity(item)
@@ -142,21 +142,11 @@ struct CityListView: View {
             return
         }
         
-        if placeStore.activePlace == item {
-            placeStore.activePlace = placeList[0]
-            UserDefaults.standard.set(placeList[0].districtCode, forKey: "activedDistrictCode")
+        if viewModel.activePlace == item {
+            viewModel.changeActivePlace(dbPlaceList[0])
+            UserDefaults.standard.set(dbPlaceList[0].placeID, forKey: "activedPlaceID")
         }
         
-        placeStore.removePlace(item)
-    }
-}
-
-struct CityView_Previews: PreviewProvider {
-    static var previews: some View {
-        CityListView(
-            showCityList: .constant(true)
-        )
-        .environmentObject(Theme())
-        .environmentObject(PlaceViewModel())
+        viewModel.removePlace(item)
     }
 }

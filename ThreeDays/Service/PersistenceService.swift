@@ -1,5 +1,5 @@
 //
-//  PersistenceProvider.swift
+//  PersistenceService.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/21.
@@ -7,8 +7,8 @@
 
 import CoreData
 
-struct PersistenceProvider {
-    static let shared = PersistenceProvider()
+struct PersistenceService {
+    static let shared = PersistenceService()
     
     let container: NSPersistentContainer
     

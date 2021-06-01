@@ -1,4 +1,4 @@
-LocationID,LocationNameEN,LocationNameCN,CountryCode,CountryEN,CountryCN,Adm1EN,Adm1CN,Adm2EN,Adm2CN,Latitude,Longitude,ADCode
+placeID,regionEN,regionCN,countryCode,countryEN,countryCN,provinceEN,provinceCN,cityEN,cityCN,latitude,longitude,adCode
 101010100,Beijing,北京,CN,China,中国,Beijing,北京市,Beijing,北京,39.904987,116.405289,110000 | 110100
 101010200,Haidian,海淀,CN,China,中国,Beijing,北京市,Beijing,北京,39.956074,116.310318,110108
 101010300,Chaoyang,朝阳,CN,China,中国,Beijing,北京市,Beijing,北京,39.921490,116.486412,110105

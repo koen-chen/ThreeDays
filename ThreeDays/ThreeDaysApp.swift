@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ThreeDaysApp: App {
-    let persistenceProvider = PersistenceProvider.shared
+    let persistenceProvider = PersistenceService.shared
     
     var body: some Scene {
         WindowGroup {
@@ -17,7 +17,7 @@ struct ThreeDaysApp: App {
                 .environment(\.managedObjectContext, persistenceProvider.managedObjectContext)
                 .environmentObject(Theme())
                 .environmentObject(WeatherViewModel())
-                .environmentObject(PlaceViewModel())
+                .environmentObject(PlaceListViewModel())
         }
     }
 }

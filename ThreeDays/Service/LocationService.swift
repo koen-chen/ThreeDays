@@ -1,5 +1,5 @@
 //
-//  LocationProvider.swift
+//  LocationService.swift
 //  ThreeDays
 //
 //  Created by koen.chen on 2021/5/8.
@@ -9,12 +9,12 @@ import SwiftUI
 import CoreLocation
 import Combine
 
-class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
+class LocationService<T>: NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
    
     @Published var authorizationStatus: CLAuthorizationStatus?
-    let locationSubject: PassthroughSubject<PlaceCSV.Area?, Never>
-    var locationPublisher: AnyPublisher<PlaceCSV.Area?, Never>
+    let locationSubject: PassthroughSubject<T?, Never>
+    var locationPublisher: AnyPublisher<T?, Never>
     
     func requestAuthorization () {
         manager.requestWhenInUseAuthorization()
@@ -44,7 +44,7 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.allowsBackgroundLocationUpdates = true
         
-        locationSubject = PassthroughSubject<PlaceCSV.Area?, Never>()
+        locationSubject = PassthroughSubject<T?, Never>()
         locationPublisher = locationSubject.eraseToAnyPublisher()
         
         super.init()
@@ -61,16 +61,17 @@ class LocationProvider: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var appPlace: PlaceCSV.Area? = nil
+        var appPlace: T? = nil
         
         let location = locations.last
         let gecoder = CLGeocoder()
         if let location = location {
             gecoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "zh_CN")) { (placeMarks, error) in
                 let placeMark = placeMarks?.last
+
                 if let placeMark = placeMark, let city = placeMark.locality {
-                    let result = PlaceCSV.shared.searchPlace(city, field: "city")
-                    appPlace = result.first
+                    let result = ChinaPlace.shared.searchPlace(city, field: "city")
+                    appPlace = result.first as? T
                 }
                 
                 self.locationSubject.send(appPlace)

@@ -8,16 +8,11 @@
 import SwiftUI
 import CoreData
 
-let screen = UIScreen.main.bounds
-
 struct ContentView: View {
-    private let context = PersistenceProvider.shared.managedObjectContext
+    private let context = PersistenceService.shared.managedObjectContext
 
-    @EnvironmentObject var theme: Theme
-    @EnvironmentObject var weatherStore: WeatherViewModel
-    @EnvironmentObject var placeStore: PlaceViewModel
-   
-    @StateObject var netMonitor = NetworProvider()
+    @EnvironmentObject var theme: Theme   
+    @StateObject var netMonitor = NetworkService()
     @State var showDayList = false
     @State var activeDay = 0
     @State var showCityList = false
@@ -30,7 +25,9 @@ struct ContentView: View {
         return netMonitor.status == .connected ? true : false
     }
     
-    var cityListShowHeight = screen.height < 800 ? screen.height / 2 : 500
+    var cityListShowHeight: CGFloat {
+        return theme.screen.height < 800 ? theme.screen.height / 2 : 500
+    }
     
     var body: some View {
         ZStack {
@@ -46,7 +43,7 @@ struct ContentView: View {
             .cornerRadius((showCityList || showDayList) ? 30 : 0)
             .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
             .offset(y: showDayList ? CGFloat(200) : 0)
-            .offset(y: showCityList ? -(screen.height - cityListShowHeight) : 0)
+            .offset(y: showCityList ? -(theme.screen.height - cityListShowHeight) : 0)
             .offset(y: cityListDragState.height)
             .offset(y: weatherDragState.height)
             .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
@@ -78,26 +75,26 @@ struct ContentView: View {
                 }
             }
             
-            LaunchView()
-                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
-                .onReceive(weatherStore.$weather, perform: { weather in
-                    if weather.result.now != nil {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation() {
-                                self.weatherAPIDone = true
-                            }
-                        }
-                    }
-                })
-            
+//            LaunchView()
+//                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
+//                .onReceive(weatherStore.$weather, perform: { weather in
+//                    if weather.result.now != nil {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                            withAnimation() {
+//                                self.weatherAPIDone = true
+//                            }
+//                        }
+//                    }
+//                })
+//
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
-                .offset(y: showDayList ? 10 : -screen.height)
+                .offset(y: showDayList ? 10 : -theme.screen.height)
                 .offset(y: weatherDragState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
                 
-            CityListView(showCityList: $showCityList)
-                .offset(y: showCityList ? cityListShowHeight + 20 : screen.height)
+            PlaceListView(showCityList: $showCityList)
+                .offset(y: showCityList ? cityListShowHeight + 20 : theme.screen.height)
                 .offset(y: cityListDragState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
                 .environment(\.managedObjectContext, context)
@@ -144,6 +141,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(Theme())
             .environmentObject(WeatherViewModel())
-            .environmentObject(PlaceViewModel())
+            .environmentObject(PlaceListViewModel())
     }
 }

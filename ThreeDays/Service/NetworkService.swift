@@ -16,7 +16,7 @@ enum ConnectionStatus {
     case connected, disconnected
 }
 
-class NetworProvider: ObservableObject {
+class NetworkService: ObservableObject {
     @Published var status: ConnectionStatus = .disconnected
     @Published var type: ConnectionType = .wifi
     
