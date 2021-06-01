@@ -58,6 +58,8 @@
 		44453BA3265B62C50060EFD7 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44453BA2265B62C50060EFD7 /* PlaceViewModel.swift */; };
 		4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
 		44458935265B95040060D666 /* full-place.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44458934265B95040060D666 /* full-place.csv */; };
+		446B2C852663C1870032F83C /* release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446B2C842663C1870032F83C /* release.plist */; };
+		446B2C892663C3190032F83C /* City-List.csv in Resources */ = {isa = PBXBuildFile; fileRef = 446B2C882663C3190032F83C /* City-List.csv */; };
 		449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */; };
 		449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E19263AF3B10095DC12 /* ContentView.swift */; };
 		449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
@@ -130,6 +132,8 @@
 		44453BA2265B62C50060EFD7 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		44458934265B95040060D666 /* full-place.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "full-place.csv"; sourceTree = "<group>"; };
+		446B2C842663C1870032F83C /* release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = release.plist; sourceTree = "<group>"; };
+		446B2C882663C3190032F83C /* City-List.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "City-List.csv"; sourceTree = "<group>"; };
 		449D3E14263AF3B10095DC12 /* ThreeDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysApp.swift; sourceTree = "<group>"; };
 		449D3E19263AF3B10095DC12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,7 +147,6 @@
 		44C727DF26463FF600F83303 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		44C727E126465FF100F83303 /* NetworProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworProvider.swift; sourceTree = "<group>"; };
 		44CEEB312662359300518FEC /* ThreeDays-Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThreeDays-Release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		44CEEB322662359300518FEC /* release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = release.plist; path = "/Users/koen.chen/Documents/@ios/ThreeDays/release.plist"; sourceTree = "<absolute>"; };
 		44F999172652702A00F6D646 /* CityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListView.swift; sourceTree = "<group>"; };
 		44FEBAEC264392EB00DD785C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6338727A07B14A491FD6F1E3 /* Pods-ThreeDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDays.debug.xcconfig"; path = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 				44FEBAEB2643929600DD785C /* Lottie */,
 				44BD8DDC2643B82F00FD0A72 /* Fonts */,
 				44458934265B95040060D666 /* full-place.csv */,
+				446B2C882663C3190032F83C /* City-List.csv */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -254,7 +258,7 @@
 				449D3E1B263AF3B20095DC12 /* Assets.xcassets */,
 				440C95C3265A4C91002BB5AD /* ThreeDays.xcdatamodeld */,
 				449D3E20263AF3B20095DC12 /* Info.plist */,
-				44CEEB322662359300518FEC /* release.plist */,
+				446B2C842663C1870032F83C /* release.plist */,
 				449D3E1D263AF3B20095DC12 /* Preview Content */,
 			);
 			path = ThreeDays;
@@ -417,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446B2C852663C1870032F83C /* release.plist in Resources */,
 				441F2C7526628232003828DB /* weather-day-shower-rains.json in Resources */,
 				441F2C7726628232003828DB /* weather-night-clear-sky.json in Resources */,
 				441F2C7926628232003828DB /* weather-night-mist.json in Resources */,
@@ -426,6 +431,7 @@
 				449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */,
 				441F2C7326628232003828DB /* loading-day.json in Resources */,
 				449D3E1F263AF3B20095DC12 /* Preview Assets.xcassets in Resources */,
+				446B2C892663C3190032F83C /* City-List.csv in Resources */,
 				441F2C7B26628232003828DB /* weather-day-scattered-clouds.json in Resources */,
 				44458935265B95040060D666 /* full-place.csv in Resources */,
 				441F2C6B26628232003828DB /* weather-day-snow.json in Resources */,
