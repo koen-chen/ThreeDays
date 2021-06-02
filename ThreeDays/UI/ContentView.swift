@@ -11,14 +11,16 @@ import CoreData
 struct ContentView: View {
     private let context = PersistenceService.shared.managedObjectContext
 
-    @EnvironmentObject var theme: Theme   
+    @EnvironmentObject var theme: Theme
+    @EnvironmentObject var viewModel: WeatherViewModel
+    
     @StateObject var netMonitor = NetworkService()
     @State var showDayList = false
     @State var activeDay = 0
     @State var showCityList = false
-    @State var cityListDragState = CGSize.zero
     @State var showCityListFull = false
     @State var weatherDragState = CGSize.zero
+    @State var tempWeatherDragState = CGSize.zero
     @State var weatherAPIDone = false
     
     var isConnected: Bool {
@@ -44,7 +46,6 @@ struct ContentView: View {
             .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
             .offset(y: showDayList ? CGFloat(200) : 0)
             .offset(y: showCityList ? -(theme.screen.height - cityListShowHeight) : 0)
-            .offset(y: cityListDragState.height)
             .offset(y: weatherDragState.height)
             .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
             .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
@@ -52,12 +53,23 @@ struct ContentView: View {
             .gesture(
                 DragGesture()
                     .onChanged({ value in
-                        if showDayList {
+                        if value.translation.height < -50 || value.translation.height > 50 {
                             self.weatherDragState = value.translation
                             
-                            if self.weatherDragState.height > 50 {
+                            if (self.weatherDragState.height + self.tempWeatherDragState.height) > 100 {
                                 self.weatherDragState.height = 50
+                                
+                                self.showCityList = false
+                                self.showDayList = true
                             }
+                            
+                            if (self.weatherDragState.height + self.tempWeatherDragState.height)  < -100 {
+                                self.weatherDragState.height = -100
+                                self.showCityList = true
+                                self.showDayList = false
+                            }
+                            
+                            
                         }
                     })
                     .onEnded({ value in
@@ -65,28 +77,34 @@ struct ContentView: View {
                             self.showDayList = false
                         }
                         
+                        if self.weatherDragState.height > 50 {
+                            self.showCityList = false
+                        }
+                        
+                        self.tempWeatherDragState = self.weatherDragState
+                        
                         self.weatherDragState = .zero
                     })
             )
             .onChange(of: showCityList) { value in
                 if !value {
-                    self.cityListDragState = .zero
+                    self.weatherDragState = .zero
                     self.showCityListFull = false
                 }
             }
             
-//            LaunchView()
-//                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
-//                .onReceive(weatherStore.$weather, perform: { weather in
-//                    if weather.result.now != nil {
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                            withAnimation() {
-//                                self.weatherAPIDone = true
-//                            }
-//                        }
-//                    }
-//                })
-//
+            LaunchView()
+                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
+                .onReceive(viewModel.$weatherNow, perform: { weather in
+                    if weather?.now != nil {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation() {
+                                self.weatherAPIDone = true
+                            }
+                        }
+                    }
+                })
+
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .offset(y: showDayList ? 10 : -theme.screen.height)
@@ -95,39 +113,39 @@ struct ContentView: View {
                 
             PlaceListView(showCityList: $showCityList)
                 .offset(y: showCityList ? cityListShowHeight + 20 : theme.screen.height)
-                .offset(y: cityListDragState.height)
+                .offset(y: weatherDragState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
                 .environment(\.managedObjectContext, context)
                 .gesture(
                     DragGesture()
                         .onChanged({ value in
-                            self.cityListDragState = value.translation
+                            self.weatherDragState = value.translation
                             
                             if self.showCityListFull {
-                                self.cityListDragState.height += -300
+                                self.weatherDragState.height += -300
                             }
                             
-                            if self.cityListDragState.height < -300 {
-                                self.cityListDragState.height = -300
+                            if self.weatherDragState.height < -300 {
+                                self.weatherDragState.height = -300
                             }
                         })
                         .onEnded({ value in
-                            if self.cityListDragState.height > 50 {
+                            if self.weatherDragState.height > 50 {
                                 self.showCityList = false
                             }
                             
-                            if (self.cityListDragState.height < -100 && !self.showCityListFull) || (self.cityListDragState.height < -250 && self.showCityListFull) {
-                                self.cityListDragState.height = -300
+                            if (self.weatherDragState.height < -100 && !self.showCityListFull) || (self.weatherDragState.height < -250 && self.showCityListFull) {
+                                self.weatherDragState.height = -300
                                 self.showCityListFull = true
                             } else {
-                                self.cityListDragState = .zero
+                                self.weatherDragState = .zero
                                 self.showCityListFull = false
                             }
                         })
                 )
                 .onChange(of: showCityList) { value in
                     if !value {
-                        self.cityListDragState = .zero
+                        self.weatherDragState = .zero
                         self.showCityListFull = false
                     }
                 }
