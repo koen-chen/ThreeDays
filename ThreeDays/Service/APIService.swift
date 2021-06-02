@@ -40,7 +40,7 @@ class APIService {
     enum EndPoint {
         case getWeatherNow(_ location: String)
         case getWeatherDaily(_ location: String, daily: String = "3d")
-        case getWeatherHour(_ location: String, hour: String = "24h")
+        case getWeatherHourly(_ location: String, hour: String = "24h")
         
         func getBaseUrl () -> URLComponents {
             var components = URLComponents()
@@ -71,7 +71,7 @@ class APIService {
                     components.queryItems?.append(.init(name: "location", value: location))
                     component = components
                    
-                case .getWeatherHour(let location, let hour):
+                case .getWeatherHourly(let location, let hour):
                     var components = getBaseUrl()
                     components.path = "/v7/weather/\(hour)"
                     components.queryItems?.append(.init(name: "location", value: location))
@@ -120,6 +120,27 @@ class APIService {
                 switch error {
                     case is URLError:
                         return Error.urlError(EndPoint.getWeatherDaily(location).url)
+                    default:
+                        return Error.invalidResponse
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func getWeatherHourly(_ location: String) -> AnyPublisher<WeatherHourlyModel, Error> {
+        print("逐小时天气URI",  EndPoint.getWeatherHourly(location).url)
+        
+        let config = URLSessionConfiguration.ephemeral
+        let sessionWorker = URLSession(configuration: config)
+        return sessionWorker
+            .dataTaskPublisher(for: EndPoint.getWeatherHourly(location).url)
+            .receive(on: queue)
+            .map { $0.0 }
+            .decode(type: WeatherHourlyModel.self, decoder: decoder)
+            .mapError { error in
+                switch error {
+                    case is URLError:
+                        return Error.urlError(EndPoint.getWeatherHourly(location).url)
                     default:
                         return Error.invalidResponse
                 }

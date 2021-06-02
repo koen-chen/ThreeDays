@@ -11,6 +11,7 @@ import Combine
 class WeatherViewModel: ObservableObject {
     @Published var weatherNow: WeatherNowModel?
     @Published var weatherDaily: WeatherDailyModel?
+    @Published var weatherHourly: WeatherHourlyModel?
 
     private let API = APIService()
     private var subscriptions = Set<AnyCancellable>()
@@ -41,6 +42,16 @@ class WeatherViewModel: ObservableObject {
             .sink { completion in
             } receiveValue: { value in
                 self.weatherDaily = value
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func getWeatherHourly (location: String) {
+        API.getWeatherHourly(location)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+            } receiveValue: { value in
+                self.weatherHourly = value
             }
             .store(in: &subscriptions)
     }

@@ -91,7 +91,6 @@ struct WeatherView: View {
                         Text("最高 \(dailyWeather?.tempMax ?? "")°")
                     }
                     .font(.custom(theme.font, size: 18))
-                    .padding(.top, theme.screen.height < 800 ? 0 : 30)
                     .offset(x: 5)
                 }
             }
