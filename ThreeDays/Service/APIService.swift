@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 class APIService {
-    #if RELEASE
+    #if PRODUCTION
     static var key = "fa337af718794348960d3e498713ca0d"
     static var host = "api.qweather.com"
     #else

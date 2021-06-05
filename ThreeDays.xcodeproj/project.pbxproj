@@ -54,12 +54,13 @@
 		441F2C9026628258003828DB /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6926628232003828DB /* weather-night-wind.json */; };
 		442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */; };
 		44376C3D2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */; };
+		4440F80E26677C7E0027D647 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440F80D26677C7E0027D647 /* WeatherDetailView.swift */; };
+		4440F80F26677C7E0027D647 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440F80D26677C7E0027D647 /* WeatherDetailView.swift */; };
 		44453BA3265B62C50060EFD7 /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44453BA2265B62C50060EFD7 /* PlaceListViewModel.swift */; };
 		4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
 		44458935265B95040060D666 /* full-place.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44458934265B95040060D666 /* full-place.csv */; };
 		4453CA612667691800C5DECB /* WeatherHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CA602667691800C5DECB /* WeatherHourlyModel.swift */; };
 		4453CA622667691800C5DECB /* WeatherHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CA602667691800C5DECB /* WeatherHourlyModel.swift */; };
-		446B2C852663C1870032F83C /* release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446B2C842663C1870032F83C /* release.plist */; };
 		449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */; };
 		449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E19263AF3B10095DC12 /* ContentView.swift */; };
 		449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
@@ -82,6 +83,8 @@
 		44B8C60D2665D89800066AAF /* WeatherDailyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C60B2665D89800066AAF /* WeatherDailyModel.swift */; };
 		44C727E026463FF600F83303 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727DF26463FF600F83303 /* LocationService.swift */; };
 		44C727E226465FF100F83303 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727E126465FF100F83303 /* NetworkService.swift */; };
+		44CBC1072668F07700F53F88 /* weather-night-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CBC1062668F07700F53F88 /* weather-night-rain.json */; };
+		44CBC1082668F07700F53F88 /* weather-night-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CBC1062668F07700F53F88 /* weather-night-rain.json */; };
 		44CEEAFE2662359300518FEC /* PlaceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1CDE1265805FB00DC5502 /* PlaceSearchViewModel.swift */; };
 		44CEEAFF2662359300518FEC /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5D3265F3F2500D9101D /* LaunchView.swift */; };
 		44CEEB002662359300518FEC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
@@ -139,6 +142,7 @@
 		441F2C6A26628232003828DB /* weather-day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-clear-sky.json"; sourceTree = "<group>"; };
 		442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerifCN-SemiBold.otf"; sourceTree = "<group>"; };
+		4440F80D26677C7E0027D647 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 		44453BA2265B62C50060EFD7 /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		44458934265B95040060D666 /* full-place.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "full-place.csv"; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		44B8C60B2665D89800066AAF /* WeatherDailyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyModel.swift; sourceTree = "<group>"; };
 		44C727DF26463FF600F83303 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		44C727E126465FF100F83303 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		44CBC1062668F07700F53F88 /* weather-night-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-rain.json"; sourceTree = "<group>"; };
 		44CEEB312662359300518FEC /* ThreeDays-Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThreeDays-Release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F999172652702A00F6D646 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		44FEBAEC264392EB00DD785C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
@@ -272,6 +277,7 @@
 			children = (
 				4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */,
 				442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */,
+				4440F80D26677C7E0027D647 /* WeatherDetailView.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 		44FEBAEB2643929600DD785C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				44CBC1062668F07700F53F88 /* weather-night-rain.json */,
 				441F2C6026628231003828DB /* loading-day.json */,
 				441F2C6726628232003828DB /* loading-night.json */,
 				441F2C6A26628232003828DB /* weather-day-clear-sky.json */,
@@ -474,7 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446B2C852663C1870032F83C /* release.plist in Resources */,
+				44CBC1072668F07700F53F88 /* weather-night-rain.json in Resources */,
 				441F2C7526628232003828DB /* weather-day-shower-rains.json in Resources */,
 				441F2C7726628232003828DB /* weather-night-clear-sky.json in Resources */,
 				441F2C7926628232003828DB /* weather-night-mist.json in Resources */,
@@ -506,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CBC1082668F07700F53F88 /* weather-night-rain.json in Resources */,
 				441F2C8926628258003828DB /* weather-night-mist.json in Resources */,
 				44CEEB172662359300518FEC /* Preview Assets.xcassets in Resources */,
 				441F2C8226628258003828DB /* weather-night-shower-rains.json in Resources */,
@@ -631,6 +639,7 @@
 				449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */,
 				440E78ED2643E60300105EB7 /* BlurView.swift in Sources */,
 				44B8C6062665C67B00066AAF /* ChinaPlace.swift in Sources */,
+				4440F80E26677C7E0027D647 /* WeatherDetailView.swift in Sources */,
 				44B8C6002665C3F900066AAF /* PlaceView.swift in Sources */,
 				442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */,
 				44C727E026463FF600F83303 /* LocationService.swift in Sources */,
@@ -663,6 +672,7 @@
 				44CEEB032662359300518FEC /* ContentView.swift in Sources */,
 				44CEEB042662359300518FEC /* BlurView.swift in Sources */,
 				44B8C6072665C67B00066AAF /* ChinaPlace.swift in Sources */,
+				4440F80F26677C7E0027D647 /* WeatherDetailView.swift in Sources */,
 				44B8C6012665C3F900066AAF /* PlaceView.swift in Sources */,
 				44CEEB062662359300518FEC /* WeatherView.swift in Sources */,
 				44CEEB072662359300518FEC /* LocationService.swift in Sources */,
@@ -719,6 +729,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -781,7 +792,9 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -858,12 +871,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ThreeDays/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PN847NX57;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/release.plist";
+				INFOPLIST_FILE = ThreeDays/release.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited) -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = koen.chen.ThreeDays.Release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -881,12 +895,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ThreeDays/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PN847NX57;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/release.plist";
+				INFOPLIST_FILE = ThreeDays/release.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited) -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = koen.chen.ThreeDays.Release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

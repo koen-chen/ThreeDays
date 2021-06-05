@@ -19,6 +19,7 @@ struct ContentView: View {
     @State var activeDay = 0
     @State var showCityList = false
     @State var showCityListFull = false
+    @State var showWeatherDetail = false
     @State var weatherDragState = CGSize.zero
     @State var tempWeatherDragState = CGSize.zero
     @State var weatherAPIDone = false
@@ -38,7 +39,8 @@ struct ContentView: View {
             WeatherView(
                 activeDay: activeDay,
                 showDayList: $showDayList,
-                showCityList: $showCityList
+                showCityList: $showCityList,
+                showWeatherDetail: $showWeatherDetail
             )
             .padding(.vertical, 30)
             .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
@@ -93,17 +95,17 @@ struct ContentView: View {
                 }
             }
             
-            LaunchView()
-                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
-                .onReceive(viewModel.$weatherNow, perform: { weather in
-                    if weather?.now != nil {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation() {
-                                self.weatherAPIDone = true
-                            }
-                        }
-                    }
-                })
+//            LaunchView()
+//                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
+//                .onReceive(viewModel.$weatherNow, perform: { weather in
+//                    if weather?.now != nil {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                            withAnimation() {
+//                                self.weatherAPIDone = true
+//                            }
+//                        }
+//                    }
+//                })
 
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
@@ -149,6 +151,10 @@ struct ContentView: View {
                         self.showCityListFull = false
                     }
                 }
+            
+            WeatherDetailView(showWeatherDetail: $showWeatherDetail)
+                .offset(x: showWeatherDetail ? 0 : theme.screen.width)
+                .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
         }
         .ignoresSafeArea()
     }

@@ -12,7 +12,7 @@ class WeatherViewModel: ObservableObject {
     @Published var weatherNow: WeatherNowModel?
     @Published var weatherDaily: WeatherDailyModel?
     @Published var weatherHourly: WeatherHourlyModel?
-
+    
     private let API = APIService()
     private var subscriptions = Set<AnyCancellable>()
     
@@ -22,6 +22,7 @@ class WeatherViewModel: ObservableObject {
             if let id = id {
                 self.getWeatherNow(location: id)
                 self.getWeatherDaily(location: id)
+                self.getWeatherHourly(location: id)
             }
         }.store(in: &subscriptions)
     }

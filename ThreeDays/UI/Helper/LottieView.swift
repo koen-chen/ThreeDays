@@ -17,36 +17,17 @@ struct LottieView: UIViewRepresentable {
     var name: String = ""
     var loopMode: LottieLoopMode = .loop
     var isWeather: Bool = false
-    var weatherDesc: String = ""
+    var weatherCode: String?
     var loopWay: LottieLoopMode = .loop
     let animationView = AnimationView()
    
     var weatherIcon: String {
-        switch weatherDesc {
-            case "晴":
-                return "clear-sky"
-            case "多云":
-                return "scattered-clouds"
-            case "阴":
-                return "few-clouds"
-            case "雨", "雨夹雪", "小雨", "中雨", "大雨", "暴雨", "大暴雨", "冻雨":
-                return "rain"
-            case "阵雨":
-                return "shower-rains"
-            case "雷阵雨":
-                return "thunderstorm"
-            case "雪", "阵雪", "小雪", "中雪", "大雪", "暴雪", "高吹雪":
-                return "snow"
-            case "雾", "浓雾", "强浓雾", "轻雾", "霾", "中度霾", "重度霾", "严重霾", "大雾":
-                return "mist"
-            case "沙尘暴", "浮尘", "扬沙", "龙卷风":
-                return "wind"
-            default:
-                return ""
-        }
+        print(Description.weatherLottieIcon(weatherCode))
+        return Description.weatherLottieIcon(weatherCode)
     }
     
     var weatherName: String {
+        print("weather-\(theme.iconText)-\(weatherIcon)")
         return "weather-\(theme.iconText)-\(weatherIcon)"
     }
     

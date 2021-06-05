@@ -17,7 +17,7 @@ struct LaunchView: View {
             Spacer()
             
             VStack {
-                #if DEBUG
+                #if !PRODUCTION
                 Text("Develop Version")
                     .font(.system(size: 14))
                 #endif

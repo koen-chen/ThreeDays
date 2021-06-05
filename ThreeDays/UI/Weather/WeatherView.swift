@@ -14,6 +14,7 @@ struct WeatherView: View {
     var activeDay: Int
     @Binding var showDayList: Bool
     @Binding var showCityList: Bool
+    @Binding var showWeatherDetail: Bool
     
     var dailyText: String {
         return Description.dayDesc(activeDay)
@@ -68,7 +69,7 @@ struct WeatherView: View {
             
             VStack(alignment: .center, spacing: 15) {
                 VStack {
-                    LottieView(isWeather: true, weatherDesc: weatherDesc)
+                    LottieView(isWeather: true, weatherCode: nowWeather?.icon)
                         .frame(width: 180, height: 180)
                         .padding(.bottom, 20)
                 }
@@ -92,7 +93,11 @@ struct WeatherView: View {
                     }
                     .font(.custom(theme.font, size: 18))
                     .offset(x: 5)
+                    
                 }
+                .onTapGesture(perform: {
+                    self.showWeatherDetail.toggle()
+                })
             }
             .offset(y: -20)
             
@@ -106,9 +111,14 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(activeDay: 0, showDayList: .constant(false), showCityList: .constant(false))
-            .environmentObject(Theme())
-            .environmentObject(WeatherViewModel())
-            .environmentObject(PlaceListViewModel())
+        WeatherView(
+            activeDay: 0,
+            showDayList: .constant(false),
+            showCityList: .constant(false),
+            showWeatherDetail: .constant(false)
+        )
+        .environmentObject(Theme())
+        .environmentObject(WeatherViewModel())
+        .environmentObject(PlaceListViewModel())
     }
 }
