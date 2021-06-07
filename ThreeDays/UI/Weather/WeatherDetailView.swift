@@ -82,13 +82,6 @@ struct WeatherDetailView: View {
                                     .background(currentDate == day ? theme.backgroundColor.opacity(1) : Color.white)
                                     .foregroundColor(currentDate == day ? Color.white : theme.textColor)
                                     .cornerRadius(50)
-//                                    .overlay(
-//                                        RoundedRectangle(cornerRadius: 50)
-//                                            .strokeBorder(
-//                                                theme.backgroundColor.opacity(1),
-//                                                style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round)
-//                                            )
-//                                    )
                                     .shadow(color: theme.textColor.opacity(0.2), radius: 3, x: 0, y:  10)
                                     .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
                                 }

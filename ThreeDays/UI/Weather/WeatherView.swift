@@ -76,6 +76,11 @@ struct WeatherView: View {
                             .frame(width: 160, height: 160)
                             .padding(.bottom, 10)
                     }
+                    .onTapGesture(perform: {
+                        if !showDailyPreview {
+                            self.showWeatherDetail.toggle()
+                        }
+                    })
                 }
                 
                 VStack(alignment: .center, spacing: 0) {
@@ -115,11 +120,6 @@ struct WeatherView: View {
                         }
                     }
                 }
-                .onTapGesture(perform: {
-                    if !showDailyPreview {
-                        self.showWeatherDetail.toggle()
-                    }
-                })
             }
             .offset(y: -20)
             .padding(.top, showDailyPreview ? 60 : 0)

@@ -69,19 +69,14 @@ struct PlaceListView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .firstTextBaseline, spacing: 40) {
                         ForEach(dbPlaceList) { item in
-                            VStack {
+                            VStack(spacing: 0) {
                                 if showRemoveBtn {
-                                    Button(action: {
-                                        self.removeCity(item)
-                                    }, label: {
-                                        Image(systemName: item.isAppLocation ? "location.circle" : "xmark.circle")
-                                    })
-                                    .padding(.bottom, 2)
+                                    Image(systemName: item.isAppLocation ? "location.circle" : "xmark.circle")
+                                        .font(.custom(theme.font, size: 22))
+                                        .padding(.all, 10)
                                 }
 
-                                Button(action: {
-                                    chooseCity(item)
-                                }, label: {
+                                Group {
                                     if let regionCN = item.regionCN,
                                        let cityCN = item.cityCN,
                                        regionCN == cityCN {
@@ -105,14 +100,17 @@ struct PlaceListView: View {
                                                 .offset(y: -10)
                                         }
                                     }
-                                })
-                                
+                                }
+                                .font(.custom(theme.font, size: 28))
+                                .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
                             }
                             .frame(maxHeight: .infinity, alignment: .top)
-                            .font(.custom(theme.font, size: 28))
+                            .contentShape(Rectangle())
                             .foregroundColor(theme.textColor)
-                            .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
                             .animation(.easeInOut)
+                            .onTapGesture(perform: {
+                                chooseCity(item)
+                            })
                         }
                     }
                 }
@@ -147,6 +145,8 @@ struct PlaceListView: View {
             UserDefaults.standard.set(dbPlaceList[0].placeID, forKey: "activedPlaceID")
         }
         
-        viewModel.removePlace(item)
+        DispatchQueue.main.async {
+            viewModel.removePlace(item)
+        }
     }
 }

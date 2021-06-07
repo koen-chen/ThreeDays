@@ -58,6 +58,7 @@ struct ContentView: View {
                     showDailyPreview: $showDailyPreview
                 )
                 .frame(maxWidth: showDailyPreview ? theme.screen.width / 3 : .infinity)
+                .contentShape(Rectangle())
                 .padding(.vertical, 30)
                 .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
                 .cornerRadius((showCityList || showDayList) ? 30 : 0)
@@ -71,6 +72,7 @@ struct ContentView: View {
                 .gesture(
                     DragGesture()
                         .onChanged({ value in
+                            print(value.translation.width)
                             if value.translation.height < -50 || value.translation.height > 50 {
                                 self.weatherDragState = value.translation
                                 
@@ -114,11 +116,14 @@ struct ContentView: View {
                         self.showCityListFull = false
                     }
                 }
-                .onTapGesture(perform: {
-                    activeDay = 0
-                    showDailyPreview = false
-                })
-                
+                .simultaneousGesture(
+                    TapGesture().onEnded({ _ in
+                        if showDailyPreview {
+                            activeDay = 0
+                            showDailyPreview = false
+                        }
+                    })
+                )
                 
                 WeatherView(
                     activeDay: 1,
@@ -128,15 +133,20 @@ struct ContentView: View {
                     showDailyPreview: $showDailyPreview
                 )
                 .frame(width: showDailyPreview ? theme.screen.width / 3 : 0)
+                .contentShape(Rectangle())
                 .padding(.vertical, 30)
                 .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
                 .cornerRadius((showCityList || showDayList) ? 30 : 0)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .gesture(showPreviewGesture)
-                .onTapGesture(perform: {
-                    activeDay = 1
-                    showDailyPreview = false
-                })
+                .simultaneousGesture(
+                    TapGesture().onEnded({ _ in
+                        if showDailyPreview {
+                            activeDay = 1
+                            showDailyPreview = false
+                        }
+                    })
+                )
                 
                 WeatherView(
                     activeDay: 2,
@@ -146,15 +156,20 @@ struct ContentView: View {
                     showDailyPreview: $showDailyPreview
                 )
                 .frame(width: showDailyPreview ? theme.screen.width / 3 : 0)
+                .contentShape(Rectangle())
                 .padding(.vertical, 30)
                 .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
                 .cornerRadius((showCityList || showDayList) ? 30 : 0)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .gesture(showPreviewGesture)
-                .onTapGesture(perform: {
-                    activeDay = 2
-                    showDailyPreview = false
-                })
+                .simultaneousGesture(
+                    TapGesture().onEnded({ _ in
+                        if showDailyPreview {
+                            activeDay = 2
+                            showDailyPreview = false
+                        }
+                    })
+                )
             }
             .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             

@@ -71,6 +71,7 @@ struct PlaceSearchView: View {
                     VStack(alignment: .leading) {
                         ForEach(citySearchViewModel.searchCitys, id: \.self) { item in
                             ItemView(item: item)
+                                .contentShape(Rectangle())
                                 .environmentObject(Theme())
                                 .onTapGesture {
                                     viewModel.addPlace(item)
@@ -131,13 +132,8 @@ struct ItemView: View {
             
             Spacer()
             
-            Button(action: {
-                viewModel.addPlace(item)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "plus")
-                    .font(.system(size: 38))
-            })
+            Image(systemName: "plus")
+                .font(.system(size: 38))
         }
     }
 }
