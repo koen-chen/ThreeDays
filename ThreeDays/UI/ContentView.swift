@@ -24,6 +24,8 @@ struct ContentView: View {
     @State var tempWeatherDragState = CGSize.zero
     @State var weatherAPIDone = false
     
+    @State var showDailyPreview = false
+    
     var isConnected: Bool {
         return netMonitor.status == .connected ? true : false
     }
@@ -32,68 +34,129 @@ struct ContentView: View {
         return theme.screen.height < 800 ? theme.screen.height / 2 : 500
     }
     
+    var showPreviewGesture: some Gesture  {
+        DragGesture()
+            .onEnded { value in
+                if value.translation.width < -50 || value.translation.width > 30 {
+                    if !self.showDayList, !self.showCityList {
+                        showDailyPreview.toggle()
+                    }
+                }
+            }
+    }
+    
     var body: some View {
         ZStack {
             BlurView(style: .systemMaterial).background(theme.backgroundColor)
           
-            WeatherView(
-                activeDay: activeDay,
-                showDayList: $showDayList,
-                showCityList: $showCityList,
-                showWeatherDetail: $showWeatherDetail
-            )
-            .padding(.vertical, 30)
-            .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
-            .cornerRadius((showCityList || showDayList) ? 30 : 0)
-            .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
-            .offset(y: showDayList ? CGFloat(200) : 0)
-            .offset(y: showCityList ? -(theme.screen.height - cityListShowHeight) : 0)
-            .offset(y: weatherDragState.height)
-            .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
-            .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
-            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-            .gesture(
-                DragGesture()
-                    .onChanged({ value in
-                        if value.translation.height < -50 || value.translation.height > 50 {
-                            self.weatherDragState = value.translation
-                            
-                            if (self.weatherDragState.height + self.tempWeatherDragState.height) > 100 {
-                                self.weatherDragState.height = 50
+            HStack(alignment: .top, spacing: 0) {
+                WeatherView(
+                    activeDay: showDailyPreview ? 0 : activeDay,
+                    showDayList: $showDayList,
+                    showCityList: $showCityList,
+                    showWeatherDetail: $showWeatherDetail,
+                    showDailyPreview: $showDailyPreview
+                )
+                .frame(maxWidth: showDailyPreview ? theme.screen.width / 3 : .infinity)
+                .padding(.vertical, 30)
+                .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
+                .cornerRadius((showCityList || showDayList) ? 30 : 0)
+                .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
+                .offset(y: showDayList ? CGFloat(200) : 0)
+                .offset(y: showCityList ? -(theme.screen.height - cityListShowHeight) : 0)
+                .offset(y: weatherDragState.height)
+                .padding(.horizontal, showDayList ? 10 : CGFloat.zero)
+                .padding(.horizontal, showCityList ? 10 : CGFloat.zero)
+                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+                .gesture(
+                    DragGesture()
+                        .onChanged({ value in
+                            if value.translation.height < -50 || value.translation.height > 50 {
+                                self.weatherDragState = value.translation
                                 
-                                self.showCityList = false
-                                self.showDayList = true
+                                if (self.weatherDragState.height + self.tempWeatherDragState.height) > 100 {
+                                    self.weatherDragState.height = 50
+                                    
+                                    self.showCityList = false
+                                    self.showDayList = true
+                                }
+                                
+                                if (self.weatherDragState.height + self.tempWeatherDragState.height)  < -100 {
+                                    self.weatherDragState.height = -100
+                                    self.showCityList = true
+                                    self.showDayList = false
+                                }
                             }
-                            
-                            if (self.weatherDragState.height + self.tempWeatherDragState.height)  < -100 {
-                                self.weatherDragState.height = -100
-                                self.showCityList = true
+                        })
+                        .onEnded({ value in
+                            if self.weatherDragState.height < -10 {
                                 self.showDayList = false
                             }
                             
+                            if self.weatherDragState.height > 50 {
+                                self.showCityList = false
+                            }
                             
-                        }
-                    })
-                    .onEnded({ value in
-                        if self.weatherDragState.height < -10 {
-                            self.showDayList = false
-                        }
-                        
-                        if self.weatherDragState.height > 50 {
-                            self.showCityList = false
-                        }
-                        
-                        self.tempWeatherDragState = self.weatherDragState
-                        
+                            if value.translation.width < -50 || value.translation.width > 50 {
+                                if !self.showDayList, !self.showCityList {
+                                    showDailyPreview.toggle()
+                                }
+                            }
+                            
+                            self.tempWeatherDragState = self.weatherDragState
+                            
+                            self.weatherDragState = .zero
+                        })
+                )
+                .onChange(of: showCityList) { value in
+                    if !value {
                         self.weatherDragState = .zero
-                    })
-            )
-            .onChange(of: showCityList) { value in
-                if !value {
-                    self.weatherDragState = .zero
-                    self.showCityListFull = false
+                        self.showCityListFull = false
+                    }
                 }
+                .onTapGesture(perform: {
+                    activeDay = 0
+                    showDailyPreview = false
+                })
+                
+                
+                WeatherView(
+                    activeDay: 1,
+                    showDayList: $showDayList,
+                    showCityList: $showCityList,
+                    showWeatherDetail: $showWeatherDetail,
+                    showDailyPreview: $showDailyPreview
+                )
+                .frame(width: showDailyPreview ? theme.screen.width / 3 : 0)
+                .padding(.vertical, 30)
+                .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
+                .cornerRadius((showCityList || showDayList) ? 30 : 0)
+                .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
+                .gesture(showPreviewGesture)
+                .onTapGesture(perform: {
+                    activeDay = 1
+                    showDailyPreview = false
+                })
+                
+                WeatherView(
+                    activeDay: 2,
+                    showDayList: $showDayList,
+                    showCityList: $showCityList,
+                    showWeatherDetail: $showWeatherDetail,
+                    showDailyPreview: $showDailyPreview
+                )
+                .frame(width: showDailyPreview ? theme.screen.width / 3 : 0)
+                .padding(.vertical, 30)
+                .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
+                .cornerRadius((showCityList || showDayList) ? 30 : 0)
+                .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
+                .gesture(showPreviewGesture)
+                .onTapGesture(perform: {
+                    activeDay = 2
+                    showDailyPreview = false
+                })
             }
+            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             
 //            LaunchView()
 //                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
@@ -107,6 +170,7 @@ struct ContentView: View {
 //                    }
 //                })
 
+            
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
                 .offset(y: showDayList ? 10 : -theme.screen.height)
@@ -153,7 +217,7 @@ struct ContentView: View {
                 }
             
             WeatherDetailView(showWeatherDetail: $showWeatherDetail)
-                .offset(x: showWeatherDetail ? 0 : theme.screen.width)
+                .offset(x: showWeatherDetail ? 0 : theme.screen.width + 50)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
         }
         .ignoresSafeArea()

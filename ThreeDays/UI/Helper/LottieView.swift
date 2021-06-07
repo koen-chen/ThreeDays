@@ -22,12 +22,10 @@ struct LottieView: UIViewRepresentable {
     let animationView = AnimationView()
    
     var weatherIcon: String {
-        print(Description.weatherLottieIcon(weatherCode))
         return Description.weatherLottieIcon(weatherCode)
     }
     
     var weatherName: String {
-        print("weather-\(theme.iconText)-\(weatherIcon)")
         return "weather-\(theme.iconText)-\(weatherIcon)"
     }
     

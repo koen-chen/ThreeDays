@@ -21,7 +21,6 @@ struct DayView: View {
                 
                 HStack(alignment: .lastTextBaseline) {
                     Text(dailyText)
-                        .font(.custom(theme.font, size: 42))
                     
                     VStack {
                         Button(action: {

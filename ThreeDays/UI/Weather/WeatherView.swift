@@ -15,6 +15,7 @@ struct WeatherView: View {
     @Binding var showDayList: Bool
     @Binding var showCityList: Bool
     @Binding var showWeatherDetail: Bool
+    @Binding var showDailyPreview: Bool
     
     var dailyText: String {
         return Description.dayDesc(activeDay)
@@ -64,48 +65,74 @@ struct WeatherView: View {
             DayView(
                 dailyText: dailyText,
                 dateText: dateText,
-                showDayList: $showDayList
+                showDayList: showDailyPreview ? .constant(false) : $showDayList
             )
+            .font(.custom(theme.font, size: showDailyPreview ? 38 : 40))
             
             VStack(alignment: .center, spacing: 15) {
-                VStack {
-                    LottieView(isWeather: true, weatherCode: nowWeather?.icon)
-                        .frame(width: 180, height: 180)
-                        .padding(.bottom, 20)
+                if !showDailyPreview {
+                    VStack {
+                        LottieView(isWeather: true, weatherCode: nowWeather?.icon)
+                            .frame(width: 160, height: 160)
+                            .padding(.bottom, 10)
+                    }
                 }
                 
-                VStack(alignment: .center, spacing: 15) {
+                VStack(alignment: .center, spacing: 0) {
                     Text("\(weatherDesc)")
-                        .font(.custom(theme.font, size: 66))
+                        .font(.custom(theme.font, size: showDailyPreview ? 48 : 62))
+                        .frame(maxWidth: showDailyPreview ? 60 : .infinity)
+                        .frame(height: showDailyPreview ? 240 : nil)
                     
-                    if activeDay == 0 {
-                        ZStack(alignment: .bottom) {
-                            Text("\(nowWeather?.temp ?? "")°")
-                                .font(.custom(theme.font, size: 66))
-                                .offset(x: 10)
-                
+                    if !showDailyPreview && activeDay == 0 {
+                        Text("\(nowWeather?.temp ?? "")°")
+                            .font(.custom(theme.font, size: 60))
+                            .offset(x: 10)
+                    }
+                    
+                    if showDailyPreview {
+                        VStack(alignment: .center, spacing: 10) {
+                            TempLimitView(label: "最高", value: dailyWeather?.tempMax ?? "")
+                            Divider().background(theme.backgroundColor).padding(.horizontal, 30)
+                            TempLimitView(label: "最低", value: dailyWeather?.tempMin ?? "")
+                        }
+                    } else {
+                        HStack(alignment: .center, spacing: 20) {
+                            TempLimitView(label: "最低", value: dailyWeather?.tempMin ?? "")
+                            TempLimitView(label: "最高", value: dailyWeather?.tempMax  ?? "")
+                        }
+                        .padding(.top, 15)
+                    }
+                    
+                    if showDailyPreview {
+                        if let windDirDay = dailyWeather?.windDirDay,
+                           let windSpeedDay = dailyWeather?.windSpeedDay {
+                            VStack(spacing: 10) {
+                                Text("\(windDirDay)")
+                                Text("\(windSpeedDay)级")
+                            }
+                            .padding(.top, 50)
                         }
                     }
-                    
-                    HStack(alignment: .center, spacing: 20) {
-                        Text("最低 \(dailyWeather?.tempMin ?? "")°")
-                        Text("最高 \(dailyWeather?.tempMax ?? "")°")
-                    }
-                    .font(.custom(theme.font, size: 18))
-                    .offset(x: 5)
-                    
                 }
                 .onTapGesture(perform: {
-                    self.showWeatherDetail.toggle()
+                    if !showDailyPreview {
+                        self.showWeatherDetail.toggle()
+                    }
                 })
             }
             .offset(y: -20)
+            .padding(.top, showDailyPreview ? 60 : 0)
+            .padding(.bottom, showDailyPreview ? 20 : 0)
             
-            PlaceView(showCityList: $showCityList)
+            if !showDailyPreview {
+                PlaceView(showCityList: $showCityList)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(theme.textColor)
         .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
+ 
     }
 }
 
@@ -115,10 +142,29 @@ struct WeatherView_Previews: PreviewProvider {
             activeDay: 0,
             showDayList: .constant(false),
             showCityList: .constant(false),
-            showWeatherDetail: .constant(false)
+            showWeatherDetail: .constant(false),
+            showDailyPreview: .constant(false)
         )
         .environmentObject(Theme())
         .environmentObject(WeatherViewModel())
         .environmentObject(PlaceListViewModel())
+    }
+}
+
+struct TempLimitView: View {
+    @EnvironmentObject var theme: Theme
+    var label: String
+    var value: String
+    
+    var body: some View {
+        HStack(alignment: .lastTextBaseline) {
+            Text("\(label)")
+                .font(.custom(theme.font, size: 16))
+                .opacity(0.9)
+            
+            Text("\(value)°")
+                .font(.custom(theme.font, size: 20))
+        }
+        .offset(x: 5)
     }
 }
