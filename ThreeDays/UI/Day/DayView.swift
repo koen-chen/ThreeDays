@@ -16,7 +16,7 @@ struct DayView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .firstTextBaseline) {
                 Spacer()
                 
                 HStack(alignment: .lastTextBaseline) {

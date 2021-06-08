@@ -16,6 +16,7 @@ struct WeatherView: View {
     @Binding var showCityList: Bool
     @Binding var showWeatherDetail: Bool
     @Binding var showDailyPreview: Bool
+    @State var showProfileView: Bool = false
     
     var dailyText: String {
         return Description.dayDesc(activeDay)
@@ -62,12 +63,33 @@ struct WeatherView: View {
             }
             .opacity(showDayList ? 1 : 0)
             
-            DayView(
-                dailyText: dailyText,
-                dateText: dateText,
-                showDayList: showDailyPreview ? .constant(false) : $showDayList
-            )
-            .font(.custom(theme.font, size: showDailyPreview ? 38 : 40))
+           
+            HStack(alignment: showDailyPreview ? .center : .firstTextBaseline) {
+                if !showDailyPreview {
+                    Button(action: {
+                        self.showProfileView.toggle()
+                    }, label: {
+                        Image(systemName: "list.dash")
+                            .font(.system(size: 24))
+                            .padding(.all, 30)
+                            .offset(y: 20)
+                    })
+                    .fullScreenCover(isPresented: $showProfileView) {
+                        ProfileView()
+                    }
+                    
+                    Spacer()
+                }
+                
+                
+                DayView(
+                    dailyText: dailyText,
+                    dateText: dateText,
+                    showDayList: showDailyPreview ? .constant(false) : $showDayList
+                )
+                .font(.custom(theme.font, size: showDailyPreview ? 38 : 40))
+            }
+            
             
             VStack(alignment: .center, spacing: 15) {
                 if !showDailyPreview {
