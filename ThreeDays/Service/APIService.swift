@@ -106,20 +106,20 @@ class APIService {
             .eraseToAnyPublisher()
     }
     
-    func getWeatherDaily(_ location: String) -> AnyPublisher<WeatherDailyModel, Error> {
-        print("逐天天气URI",  EndPoint.getWeatherDaily(location).url)
+    func getWeatherDaily(_ location: String, daily: String = "3d") -> AnyPublisher<WeatherDailyModel, Error> {
+        print("逐天天气URI",  EndPoint.getWeatherDaily(location, daily: daily).url)
         
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker
-            .dataTaskPublisher(for: EndPoint.getWeatherDaily(location).url)
+            .dataTaskPublisher(for: EndPoint.getWeatherDaily(location, daily: daily).url)
             .receive(on: queue)
             .map { $0.0 }
             .decode(type: WeatherDailyModel.self, decoder: decoder)
             .mapError { error in
                 switch error {
                     case is URLError:
-                        return Error.urlError(EndPoint.getWeatherDaily(location).url)
+                        return Error.urlError(EndPoint.getWeatherDaily(location, daily: daily).url)
                     default:
                         return Error.invalidResponse
                 }

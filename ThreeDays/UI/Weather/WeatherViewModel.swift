@@ -21,7 +21,7 @@ class WeatherViewModel: ObservableObject {
         } receiveValue: { id in
             if let id = id {
                 self.getWeatherNow(location: id)
-                self.getWeatherDaily(location: id)
+                self.getWeatherDaily(location: id, daily: "10d")
                 self.getWeatherHourly(location: id)
             }
         }.store(in: &subscriptions)
@@ -37,8 +37,8 @@ class WeatherViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
-    func getWeatherDaily (location: String) {
-        API.getWeatherDaily(location)
+    func getWeatherDaily (location: String, daily: String = "3d") {
+        API.getWeatherDaily(location, daily: daily)
             .receive(on: DispatchQueue.main)
             .sink { completion in
             } receiveValue: { value in

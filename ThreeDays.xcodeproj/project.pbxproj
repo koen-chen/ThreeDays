@@ -62,6 +62,8 @@
 		4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
 		4453CA612667691800C5DECB /* WeatherHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CA602667691800C5DECB /* WeatherHourlyModel.swift */; };
 		4453CA622667691800C5DECB /* WeatherHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CA602667691800C5DECB /* WeatherHourlyModel.swift */; };
+		4477746C26724B67001E0CED /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477746B26724B67001E0CED /* Extension.swift */; };
+		4477746D26724B67001E0CED /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477746B26724B67001E0CED /* Extension.swift */; };
 		449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */; };
 		449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E19263AF3B10095DC12 /* ContentView.swift */; };
 		449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
@@ -148,6 +150,7 @@
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		4453CA602667691800C5DECB /* WeatherHourlyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHourlyModel.swift; sourceTree = "<group>"; };
 		446B2C842663C1870032F83C /* release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = release.plist; sourceTree = "<group>"; };
+		4477746B26724B67001E0CED /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		449D3E14263AF3B10095DC12 /* ThreeDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysApp.swift; sourceTree = "<group>"; };
 		449D3E19263AF3B10095DC12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 				441526C2265C93D200FD0700 /* Theme.swift */,
 				44B8C5FB2665BFEC00066AAF /* Description.swift */,
 				44B8C6052665C67B00066AAF /* ChinaPlace.swift */,
+				4477746B26724B67001E0CED /* Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -650,6 +654,7 @@
 				4453CA612667691800C5DECB /* WeatherHourlyModel.swift in Sources */,
 				44B1CDDE2657B8E800DC5502 /* PersistenceService.swift in Sources */,
 				440E78FF2644CCF600105EB7 /* WeatherNowModel.swift in Sources */,
+				4477746C26724B67001E0CED /* Extension.swift in Sources */,
 				441526C3265C93D200FD0700 /* Theme.swift in Sources */,
 				44FEBAED264392EB00DD785C /* LottieView.swift in Sources */,
 				44F999182652702A00F6D646 /* PlaceListView.swift in Sources */,
@@ -684,6 +689,7 @@
 				4453CA622667691800C5DECB /* WeatherHourlyModel.swift in Sources */,
 				44CEEB0D2662359300518FEC /* PersistenceService.swift in Sources */,
 				44CEEB0E2662359300518FEC /* WeatherNowModel.swift in Sources */,
+				4477746D26724B67001E0CED /* Extension.swift in Sources */,
 				44CEEB0F2662359300518FEC /* Theme.swift in Sources */,
 				44CEEB102662359300518FEC /* LottieView.swift in Sources */,
 				44CEEB112662359300518FEC /* PlaceListView.swift in Sources */,
