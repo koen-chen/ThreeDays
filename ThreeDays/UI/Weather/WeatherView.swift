@@ -69,8 +69,8 @@ struct WeatherView: View {
                     Button(action: {
                         self.showProfileView.toggle()
                     }, label: {
-                        Image(systemName: "list.dash")
-                            .font(.system(size: 24))
+                        Image(systemName: "circle.bottomhalf.fill")
+                            .font(.system(size: 18))
                             .padding(.all, 30)
                             .offset(y: 20)
                     })

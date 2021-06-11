@@ -10,8 +10,12 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var theme: Theme
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.openURL) var openURL
 
     @State var showOperatetionGuide: Bool = false
+    @State var showShareSheet: Bool = false
+    
+    let shareLink = "https://www.apple.com"
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,7 +23,8 @@ struct ProfileView: View {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "arrow.backward")
-                    .font(.system(size: 28))
+                    .font(.system(size: 18))
+                    .padding(.all, 10)
             })
             
             ScrollView(showsIndicators: false) {
@@ -38,14 +43,24 @@ struct ProfileView: View {
                     Divider().background(theme.backgroundColor).padding(.vertical, 10)
                     
                     Text("建议评分")
+                        .onTapGesture(perform: {
+                            openURL(URL(string: shareLink)!)
+                        })
                     
                     Divider().background(theme.backgroundColor).padding(.vertical, 10)
                     
                     Text("分享推荐")
+                        .onTapGesture(perform: {
+                            showShareSheet.toggle()
+                        })
+                        .sheet(isPresented: $showShareSheet) {
+                            ShareSheet(activityItems: ["三日天气", URL(string: shareLink)!])
+                        }
                     
                     Divider().background(theme.backgroundColor).padding(.vertical, 10)
                     
-                    //ProfileItem(label: "当前版本")
+                    Text("当前版本：1.0.0")
+                        .font(.custom(theme.font, size: 14))
                     
                     Spacer()
                 }

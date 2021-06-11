@@ -189,8 +189,8 @@ struct WeatherDetailView: View {
                             VStack(spacing: 10) {
                                 if let pop = item.pop, Int(pop) != 0 {
                                    Text("\(pop)%")
-                                        .opacity(0.6)
-                                        .font(.system(size: 14, weight: .bold, design: .default))
+                                        .opacity(0.7)
+                                        .font(.system(size: 12, weight: .bold, design: .default))
                                 }
                                 
                                 VStack(spacing: 20) {
