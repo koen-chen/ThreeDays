@@ -44,7 +44,14 @@ struct WeatherDetailView: View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("未来24小时预报")
+                        HStack {
+                            Text("未来24小时预报")
+                            Image(systemName: "chevron.up.chevron.down")
+                                .rotationEffect(Angle(degrees: 90))
+                                .font(.system(size: 14))
+                            
+                        }
+                        
                         Spacer()
                         
                         Button(action: {
@@ -68,7 +75,13 @@ struct WeatherDetailView: View {
                 .padding(.horizontal, 20)
                 
                 VStack(alignment: .leading) {
-                    Text("未来10日预报")
+                    HStack {
+                        Text("未来10日预报")
+                        
+                        Image(systemName: "chevron.up.chevron.down")
+                            .font(.system(size: 14))
+                           
+                    }
                     
                     if let daily = dailyModel.daily {
                         ScrollView(.vertical, showsIndicators: false) {
@@ -92,7 +105,7 @@ struct WeatherDetailView: View {
         .foregroundColor(theme.textColor)
         .font(.custom(theme.font, size: 24))
         .frame(maxWidth: .infinity)
-        .background(BlurView(style: .systemMaterial).background(theme.backgroundColor.opacity(0.4)))
+        .background(BlurView(style: .systemMaterial).background(theme.backgroundColor))
         .ignoresSafeArea()
     }
     

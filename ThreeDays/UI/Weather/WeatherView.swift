@@ -76,11 +76,11 @@ struct WeatherView: View {
                     })
                     .fullScreenCover(isPresented: $showProfileView) {
                         ProfileView()
+                            .environmentObject(Theme())
                     }
                     
                     Spacer()
                 }
-                
                 
                 DayView(
                     dailyText: dailyText,
