@@ -56,6 +56,8 @@
 		441F2C9026628258003828DB /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6926628232003828DB /* weather-night-wind.json */; };
 		442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */; };
 		44376C3D2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */; };
+		443B48A52673130E0017AE1B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443B48A42673130E0017AE1B /* Launch Screen.storyboard */; };
+		443B48A62673130E0017AE1B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443B48A42673130E0017AE1B /* Launch Screen.storyboard */; };
 		4440F80E26677C7E0027D647 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440F80D26677C7E0027D647 /* WeatherDetailView.swift */; };
 		4440F80F26677C7E0027D647 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440F80D26677C7E0027D647 /* WeatherDetailView.swift */; };
 		44453BA3265B62C50060EFD7 /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44453BA2265B62C50060EFD7 /* PlaceListViewModel.swift */; };
@@ -147,6 +149,7 @@
 		441F2C6A26628232003828DB /* weather-day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-clear-sky.json"; sourceTree = "<group>"; };
 		442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerifCN-SemiBold.otf"; sourceTree = "<group>"; };
+		443B48A42673130E0017AE1B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4440F80D26677C7E0027D647 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 		44453BA2265B62C50060EFD7 /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
@@ -267,6 +270,7 @@
 				449D3E20263AF3B20095DC12 /* Info.plist */,
 				446B2C842663C1870032F83C /* release.plist */,
 				449D3E1D263AF3B20095DC12 /* Preview Content */,
+				443B48A42673130E0017AE1B /* Launch Screen.storyboard */,
 			);
 			path = ThreeDays;
 			sourceTree = "<group>";
@@ -502,6 +506,7 @@
 				441F2C7B26628232003828DB /* weather-day-scattered-clouds.json in Resources */,
 				441F2C6B26628232003828DB /* weather-day-snow.json in Resources */,
 				44B8C6092665C84900066AAF /* China-Place-List.csv in Resources */,
+				443B48A52673130E0017AE1B /* Launch Screen.storyboard in Resources */,
 				441F2C7A26628232003828DB /* loading-night.json in Resources */,
 				441F2C7D26628232003828DB /* weather-day-clear-sky.json in Resources */,
 				441F2C7026628232003828DB /* weather-day-wind.json in Resources */,
@@ -533,6 +538,7 @@
 				441F2C8126628258003828DB /* weather-day-thunderstorm.json in Resources */,
 				441F2C8626628258003828DB /* weather-day-mist.json in Resources */,
 				441F2C7F26628258003828DB /* weather-day-clear-sky.json in Resources */,
+				443B48A62673130E0017AE1B /* Launch Screen.storyboard in Resources */,
 				441F2C8B26628258003828DB /* weather-day-wind.json in Resources */,
 				44B8C60A2665C84900066AAF /* China-Place-List.csv in Resources */,
 				44CEEB282662359300518FEC /* Assets.xcassets in Resources */,

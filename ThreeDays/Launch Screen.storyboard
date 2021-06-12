@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GKF-0D-IQd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4Zn-e9-rO1">
+                                <rect key="frame" x="87" y="265.5" width="240" height="365"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="2e8-Kz-Bvx"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" id="B6K-dC-XHJ"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="G0p-OH-zOb"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="JVl-ge-HPH"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="383" id="dEo-XN-1hd"/>
+                                    <constraint firstAttribute="width" constant="240" id="h9v-Hi-333"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GKF-0D-IQd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1IR-8y-AYJ"/>
+                            <constraint firstItem="4Zn-e9-rO1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AJJ-ph-k4P"/>
+                            <constraint firstItem="GKF-0D-IQd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="NDq-lP-1Hs"/>
+                            <constraint firstItem="4Zn-e9-rO1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ubp-TD-kmW"/>
+                            <constraint firstAttribute="trailing" secondItem="GKF-0D-IQd" secondAttribute="trailing" id="dBf-qy-W5a"/>
+                            <constraint firstItem="4Zn-e9-rO1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fHy-C4-hVv"/>
+                            <constraint firstItem="4Zn-e9-rO1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tuG-xD-dF9"/>
+                            <constraint firstAttribute="bottom" secondItem="GKF-0D-IQd" secondAttribute="bottom" id="vRF-ic-Ecb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="200" height="200"/>
+        <image name="logo" width="200" height="365"/>
+    </resources>
+</document>

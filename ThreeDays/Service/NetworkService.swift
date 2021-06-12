@@ -17,7 +17,7 @@ enum ConnectionStatus {
 }
 
 class NetworkService: ObservableObject {
-    @Published var status: ConnectionStatus = .disconnected
+    @Published var status: ConnectionStatus = .connected
     @Published var type: ConnectionType = .wifi
     
     private let monitor = NWPathMonitor()

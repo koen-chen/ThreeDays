@@ -72,7 +72,6 @@ struct ContentView: View {
                 .gesture(
                     DragGesture()
                         .onChanged({ value in
-                            print(value.translation.width)
                             if value.translation.height < -50 || value.translation.height > 50 {
                                 self.weatherDragState = value.translation
                                 

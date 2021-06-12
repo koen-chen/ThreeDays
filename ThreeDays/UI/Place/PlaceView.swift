@@ -49,6 +49,6 @@ struct PlaceView: View {
             }
         }
         .padding(.horizontal, 30)
-        .padding(.vertical, theme.screen.height < 800 ? 10 : 30)
+        .padding(.vertical, theme.screen.height < 800 ? 20 : 50)
     }
 }
