@@ -25,7 +25,7 @@ struct PersistenceService {
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("错误 \(error), \(error.userInfo)")
             }
         })
     }
@@ -39,7 +39,7 @@ struct PersistenceService {
                     try context.save()
                 } catch {
                     let nserror = error as NSError
-                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    fatalError("错误 \(nserror), \(nserror.userInfo)")
                 }
             }
         }

@@ -28,7 +28,7 @@ struct ProfileView: View {
             })
             
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 20) {
+                LazyVStack(alignment: .leading, spacing: 20) {
                     Divider().background(theme.backgroundColor).padding(.vertical, 10)
                     
                     Text("操作说明")

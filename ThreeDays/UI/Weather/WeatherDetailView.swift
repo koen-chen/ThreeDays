@@ -146,7 +146,7 @@ struct WeatherDetailView: View {
         VStack(alignment: .leading, spacing: 0) {
             Spacer()
             
-            HStack(spacing: 0) {
+            LazyHStack(spacing: 0) {
                 ForEach(hourly.indices) { i in
                     VStack(spacing: 5) {
                         if let hour = timeString(hourly[i].fxTime) {
@@ -163,6 +163,7 @@ struct WeatherDetailView: View {
                     
                 }
             }
+            .fixedSize()
         }
         .frame(width:CGFloat(hourly.count) * hourlyWidth, height: 200)
         .opacity(0.9)
