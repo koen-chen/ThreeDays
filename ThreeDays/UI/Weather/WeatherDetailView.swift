@@ -69,7 +69,6 @@ struct WeatherDetailView: View {
                                 .overlay(drawGradient(hourly))
                                 .overlay(drawLine(hourly))
                                 .overlay(drawPoints(hourly))
-                                //.overlay(drawWindInfo(hourly))
                         }
                     }
                 }
@@ -86,7 +85,7 @@ struct WeatherDetailView: View {
                     
                     if let daily = dailyModel.daily {
                         ScrollView(.vertical, showsIndicators: false) {
-                            VStack {
+                            LazyVStack {
                                 ForEach(daily.indices) { index in
                                     Day15Item(item: daily[index])
                                     Divider().background(theme.backgroundColor).padding(.vertical, 5)
@@ -225,8 +224,8 @@ struct WeatherDetailView: View {
                         .overlay(
                             VStack(spacing: 0) {
                                 VStack(spacing: 15) {
-//                                    LottieView(isWeather: true, weatherCode: item.icon)
-//                                        .frame(width: 30, height: 30)
+                                    LottieView(isWeather: true, weatherCode: item.icon)
+                                        .frame(width: 30, height: 30)
                                     Text("\(temp)°")
                                 }
                             }

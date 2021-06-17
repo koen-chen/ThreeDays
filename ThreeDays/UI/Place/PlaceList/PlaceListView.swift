@@ -67,7 +67,7 @@ struct PlaceListView: View {
                 
               
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .firstTextBaseline, spacing: 40) {
+                    LazyHStack(alignment: .firstTextBaseline, spacing: 40) {
                         ForEach(dbPlaceList) { item in
                             VStack(spacing: 0) {
                                 if showRemoveBtn {

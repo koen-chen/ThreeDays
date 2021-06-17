@@ -19,6 +19,7 @@ struct ContentView: View {
     @State var activeDay = 0
     @State var showCityList = false
     @State var showCityListFull = false
+    @State var showProfileView = false
     @State var showWeatherDetail = false
     @State var weatherDragState = CGSize.zero
     @State var tempWeatherDragState = CGSize.zero
@@ -55,7 +56,8 @@ struct ContentView: View {
                     showDayList: $showDayList,
                     showCityList: $showCityList,
                     showWeatherDetail: $showWeatherDetail,
-                    showDailyPreview: $showDailyPreview
+                    showDailyPreview: $showDailyPreview,
+                    showProfileView: $showProfileView
                 )
                 .frame(maxWidth: showDailyPreview ? theme.screen.width / 3 : .infinity)
                 .contentShape(Rectangle())
@@ -98,9 +100,13 @@ struct ContentView: View {
                                 self.showCityList = false
                             }
                             
-                            if value.translation.width < -50 || value.translation.width > 50 {
-                                if !self.showDayList, !self.showCityList {
-                                    showDailyPreview.toggle()
+                            if !self.showDayList, !self.showCityList {
+                                if value.translation.width < -50 {
+                                    showProfileView ? showProfileView.toggle() : showDailyPreview.toggle()
+                                }
+                                
+                                if value.translation.width > 50 {
+                                    showDailyPreview ? showDailyPreview.toggle() : showProfileView.toggle()
                                 }
                             }
                             
@@ -129,7 +135,8 @@ struct ContentView: View {
                     showDayList: $showDayList,
                     showCityList: $showCityList,
                     showWeatherDetail: $showWeatherDetail,
-                    showDailyPreview: $showDailyPreview
+                    showDailyPreview: $showDailyPreview,
+                    showProfileView: $showProfileView
                 )
                 .frame(width: showDailyPreview ? theme.screen.width / 3 : 0)
                 .contentShape(Rectangle())
@@ -152,7 +159,8 @@ struct ContentView: View {
                     showDayList: $showDayList,
                     showCityList: $showCityList,
                     showWeatherDetail: $showWeatherDetail,
-                    showDailyPreview: $showDailyPreview
+                    showDailyPreview: $showDailyPreview,
+                    showProfileView: $showProfileView
                 )
                 .frame(width: showDailyPreview ? theme.screen.width / 3 : 0)
                 .contentShape(Rectangle())
@@ -233,6 +241,11 @@ struct ContentView: View {
             WeatherDetailView(showWeatherDetail: $showWeatherDetail)
                 .frame(width: showWeatherDetail ? theme.screen.width : 0, height: showWeatherDetail ? theme.screen.height : 0)
                 .opacity(showWeatherDetail ? 1 : 0)
+                .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
+            
+            
+            ProfileView(showProfileView: $showProfileView)
+                .offset(x: showProfileView ? 0 : -theme.screen.width)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
         }
         .ignoresSafeArea()

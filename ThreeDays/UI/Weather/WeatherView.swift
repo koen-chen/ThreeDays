@@ -16,7 +16,7 @@ struct WeatherView: View {
     @Binding var showCityList: Bool
     @Binding var showWeatherDetail: Bool
     @Binding var showDailyPreview: Bool
-    @State var showProfileView: Bool = false
+    @Binding var showProfileView: Bool
 
     var dateText: (Int, Int) {
         guard let daily = viewModel.weatherDaily?.daily[self.activeDay] else {
@@ -53,10 +53,6 @@ struct WeatherView: View {
                             .padding(.all, 30)
                             .offset(y: 20)
                     })
-                    .fullScreenCover(isPresented: $showProfileView) {
-                        ProfileView()
-                            .environmentObject(Theme())
-                    }
                     
                     Spacer()
                 }
@@ -144,7 +140,8 @@ struct WeatherView_Previews: PreviewProvider {
             showDayList: .constant(false),
             showCityList: .constant(false),
             showWeatherDetail: .constant(false),
-            showDailyPreview: .constant(false)
+            showDailyPreview: .constant(false),
+            showProfileView: .constant(false)
         )
         .environmentObject(Theme())
         .environmentObject(WeatherViewModel())

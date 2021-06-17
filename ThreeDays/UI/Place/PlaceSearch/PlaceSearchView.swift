@@ -68,7 +68,7 @@ struct PlaceSearchView: View {
             
             if citySearchViewModel.searchCitys.count > 0 {
                 ScrollView(showsIndicators: false) {
-                    VStack(alignment: .leading) {
+                    LazyVStack(alignment: .leading) {
                         ForEach(citySearchViewModel.searchCitys, id: \.self) { item in
                             ItemView(item: item)
                                 .contentShape(Rectangle())

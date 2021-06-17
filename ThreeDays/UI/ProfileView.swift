@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var theme: Theme
-    @Environment(\.presentationMode) var presentationMode
     @Environment(\.openURL) var openURL
 
+    @Binding var showProfileView: Bool
     @State var showOperatetionGuide: Bool = false
     @State var showShareSheet: Bool = false
     
@@ -20,7 +20,7 @@ struct ProfileView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Button(action: {
-                presentationMode.wrappedValue.dismiss()
+                showProfileView.toggle()
             }, label: {
                 Image(systemName: "arrow.backward")
                     .font(.system(size: 18))
@@ -68,7 +68,7 @@ struct ProfileView: View {
             
         }
         .padding(.horizontal, 20)
-        .padding(.top, 20)
+        .padding(.vertical, 50)
         .font(.custom(theme.font, size: 20))
         .foregroundColor(theme.textColor)
         .shadow(color: theme.textColor.opacity(0.2), radius: 2, x: 0, y:  5)
@@ -94,8 +94,8 @@ struct OperatetionGuideView: View {
             GuideItem(icon: "gesture-click", desc: "查看天气详情") {
                 HStack(alignment: .center) {
                     Text("单击天气图标")
-//                    LottieView(isWeather: true, weatherCode: "100")
-//                        .frame(width: 40, height: 40)
+                    LottieView(isWeather: true, weatherCode: "100")
+                        .frame(width: 40, height: 40)
                 }
             }
             
@@ -110,6 +110,10 @@ struct OperatetionGuideView: View {
             GuideItem(icon: "gesture-left", desc: "查看3日天气概览") {
                 Text("向左滑动屏幕")
             }
+            
+            GuideItem(icon: "gesture-right", desc: "查看操作说明") {
+                Text("向右滑动屏幕")
+            }
         }
         .padding(.horizontal, 10)
         .foregroundColor(theme.textColor)
@@ -118,7 +122,7 @@ struct OperatetionGuideView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(showProfileView: .constant(false))
             .environmentObject(Theme())
     }
 }

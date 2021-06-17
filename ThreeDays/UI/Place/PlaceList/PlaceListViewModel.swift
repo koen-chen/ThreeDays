@@ -24,6 +24,7 @@ class PlaceListViewModel: ObservableObject {
             if let id = self.appPlace?.placeID {
                 self.saveAppLocation(id)
             }
+            self.locationService.cancelLocation()
         } receiveValue: { place in
             self.appPlace = place
         }.store(in: &subscriptions)
