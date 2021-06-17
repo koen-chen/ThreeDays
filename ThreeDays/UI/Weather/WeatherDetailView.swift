@@ -45,7 +45,7 @@ struct WeatherDetailView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         HStack {
-                            Text("未来24小时预报")
+                            Text("未来24时预报")
                             Image(systemName: "chevron.up.chevron.down")
                                 .rotationEffect(Angle(degrees: 90))
                                 .font(.system(size: 14))
@@ -66,9 +66,10 @@ struct WeatherDetailView: View {
                     if let hourly = hourlyModel.hourly {
                         ScrollView(.horizontal, showsIndicators: false) {
                             drawGrid(hourly)
+                                .overlay(drawGradient(hourly))
                                 .overlay(drawLine(hourly))
                                 .overlay(drawPoints(hourly))
-                                .overlay(drawWindInfo(hourly))
+                                //.overlay(drawWindInfo(hourly))
                         }
                     }
                 }
@@ -109,6 +110,39 @@ struct WeatherDetailView: View {
         .ignoresSafeArea()
     }
     
+    func drawGradient(_ hourly: [WeatherHourlyModel.Hourly]) -> some View {
+        LinearGradient(
+            gradient: Gradient(colors: [theme.textColor, Color(#colorLiteral(red: 0.4980392157, green: 0.7215686275, blue: 0.9568627451, alpha: 1)).opacity(0.1)]),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+            .padding(.horizontal, 8)
+            .padding(.bottom, 1)
+            .opacity(0.8)
+            .mask(
+                GeometryReader { geo in
+                    Path { p in
+                        let scale = getScale(hourly, geo: geo)
+                        var index: CGFloat = 0
+                    
+                        p.move(to: CGPoint(x: hourlyWidth / 2, y: geo.size.height - (CGFloat(Int(hourly[0].temp) ?? 0) * scale)))
+                        
+                        for _ in hourly {
+                            if index != 0 {
+                                p.addLine(to: CGPoint(x: hourlyWidth / 2 + ((geo.size.width - hourlyWidth) / 23) * index, y: geo.size.height - (CGFloat(Int(hourly[Int(index)].temp) ?? 0) * scale)))
+                            }
+                            
+                            index += 1
+                        }
+                        
+                        p.addLine(to: CGPoint(x: hourlyWidth / 2 + ((geo.size.width - hourlyWidth) / 23) * (index - 1), y: geo.size.height - 30))
+                        p.addLine(to: CGPoint(x: hourlyWidth / 2, y: geo.size.height - 30))
+                        p.closeSubpath()
+                    }
+                }
+            )
+    }
+    
     func drawGrid(_ hourly: [WeatherHourlyModel.Hourly]) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Spacer()
@@ -116,9 +150,6 @@ struct WeatherDetailView: View {
             HStack(spacing: 0) {
                 ForEach(hourly.indices) { i in
                     VStack(spacing: 5) {
-                        theme.textColor
-                            .opacity(0.4)
-                            .frame(width: 1, height: 5, alignment: .center)
                         if let hour = timeString(hourly[i].fxTime) {
                             if hour != "00:00" {
                                 Text("\(hour)")
@@ -133,14 +164,9 @@ struct WeatherDetailView: View {
                     
                 }
             }
-            
-            theme.textColor.opacity(0.4)
-                .frame(height: 1, alignment: .center)
-                .offset(y: -28)
         }
-        .frame(width:CGFloat(hourly.count) * hourlyWidth, height: 280)
+        .frame(width:CGFloat(hourly.count) * hourlyWidth, height: 200)
         .opacity(0.9)
-           
     }
     
     func drawLine(_ hourly: [WeatherHourlyModel.Hourly]) -> some View {
@@ -167,13 +193,11 @@ struct WeatherDetailView: View {
     
     func drawWindInfo (_ hourly: [WeatherHourlyModel.Hourly]) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            Spacer()
-            
             HStack(spacing: 0) {
                 ForEach(hourly.indices) { i in
                     VStack(spacing: 10) {
                         Text("\(hourly[i].windDir)")
-                        Text("\(hourly[i].windScale)级")
+                        Text("\(getWindScale(hourly[i].windScale))级")
                     }
                     .frame(width: hourlyWidth)
                     .font(.system(size: 14))
@@ -183,7 +207,7 @@ struct WeatherDetailView: View {
         }
         .frame(width:CGFloat(hourly.count) * hourlyWidth)
         .opacity(0.9)
-        .offset(y: -45)
+        .offset(y: -65)
     }
     
     func drawPoints(_ hourly: [WeatherHourlyModel.Hourly]) -> some View {
@@ -193,22 +217,16 @@ struct WeatherDetailView: View {
             ForEach(hourly.indices) { i in
                 if let item = hourly[i], let temp = item.temp {
                     Circle()
-                        .stroke(style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round, miterLimit: 80, dash: [], dashPhase: 0))
+                        .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round, miterLimit: 80, dash: [], dashPhase: 0))
                         .frame(width: 10, height: 10, alignment: .center)
                         .foregroundColor(theme.textColor.opacity(0.8))
                         .background(Color.white)
                         .cornerRadius(5)
                         .overlay(
-                            VStack(spacing: 10) {
-                                if let pop = item.pop, Int(pop) != 0 {
-                                   Text("\(pop)%")
-                                        .opacity(0.7)
-                                        .font(.system(size: 12, weight: .bold, design: .default))
-                                }
-                                
-                                VStack(spacing: 20) {
-                                    Image(systemName: "\(Description.weatherSystemIcon(item.icon))")
-                                        .font(.system(size: 18, weight: .bold, design: .default))
+                            VStack(spacing: 0) {
+                                VStack(spacing: 15) {
+//                                    LottieView(isWeather: true, weatherCode: item.icon)
+//                                        .frame(width: 30, height: 30)
                                     Text("\(temp)°")
                                 }
                             }
@@ -227,9 +245,14 @@ struct WeatherDetailView: View {
             return max(res, Int(item.temp) ?? 0)
         }
         
-        let scale = maxTemp == 0 ? 1 : (geo.size.height - 120) / CGFloat(maxTemp)
+        let scale = maxTemp == 0 ? 1 : (geo.size.height - 100) / CGFloat(maxTemp)
         
         return scale
+    }
+    
+    func getWindScale(_ windScale: String) -> String {
+        let temp = windScale.components(separatedBy: "-")
+        return temp[0]
     }
 }
 

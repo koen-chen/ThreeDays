@@ -94,8 +94,8 @@ struct OperatetionGuideView: View {
             GuideItem(icon: "gesture-click", desc: "查看天气详情") {
                 HStack(alignment: .center) {
                     Text("单击天气图标")
-                    LottieView(isWeather: true, weatherCode: "100")
-                        .frame(width: 40, height: 40)
+//                    LottieView(isWeather: true, weatherCode: "100")
+//                        .frame(width: 40, height: 40)
                 }
             }
             

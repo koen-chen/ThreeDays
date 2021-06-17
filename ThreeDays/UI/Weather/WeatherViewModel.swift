@@ -11,7 +11,7 @@ import Combine
 class WeatherViewModel: ObservableObject {
     @Published var weatherNow: WeatherNowModel?
     @Published var weatherDaily: WeatherDailyModel?
-    @Published var weatherHourly: WeatherHourlyModel?
+    @Published var weatherHourly: WeatherHourlyModel? 
     
     private let API = APIService()
     private var subscriptions = Set<AnyCancellable>()

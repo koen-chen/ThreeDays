@@ -7,13 +7,11 @@
 
 import SwiftUI
 import Lottie
-import Combine
 
 struct LottieView: UIViewRepresentable {
     @EnvironmentObject var theme: Theme
   
     static var cacheName = ""
-    
     var name: String = ""
     var loopMode: LottieLoopMode = .loop
     var isWeather: Bool = false
@@ -40,6 +38,7 @@ struct LottieView: UIViewRepresentable {
         animationView.play()
     
         animationView.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(animationView)
         NSLayoutConstraint.activate([
             animationView.heightAnchor.constraint(equalTo: view.heightAnchor),

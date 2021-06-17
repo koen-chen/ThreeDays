@@ -17,30 +17,9 @@ struct WeatherView: View {
     @Binding var showWeatherDetail: Bool
     @Binding var showDailyPreview: Bool
     @State var showProfileView: Bool = false
-    
-    var dailyText: String {
-        return Description.dayDesc(activeDay)
-    }
-    
-    var nowWeather: WeatherNowModel.Now? {
-        return viewModel.weatherNow?.now ?? nil
-    }
-    
-    var dailyWeather: WeatherDailyModel.Daily? {
-        return viewModel.weatherDaily?.daily[self.activeDay] ?? nil
-    }
-    
-    var weatherDesc: String {
-        guard let daily = dailyWeather else {
-            return ""
-        }
-    
-        let text = theme.isDaytime ? daily.textDay : daily.textNight
-        return Description.weatherDesc(text)
-    }
 
     var dateText: (Int, Int) {
-        guard let daily = dailyWeather else {
+        guard let daily = viewModel.weatherDaily?.daily[self.activeDay] else {
             return (1, 1)
         }
    
@@ -83,7 +62,7 @@ struct WeatherView: View {
                 }
                 
                 DayView(
-                    dailyText: dailyText,
+                    dailyText: Description.dayDesc(activeDay),
                     dateText: dateText,
                     showDayList: showDailyPreview ? .constant(false) : $showDayList
                 )
@@ -91,61 +70,61 @@ struct WeatherView: View {
             }
             
             
-            VStack(alignment: .center, spacing: 15) {
-                if !showDailyPreview {
-                    VStack {
-                        LottieView(isWeather: true, weatherCode: nowWeather?.icon)
+            if let dailyWeather = viewModel.weatherDaily?.daily[self.activeDay] {
+                VStack(alignment: .center, spacing: 15) {
+                    if !showDailyPreview {
+                        VStack {
+                            LottieView(
+                                isWeather: true,
+                                weatherCode: theme.isDaytime ? dailyWeather.iconDay : dailyWeather.iconNight
+                            )
                             .frame(width: 160, height: 160)
                             .padding(.bottom, 10)
-                    }
-                    .onTapGesture(perform: {
-                        if !showDailyPreview {
-                            self.showWeatherDetail.toggle()
                         }
-                    })
-                }
-                
-                VStack(alignment: .center, spacing: 0) {
-                    Text("\(weatherDesc)")
-                        .font(.custom(theme.font, size: showDailyPreview ? 48 : 62))
-                        .frame(maxWidth: showDailyPreview ? 60 : .infinity)
-                        .frame(height: showDailyPreview ? 240 : nil)
-                    
-                    if !showDailyPreview && activeDay == 0 {
-                        Text("\(nowWeather?.temp ?? "")°")
-                            .font(.custom(theme.font, size: 60))
-                            .offset(x: 10)
+                        .onTapGesture(perform: {
+                            if !showDailyPreview {
+                                self.showWeatherDetail.toggle()
+                            }
+                        })
                     }
                     
-                    if showDailyPreview {
-                        VStack(alignment: .center, spacing: 10) {
-                            TempLimitView(label: "最高", value: dailyWeather?.tempMax ?? "")
-                            Divider().background(theme.backgroundColor).padding(.horizontal, 30)
-                            TempLimitView(label: "最低", value: dailyWeather?.tempMin ?? "")
+                    VStack(alignment: .center, spacing: 0) {
+                        Text("\(Description.weatherDesc(theme.isDaytime ? dailyWeather.textDay : dailyWeather.textNight))")
+                            .font(.custom(theme.font, size: showDailyPreview ? 48 : 62))
+                            .frame(maxWidth: showDailyPreview ? 60 : .infinity)
+                            .frame(height: showDailyPreview ? 240 : nil)
+                        
+                        if !showDailyPreview, activeDay == 0, let nowWeather = viewModel.weatherNow?.now {
+                            Text("\(nowWeather.temp)°")
+                                .font(.custom(theme.font, size: 60))
+                                .offset(x: 10)
                         }
-                    } else {
-                        HStack(alignment: .center, spacing: 20) {
-                            TempLimitView(label: "最低", value: dailyWeather?.tempMin ?? "")
-                            TempLimitView(label: "最高", value: dailyWeather?.tempMax  ?? "")
-                        }
-                        .padding(.top, 15)
-                    }
-                    
-                    if showDailyPreview {
-                        if let windDirDay = dailyWeather?.windDirDay,
-                           let windSpeedDay = dailyWeather?.windSpeedDay {
+                        
+                        if showDailyPreview {
+                            VStack(alignment: .center, spacing: 10) {
+                                TempLimitView(label: "最高", value: dailyWeather.tempMax)
+                                Divider().background(theme.backgroundColor).padding(.horizontal, 30)
+                                TempLimitView(label: "最低", value: dailyWeather.tempMin)
+                            }
+                            
                             VStack(spacing: 10) {
-                                Text("\(windDirDay)")
-                                Text("\(windSpeedDay)级")
+                                Text("\(dailyWeather.windDirDay)")
+                                Text("\(dailyWeather.windSpeedDay)级")
                             }
                             .padding(.top, 50)
+                        } else {
+                            HStack(alignment: .center, spacing: 20) {
+                                TempLimitView(label: "最低", value: dailyWeather.tempMin)
+                                TempLimitView(label: "最高", value: dailyWeather.tempMax)
+                            }
+                            .padding(.top, 15)
                         }
                     }
                 }
+                .offset(y: -20)
+                .padding(.top, showDailyPreview ? 60 : 0)
+                .padding(.bottom, showDailyPreview ? 20 : 0)
             }
-            .offset(y: -20)
-            .padding(.top, showDailyPreview ? 60 : 0)
-            .padding(.bottom, showDailyPreview ? 20 : 0)
             
             if !showDailyPreview {
                 PlaceView(showCityList: $showCityList)
