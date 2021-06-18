@@ -83,11 +83,9 @@ class APIService {
     }
     
     private let decoder = JSONDecoder()
-    private let queue = DispatchQueue(label: "WeatherService", qos: .default)
+    private let queue = DispatchQueue(label: "WeatherService", qos: .default, attributes: .concurrent)
     
     func getWeatherNow(_ location: String) -> AnyPublisher<WeatherNowModel, Error> {
-        print("实时天气URI",  EndPoint.getWeatherNow(location).url)
-        
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker
@@ -107,8 +105,6 @@ class APIService {
     }
     
     func getWeatherDaily(_ location: String, daily: String = "3d") -> AnyPublisher<WeatherDailyModel, Error> {
-        print("逐天天气URI",  EndPoint.getWeatherDaily(location, daily: daily).url)
-        
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker
@@ -128,8 +124,6 @@ class APIService {
     }
     
     func getWeatherHourly(_ location: String) -> AnyPublisher<WeatherHourlyModel, Error> {
-        print("逐小时天气URI",  EndPoint.getWeatherHourly(location).url)
-        
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker

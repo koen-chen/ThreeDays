@@ -76,14 +76,14 @@ struct ContentView: View {
                         .onChanged({ value in
                             if value.translation.height < -50 || value.translation.height > 50 {
                                 self.weatherDragState = value.translation
-                                
+
                                 if (self.weatherDragState.height + self.tempWeatherDragState.height) > 100 {
                                     self.weatherDragState.height = 50
-                                    
+
                                     self.showCityList = false
                                     self.showDayList = true
                                 }
-                                
+
                                 if (self.weatherDragState.height + self.tempWeatherDragState.height)  < -100 {
                                     self.weatherDragState.height = -100
                                     self.showCityList = true
@@ -95,23 +95,23 @@ struct ContentView: View {
                             if self.weatherDragState.height < -10 {
                                 self.showDayList = false
                             }
-                            
+
                             if self.weatherDragState.height > 50 {
                                 self.showCityList = false
                             }
-                            
+
                             if !self.showDayList, !self.showCityList {
                                 if value.translation.width < -50 {
                                     showProfileView ? showProfileView.toggle() : showDailyPreview.toggle()
                                 }
-                                
+
                                 if value.translation.width > 50 {
                                     showDailyPreview ? showDailyPreview.toggle() : showProfileView.toggle()
                                 }
                             }
-                            
+
                             self.tempWeatherDragState = self.weatherDragState
-                            
+
                             self.weatherDragState = .zero
                         })
                 )
@@ -129,7 +129,7 @@ struct ContentView: View {
                         }
                     })
                 )
-                
+
                 WeatherView(
                     activeDay: 1,
                     showDayList: $showDayList,
@@ -153,7 +153,7 @@ struct ContentView: View {
                         }
                     })
                 )
-                
+
                 WeatherView(
                     activeDay: 2,
                     showDayList: $showDayList,
@@ -179,18 +179,20 @@ struct ContentView: View {
                 )
             }
             .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+
             
-            LaunchView()
-                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
-                .onReceive(viewModel.$weatherNow, perform: { weather in
-                    if weather?.now != nil {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation() {
-                                self.weatherAPIDone = true
-                            }
-                        }
-                    }
-                })
+            
+//            LaunchView()
+//                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
+//                .onReceive(viewModel.$weatherNow, perform: { weather in
+//                    if weather?.now != nil {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                            withAnimation() {
+//                                self.weatherAPIDone = true
+//                            }
+//                        }
+//                    }
+//                })
 
             
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
@@ -198,7 +200,7 @@ struct ContentView: View {
                 .offset(y: showDayList ? 10 : -theme.screen.height)
                 .offset(y: weatherDragState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
-                
+
             PlaceListView(showCityList: $showCityList)
                 .offset(y: showCityList ? cityListShowHeight + 20 : theme.screen.height)
                 .offset(y: weatherDragState.height)
@@ -208,11 +210,11 @@ struct ContentView: View {
                     DragGesture()
                         .onChanged({ value in
                             self.weatherDragState = value.translation
-                            
+
                             if self.showCityListFull {
                                 self.weatherDragState.height += -300
                             }
-                            
+
                             if self.weatherDragState.height < -300 {
                                 self.weatherDragState.height = -300
                             }
@@ -221,7 +223,7 @@ struct ContentView: View {
                             if self.weatherDragState.height > 50 {
                                 self.showCityList = false
                             }
-                            
+
                             if (self.weatherDragState.height < -100 && !self.showCityListFull) || (self.weatherDragState.height < -250 && self.showCityListFull) {
                                 self.weatherDragState.height = -300
                                 self.showCityListFull = true
@@ -237,13 +239,13 @@ struct ContentView: View {
                         self.showCityListFull = false
                     }
                 }
-            
+
             WeatherDetailView(showWeatherDetail: $showWeatherDetail)
                 .frame(width: showWeatherDetail ? theme.screen.width : 0, height: showWeatherDetail ? theme.screen.height : 0)
                 .opacity(showWeatherDetail ? 1 : 0)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))
-            
-            
+
+
             ProfileView(showProfileView: $showProfileView)
                 .offset(x: showProfileView ? 0 : -theme.screen.width)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0))

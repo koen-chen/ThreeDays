@@ -59,6 +59,7 @@ struct WeatherDetailView: View {
                         }) {
                             Image(systemName: "xmark")
                         }
+                        .padding(.all, 10)
                     }
                     .padding(.bottom, 10)
                    

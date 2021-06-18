@@ -40,9 +40,9 @@ class LocationService<T>: NSObject, CLLocationManagerDelegate, ObservableObject 
     }
     
     override init() {
-        manager.distanceFilter = 3000
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.allowsBackgroundLocationUpdates = true
+        manager.distanceFilter = kCLDistanceFilterNone
+        manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        manager.allowsBackgroundLocationUpdates = false
         
         locationSubject = PassthroughSubject<T?, Never>()
         locationPublisher = locationSubject.eraseToAnyPublisher()
@@ -58,6 +58,7 @@ class LocationService<T>: NSObject, CLLocationManagerDelegate, ObservableObject 
     
     func cancelLocation () {
         manager.stopUpdatingLocation()
+        manager.showsBackgroundLocationIndicator = false
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

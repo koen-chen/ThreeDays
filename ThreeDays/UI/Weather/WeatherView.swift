@@ -98,9 +98,9 @@ struct WeatherView: View {
                         
                         if showDailyPreview {
                             VStack(alignment: .center, spacing: 10) {
-                                TempLimitView(label: "最高", value: dailyWeather.tempMax)
+                                TempLimitView(label: "", value: dailyWeather.tempMax)
                                 Divider().background(theme.backgroundColor).padding(.horizontal, 30)
-                                TempLimitView(label: "最低", value: dailyWeather.tempMin)
+                                TempLimitView(label: "", value: dailyWeather.tempMin)
                             }
                             
                             VStack(spacing: 10) {
@@ -163,6 +163,6 @@ struct TempLimitView: View {
             Text("\(value)°")
                 .font(.custom(theme.font, size: 20))
         }
-        .offset(x: 5)
+        .offset(x: label.count > 0 ? 5 : 0)
     }
 }
