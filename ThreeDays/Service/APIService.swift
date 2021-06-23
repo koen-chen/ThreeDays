@@ -9,13 +9,13 @@ import SwiftUI
 import Combine
 
 class APIService {
-    #if PRODUCTION
+//    #if PRODUCTION
     static var key = "fa337af718794348960d3e498713ca0d"
     static var host = "api.qweather.com"
-    #else
-    static var key = "cd6eff2f582c41b4b6763a9e04c74655"
-    static var host = "devapi.qweather.com"
-    #endif
+//    #else
+//    static var key = "cd6eff2f582c41b4b6763a9e04c74655"
+//    static var host = "devapi.qweather.com"
+//    #endif
   
     static var shared = APIService()
     
