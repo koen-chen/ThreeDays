@@ -73,14 +73,15 @@ struct NowWeatherSmallView: View {
                     }
                 
                
-                    VStack {
+                    VStack(spacing: 0) {
                         HStack {
-                            VStack(spacing: 5) {
+                            VStack(alignment: .center, spacing: 2) {
                                 Text("\(Description.weatherDesc(nowWeather.text))")
-                                    .font(.custom(theme.font, size: 22))
+                                    .font(.custom(theme.font, size: 26))
                                    
                                 Text("\(nowWeather.temp)°")
                                     .font(.custom(theme.font, size: 22))
+                                    .offset(x: 4)
                                    
                                 HStack(spacing: 5) {
                                     Text("\(dailyWeather.tempMin)°")
@@ -89,6 +90,7 @@ struct NowWeatherSmallView: View {
                                     Text("\(dailyWeather.tempMax)°")
                                         .font(.custom(theme.font, size: 12))
                                 }
+                                .padding(.top, 5)
             
                             }
                             .offset(x: 10)

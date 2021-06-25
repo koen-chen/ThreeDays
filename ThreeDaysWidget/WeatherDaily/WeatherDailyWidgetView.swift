@@ -14,7 +14,7 @@ struct WeatherDailyWidgetView: View {
     
     var body: some View {
         ZStack {
-            theme.backgroundColor.opacity(0.2).ignoresSafeArea()
+            theme.backgroundColor.opacity(0.3).ignoresSafeArea()
             
             HStack(alignment: .top, spacing: 0) {
                 WeatherItem(
@@ -43,7 +43,7 @@ struct WeatherDailyWidgetView: View {
                 .frame(maxWidth: theme.screen.width / 3)
             }
         }
-        .font(.custom(theme.font, size: 14))
+        .font(.custom(theme.font, size: 12))
         .foregroundColor(theme.textColor)
     }
 }
@@ -94,7 +94,7 @@ struct WeatherItem: View {
                         
                         HStack(alignment: .top, spacing: 10) {
                             Text(Description.dayDesc(activeDay))
-                                .font(.custom(theme.font, size: 22))
+                                .font(.custom(theme.font, size: 20))
                             
                             VStack(spacing: 0) {
                                 Image(systemName: "circle.righthalf.fill")
@@ -114,12 +114,16 @@ struct WeatherItem: View {
                     Spacer()
                 }
                 
-                VStack(spacing: 15) {
+                VStack(spacing: 0) {
                     Text("\(Description.weatherDesc(activeDay == 0 ? nowWeather.text : (theme.isDaytime ? dailyWeather.textDay : dailyWeather.textNight)))")
-                        .font(.custom(theme.font, size: 26))
+                        .font(.custom(theme.font, size: 28))
                         .frame(maxWidth: 40)
-                        .frame(height: 120)
-                        
+                }
+                .offset(y: -30)
+                
+                VStack {
+                    Spacer()
+                    
                     VStack(alignment: .center, spacing: 5) {
                         Text("\(dailyWeather.tempMax)°")
                             .font(.custom(theme.font, size: 14))
@@ -127,9 +131,17 @@ struct WeatherItem: View {
                         Text("\(dailyWeather.tempMin)°")
                             .font(.custom(theme.font, size: 14))
                     }
-                
+                    .padding(.bottom, 5)
+                    
+                    HStack(spacing: 5) {
+                        Text("\(dailyWeather.windDirDay)")
+                        Image(systemName: "circlebadge.fill")
+                            .font(.system(size: 6))
+                            .opacity(0.9)
+                        Text("\(dailyWeather.windSpeedDay)级")
+                    }
                 }
-                .offset(y: 20)
+                .offset(y: -40)
                 
                 if activeDay == 1 {
                     VStack {

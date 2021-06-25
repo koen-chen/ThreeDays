@@ -120,6 +120,10 @@ struct WeatherView: View {
                 .offset(y: -20)
                 .padding(.top, showDailyPreview ? 60 : 0)
                 .padding(.bottom, showDailyPreview ? 20 : 0)
+            } else {
+                LottieView(name: "loading2-\(theme.iconText)")
+                    .frame(width: 300, height: 300)
+                    .padding()
             }
             
             if !showDailyPreview {

@@ -179,19 +179,10 @@ struct ContentView: View {
                 )
             }
             .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-
-            LaunchView()
-                .opacity((weatherAPIDone && isConnected) ? 0 : 1)
-                .onReceive(viewModel.$weatherNow, perform: { weather in
-                    if weather?.now != nil {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation() {
-                                self.weatherAPIDone = true
-                            }
-                        }
-                    }
-                })
-
+            
+            if !isConnected {
+                DisconnectedView()
+            }
             
             DayListView(showDayList: $showDayList, activeDay: $activeDay)
                 .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)

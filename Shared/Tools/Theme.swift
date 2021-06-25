@@ -14,7 +14,7 @@ class Theme: ObservableObject {
     var isDaytime: Bool {
         let d = Calendar.current.dateComponents(in: TimeZone(abbreviation: "GMT+8")!, from: Date())
         return 5...17 ~= d.hour! ? true : false
-        //return  5...17 ~= d.hour! ? false : true
+        // return  5...17 ~= d.hour! ? false : true
     }
     
     var backgroundColor: Color {
