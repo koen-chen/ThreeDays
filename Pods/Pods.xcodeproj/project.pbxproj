@@ -84,6 +84,7 @@
 		5F7AA8300D54023C648A5E6DE7892435 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E3CCE7BE66CC3B6078C9AB426DA06 /* Transform.swift */; };
 		60449BD9530C4D527F6D9865AD7AC7F0 /* LayerTransformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9A9A2FB48F768C3ABCD1746B00453 /* LayerTransformNode.swift */; };
 		6079862E4DC9B5AC605B8E9807582EAC /* ValueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6042EA6381DDDC722618EC59D4B6C6FA /* ValueContainer.swift */; };
+		609B4E2369043AE0352039BF5C1D66F6 /* Pods-ThreeDaysWidgetExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B93D17825EC0C573586682B6E54C1E /* Pods-ThreeDaysWidgetExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63AA1E813E021D69590BDFFB0484CB92 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E060133ED5A5E4E6E45607D8AED4C /* Marker.swift */; };
 		645DC6A0FDFA7FDC3DF1D2AA265C1A8F /* AnimatedSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA0970DE006A81B9A2224F57365506 /* AnimatedSwitch.swift */; };
 		6477C63835313EB2B9CBBDB4E7C6344F /* MathKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C7322BB26B0A97767B101CADBC6B83 /* MathKit.swift */; };
@@ -149,14 +150,16 @@
 		C960309E8DBD13A20BC26B2842463D62 /* StrokeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB452CCC30FD4749C98FD1E08DA43A /* StrokeNode.swift */; };
 		C9E9AB1A4B11F4EFF49986DD6BA05AC1 /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB854FCB029C01AEAF288A9B63E3AD /* Vectors.swift */; };
 		CB8A7BE8F63886EE30FBCAF2F3968764 /* LayerTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B3742EE57D4831C85D3A36A18DB69 /* LayerTextProvider.swift */; };
+		CF5D6D95BF43AF76015334211E0C6A3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		CF779993E4FEEE72B1B59F71160BF7BA /* AnimatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAE2A636C953A801B6B6421EAF06D2 /* AnimatorNode.swift */; };
 		D3966E84B9CD1B7D64EE8B68AC7BDDAA /* SourceBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5780E78EDEFDD3F6B757B7CC0EFD70D3 /* SourceBuffer.swift */; };
 		D3BB7C10CF7FB03081B7ACF2B95313D4 /* FilepathImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8CE100AE58FB00851E8FE10D067CC1 /* FilepathImageProvider.swift */; };
+		D425CE7E4425BDF008244801FFDB90CE /* Pods-ThreeDaysWidgetExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D16B050E834C48B94AB98CCB9901996C /* Pods-ThreeDaysWidgetExtension-dummy.m */; };
 		D482B07B389D6BED35B449680862FD5F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31A446A0E7F8A45627963036A0C472 /* Animation.swift */; };
 		D488166EEAC4EFA681A4A005C7998FC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		D4FE036734A6D5B9548B6E8144804700 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27182C967EEEB7BAB9AFC490CA5FCC /* AnimationContext.swift */; };
 		D79692BB25F9CFC26CEEA50ABB81CE95 /* NullCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DD1013880A13FFC23E5E63E59480E2 /* NullCompositionLayer.swift */; };
-		D96C2A5401E5F4E96D3AB280716AFFAA /* Pods-ThreeDays-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C01EE66183B0BB3D2B5C92B188C8ECD9 /* Pods-ThreeDays-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D96C2A5401E5F4E96D3AB280716AFFAA /* Pods-ThreeDays-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A59443F23CBEFC5848EA3E9B61CF904 /* Pods-ThreeDays-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB64698482B57470F644E7A916619EE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		DB8CB26680625363B4223412D88C3041 /* AnimationSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E8A09973E9E9FB9A334F720BF67C /* AnimationSubview.swift */; };
 		DE66E6F35287CBE5875652B44E5DB76E /* AnyValueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E5707C2EC6D5398CB98236AE9E92C /* AnyValueContainer.swift */; };
@@ -165,7 +168,7 @@
 		E0D17096D3801D5683ADD4D823A12D3E /* AnimationCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B3F94FF0ABB2F9D17135EFC46602B /* AnimationCacheProvider.swift */; };
 		E16392FD06121BE92CFD7CD8C0C6E757 /* ReaderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD854AF6D8187D88BB353569EDAF5AAB /* ReaderAPI.swift */; };
 		E191971060C289CB32E2A243ED1A9D79 /* PassThroughOutputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A20EF99045F4CC1213DAD13C54B92F /* PassThroughOutputNode.swift */; };
-		E341D8886634F02233BF07E360AA9F19 /* Pods-ThreeDays-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AA7191CC8227F88F3628B2ED38502 /* Pods-ThreeDays-dummy.m */; };
+		E341D8886634F02233BF07E360AA9F19 /* Pods-ThreeDays-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A445B6F6A8E6E318B57A40E2FA706E9F /* Pods-ThreeDays-dummy.m */; };
 		E4D454584D3C6A2B296DAC18F15A5C2E /* RectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB91BCC13F951CD9D4140E966BD7ED /* RectNode.swift */; };
 		E52835E3A69E0F0D060140EFFCAE45B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4870C168D84046F3AEAFA2B05EBE9 /* Color.swift */; };
 		E663A44D97FFE0F736EA3B73E47A0690 /* CompatibleAnimationKeypath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BC0E1D3F23768D6A3C891CFD3CC724 /* CompatibleAnimationKeypath.swift */; };
@@ -194,12 +197,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4B5BCD9770AF0270739D6FDD5BBCA95F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B967D7F8561D42493EE289EC8D450D1;
+			remoteInfo = "lottie-ios";
+		};
 		7A5E7607E6919F99D952130637F80E2C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0B967D7F8561D42493EE289EC8D450D1;
 			remoteInfo = "lottie-ios";
+		};
+		CEE09660FF6CF8D5399011897EEE438D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72D0020C75B9C252464AADF0A9A776B9;
+			remoteInfo = CodableCSV;
 		};
 		D8CFF71DD489E26B50C7C6CDABCC1694 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -215,6 +232,7 @@
 		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		058D0ED5DBBCF4B2D2ACD1B0C44595DD /* lottie-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "lottie-ios.modulemap"; sourceTree = "<group>"; };
 		06F5989FF303E6B5124B3B2E1C46ED0A /* StrokeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeRenderer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/Renderables/StrokeRenderer.swift"; sourceTree = "<group>"; };
+		0735EE39B64D29C732319DF10BAAA09A /* Pods-ThreeDays-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThreeDays-acknowledgements.plist"; sourceTree = "<group>"; };
 		0834267FF72FF24C78B475EA78CA3C06 /* WriterInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WriterInternals.swift; path = sources/imperative/writer/internal/WriterInternals.swift; sourceTree = "<group>"; };
 		0A27997281627C40698ED1F86F3685EC /* WriterConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WriterConfiguration.swift; path = sources/imperative/writer/WriterConfiguration.swift; sourceTree = "<group>"; };
 		0B92191027AB0BC14EFE6F588A093019 /* InvertedMatteLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvertedMatteLayer.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/InvertedMatteLayer.swift"; sourceTree = "<group>"; };
@@ -222,11 +240,12 @@
 		0F7C17D381CC4DA2C741C0E4EA579543 /* LottieView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieView.swift; path = "lottie-swift/src/Public/iOS/LottieView.swift"; sourceTree = "<group>"; };
 		0FEC7D6FB71DC31F682B2F7D2B90C3C6 /* TextCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/TextCompositionLayer.swift"; sourceTree = "<group>"; };
 		10BC0E1D3F23768D6A3C891CFD3CC724 /* CompatibleAnimationKeypath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibleAnimationKeypath.swift; path = "lottie-swift/src/Public/iOS/Compatibility/CompatibleAnimationKeypath.swift"; sourceTree = "<group>"; };
+		12F38B75A99173984CC5110F582E6AB3 /* Pods-ThreeDays-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ThreeDays-acknowledgements.markdown"; sourceTree = "<group>"; };
 		135FC3AAB69DA685E3AEF93048FB38EA /* LayerFontProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerFontProvider.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/LayerFontProvider.swift"; sourceTree = "<group>"; };
+		14124A7AC16211309F46F1CFE889B8C1 /* Pods_ThreeDaysWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeDaysWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		148E9307D85E0D9E30E4E46E95386D64 /* GroupOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupOutputNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/GroupOutputNode.swift"; sourceTree = "<group>"; };
 		14DFEBC978B670ACE1EEB906343E7E37 /* AnimatorNodeDebugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatorNodeDebugging.swift; path = "lottie-swift/src/Private/Utility/Debugging/AnimatorNodeDebugging.swift"; sourceTree = "<group>"; };
 		15CAE2A636C953A801B6B6421EAF06D2 /* AnimatorNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatorNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Protocols/AnimatorNode.swift"; sourceTree = "<group>"; };
-		175798DB3A65C53B205B97A3726CC75D /* Pods-ThreeDays-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ThreeDays-acknowledgements.markdown"; sourceTree = "<group>"; };
 		183D66C27661F31C341E2FA751A81857 /* AnimatedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedControl.swift; path = "lottie-swift/src/Public/iOS/AnimatedControl.swift"; sourceTree = "<group>"; };
 		1A9DD885F3DCD5E67833E437C1E9A69B /* Rectangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rectangle.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Rectangle.swift"; sourceTree = "<group>"; };
 		1BC38680C49AB9564B83F52FC3B6CE63 /* CodableCSV.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CodableCSV.modulemap; sourceTree = "<group>"; };
@@ -263,23 +282,27 @@
 		381AD52E09F47562E88D930EBFB8C060 /* Pods_ThreeDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3820BB70CAEA9A2AC1F0CD96432D51F2 /* LayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/LayerModel.swift"; sourceTree = "<group>"; };
 		3A10307BDD632A639883B507C9043FEF /* ShapeRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeRenderLayer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/RenderLayers/ShapeRenderLayer.swift"; sourceTree = "<group>"; };
+		3A2B379383C3B7CCA406279F3B850366 /* Pods-ThreeDaysWidgetExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ThreeDaysWidgetExtension.modulemap"; sourceTree = "<group>"; };
 		3AC6FF03B25DAC9B18E1E23D6112B712 /* KeyedDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyedDecodingContainer.swift; path = sources/declarative/decodable/containers/KeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		3C1867CEA66AA4C844E7AC90F606BA8F /* Pods-ThreeDaysWidgetExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ThreeDaysWidgetExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3C731ED739F7ACC57E8C522E016C9DE3 /* PolygonNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolygonNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/PolygonNode.swift"; sourceTree = "<group>"; };
 		3DB689F094F82F4528C578202E8767EE /* CompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/CompositionLayer.swift"; sourceTree = "<group>"; };
 		3E27182C967EEEB7BAB9AFC490CA5FCC /* AnimationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationContext.swift; path = "lottie-swift/src/Private/Utility/Helpers/AnimationContext.swift"; sourceTree = "<group>"; };
 		3F04E04F001F34E906DD98BCC3F3708D /* Interpolatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolatable.swift; path = "lottie-swift/src/Private/Utility/Interpolatable/Interpolatable.swift"; sourceTree = "<group>"; };
 		3F6B3F94FF0ABB2F9D17135EFC46602B /* AnimationCacheProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationCacheProvider.swift; path = "lottie-swift/src/Public/AnimationCache/AnimationCacheProvider.swift"; sourceTree = "<group>"; };
 		43C20AAB556056350788E6B79C5793C9 /* CodableCSV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodableCSV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A59443F23CBEFC5848EA3E9B61CF904 /* Pods-ThreeDays-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ThreeDays-umbrella.h"; sourceTree = "<group>"; };
 		4C6114582BF7386005437DF13D252C7D /* SingleValueDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleValueDecodingContainer.swift; path = sources/declarative/decodable/containers/SingleValueDecodingContainer.swift; sourceTree = "<group>"; };
 		4CD139552387FCEF1A2604815E73E2CD /* SolidLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SolidLayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/SolidLayerModel.swift"; sourceTree = "<group>"; };
 		4DE8024B89771E4DEC8FDCB69E164762 /* ColorValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorValueProvider.swift; path = "lottie-swift/src/Public/DynamicProperties/ValueProviders/ColorValueProvider.swift"; sourceTree = "<group>"; };
 		511F4471B99B6F905505ED4D99700485 /* PreCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/PreCompositionLayer.swift"; sourceTree = "<group>"; };
-		51403D275C59BF34B74EE8594AE383D4 /* Pods-ThreeDays.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ThreeDays.modulemap"; sourceTree = "<group>"; };
 		517F3A76D6F51E6A3367629B735118CD /* CodableCSV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CodableCSV-prefix.pch"; sourceTree = "<group>"; };
 		5199ADA2606D89C178288C453593358D /* ImageLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/ImageLayerModel.swift"; sourceTree = "<group>"; };
 		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		556BC7E9B3726D4CB9FE8C0FFFCDCC4F /* AnimatedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedButton.swift; path = "lottie-swift/src/Public/iOS/AnimatedButton.swift"; sourceTree = "<group>"; };
 		5780E78EDEFDD3F6B757B7CC0EFD70D3 /* SourceBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceBuffer.swift; path = sources/declarative/decodable/internal/SourceBuffer.swift; sourceTree = "<group>"; };
+		583596659EFCCA710C83143734302B4A /* Pods-ThreeDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThreeDays.debug.xcconfig"; sourceTree = "<group>"; };
+		59B93D17825EC0C573586682B6E54C1E /* Pods-ThreeDaysWidgetExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ThreeDaysWidgetExtension-umbrella.h"; sourceTree = "<group>"; };
 		59D611D3C89B3FC72E4D9598C9ECA37D /* VectorsExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorsExtensions.swift; path = "lottie-swift/src/Private/Utility/Primitives/VectorsExtensions.swift"; sourceTree = "<group>"; };
 		5A1172B065140ED244BFE35FCCB0ED16 /* PointValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PointValueProvider.swift; path = "lottie-swift/src/Public/DynamicProperties/ValueProviders/PointValueProvider.swift"; sourceTree = "<group>"; };
 		5A8F3FAA8AB7CB5E6C014A7E223B42A1 /* AnimationKeypathExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationKeypathExtension.swift; path = "lottie-swift/src/Private/Utility/Extensions/AnimationKeypathExtension.swift"; sourceTree = "<group>"; };
@@ -315,13 +338,11 @@
 		77CB779EA5E8AA6F478DB21353044045 /* WriterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WriterEncoding.swift; path = sources/imperative/writer/internal/WriterEncoding.swift; sourceTree = "<group>"; };
 		796DC324847A835F7282DD96E1D44404 /* BundleImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleImageProvider.swift; path = "lottie-swift/src/Public/iOS/BundleImageProvider.swift"; sourceTree = "<group>"; };
 		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7A749C3ECA9ABF555DCF188D342A0DBE /* Pods-ThreeDays-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThreeDays-acknowledgements.plist"; sourceTree = "<group>"; };
+		79F1C22C30FDB182CC9AA4387EFFA75C /* Pods-ThreeDays.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ThreeDays.modulemap"; sourceTree = "<group>"; };
 		7C31A446A0E7F8A45627963036A0C472 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = "lottie-swift/src/Private/Model/Animation.swift"; sourceTree = "<group>"; };
-		7C5A9351524182210BDFD3BAA7C972DA /* Pods-ThreeDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThreeDays.debug.xcconfig"; sourceTree = "<group>"; };
 		7E33345E35CC36C6F8854396A05660A8 /* TextLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextLayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/TextLayerModel.swift"; sourceTree = "<group>"; };
 		80C7A542A6D8CD43D13E33F032C27BB4 /* Writer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Writer.swift; path = sources/imperative/writer/Writer.swift; sourceTree = "<group>"; };
 		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		84B23D6B41F2A20D92FB8628BBACCAE0 /* Pods-ThreeDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThreeDays.release.xcconfig"; sourceTree = "<group>"; };
 		857878A3BD31984652D71C6C57D57257 /* EllipseNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EllipseNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/EllipseNode.swift"; sourceTree = "<group>"; };
 		857DC301C1ED3621FBCEFC0507AF0D7D /* lottie-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "lottie-ios-Info.plist"; sourceTree = "<group>"; };
 		85D03FF2F7787FBF458325C218C2C1F7 /* WriterAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WriterAPI.swift; path = sources/imperative/writer/WriterAPI.swift; sourceTree = "<group>"; };
@@ -335,8 +356,6 @@
 		8B0E8D25FD2CBF497382D915FE8A1CA2 /* BOM.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BOM.swift; path = sources/imperative/BOM.swift; sourceTree = "<group>"; };
 		8C9AB6FB5EEBA09CB1089840B798DEE0 /* Ellipse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ellipse.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Ellipse.swift"; sourceTree = "<group>"; };
 		8F07AA914F9EC4B10B0705B44793B8B3 /* AnimationTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTime.swift; path = "lottie-swift/src/Public/Primitives/AnimationTime.swift"; sourceTree = "<group>"; };
-		8F5AA7191CC8227F88F3628B2ED38502 /* Pods-ThreeDays-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ThreeDays-dummy.m"; sourceTree = "<group>"; };
-		8F988BDEEF5DB3F7974C72A8CB72D2E8 /* Pods-ThreeDays-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThreeDays-Info.plist"; sourceTree = "<group>"; };
 		8F98B1283CC301DCF9B8EBF2771810F6 /* SizeValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeValueProvider.swift; path = "lottie-swift/src/Public/DynamicProperties/ValueProviders/SizeValueProvider.swift"; sourceTree = "<group>"; };
 		8FA4BF5B7A20D5355CFCB547A505FA3E /* ImageCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/ImageCompositionLayer.swift"; sourceTree = "<group>"; };
 		900DB87D3E1104F1FC9787025889ED41 /* GradientFill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFill.swift; path = "lottie-swift/src/Private/Model/ShapeItems/GradientFill.swift"; sourceTree = "<group>"; };
@@ -346,6 +365,7 @@
 		91DEB8B65A9B2D8FAB11E6224A1BF2B3 /* FillI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillI.swift; path = "lottie-swift/src/Private/Model/ShapeItems/FillI.swift"; sourceTree = "<group>"; };
 		92C61B406AC37F7D4665B48073FD947C /* Glyph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Glyph.swift; path = "lottie-swift/src/Private/Model/Text/Glyph.swift"; sourceTree = "<group>"; };
 		932AA2ABDE6711384A308FA9F12BED30 /* CompositionLayersInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayersInitializer.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/CompositionLayersInitializer.swift"; sourceTree = "<group>"; };
+		95384D68E4C0788BFFA7BC3DA5E51B51 /* Pods-ThreeDaysWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThreeDaysWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		956C5AD2729447E0A8D24BCB2F9D6D52 /* AnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationView.swift; path = "lottie-swift/src/Public/Animation/AnimationView.swift"; sourceTree = "<group>"; };
 		96BA0970DE006A81B9A2224F57365506 /* AnimatedSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedSwitch.swift; path = "lottie-swift/src/Public/iOS/AnimatedSwitch.swift"; sourceTree = "<group>"; };
 		9751798906378631D6E7D141E8FEBCCD /* InvalidEncodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvalidEncodingContainer.swift; path = sources/declarative/encodable/containers/InvalidEncodingContainer.swift; sourceTree = "<group>"; };
@@ -353,9 +373,11 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E7B3BFE1F1E99855BDFAF2BFEA1F7B7 /* CompoundBezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompoundBezierPath.swift; path = "lottie-swift/src/Private/Utility/Primitives/CompoundBezierPath.swift"; sourceTree = "<group>"; };
 		9F90B74D6844F52E2A43F2FA069C8D71 /* CompatibleAnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibleAnimationView.swift; path = "lottie-swift/src/Public/iOS/Compatibility/CompatibleAnimationView.swift"; sourceTree = "<group>"; };
+		9FE87B9A2D07C9AF0CF1512C3BEDABA0 /* Pods-ThreeDays-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ThreeDays-frameworks.sh"; sourceTree = "<group>"; };
 		A1A9A9A2FB48F768C3ABCD1746B00453 /* LayerTransformNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTransformNode.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/LayerTransformNode.swift"; sourceTree = "<group>"; };
 		A3DD37D5FCB5F5A97D819844BBE0E2B5 /* AnimationKeypath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationKeypath.swift; path = "lottie-swift/src/Public/DynamicProperties/AnimationKeypath.swift"; sourceTree = "<group>"; };
 		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A445B6F6A8E6E318B57A40E2FA706E9F /* Pods-ThreeDays-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ThreeDays-dummy.m"; sourceTree = "<group>"; };
 		A7E1A4B44944607BA1B95C6A60528046 /* SinkBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SinkBuffer.swift; path = sources/declarative/encodable/internal/SinkBuffer.swift; sourceTree = "<group>"; };
 		AAE08F0C92E1200A27FD41080D9E6E37 /* EncoderConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncoderConfiguration.swift; path = sources/declarative/encodable/EncoderConfiguration.swift; sourceTree = "<group>"; };
 		AD0EAB93AB7A5A5AE017FD750BEA4B5D /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = sources/Deprecated.swift; sourceTree = "<group>"; };
@@ -365,9 +387,10 @@
 		B305B2C2C2EBA1F0A2CE574D6F419BAA /* TextDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextDocument.swift; path = "lottie-swift/src/Private/Model/Text/TextDocument.swift"; sourceTree = "<group>"; };
 		B7ACE45ADDD07B19327547520A3C3A62 /* InterpolatableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InterpolatableExtensions.swift; path = "lottie-swift/src/Private/Utility/Interpolatable/InterpolatableExtensions.swift"; sourceTree = "<group>"; };
 		B94AA8798D24D07A9D0D4D11AC82F36E /* ShapeContainerLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeContainerLayer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/RenderLayers/ShapeContainerLayer.swift"; sourceTree = "<group>"; };
+		B966B369D27B672085E1FD2AB69E7EFC /* Pods-ThreeDays-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThreeDays-Info.plist"; sourceTree = "<group>"; };
 		BF542EA9C12763AC25DD0E882CC74099 /* ReaderInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderInternals.swift; path = sources/imperative/reader/internal/ReaderInternals.swift; sourceTree = "<group>"; };
 		BFF687DD7FA30B0EC269098B15DE6659 /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = "lottie-swift/src/Private/Utility/Extensions/StringExtensions.swift"; sourceTree = "<group>"; };
-		C01EE66183B0BB3D2B5C92B188C8ECD9 /* Pods-ThreeDays-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ThreeDays-umbrella.h"; sourceTree = "<group>"; };
+		C348C1144F666D84F54DD459BFF8C103 /* Pods-ThreeDaysWidgetExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThreeDaysWidgetExtension-acknowledgements.plist"; sourceTree = "<group>"; };
 		C382986CD4EF78648ED6EF789AB0E15A /* WriterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WriterEncoder.swift; path = sources/imperative/writer/internal/WriterEncoder.swift; sourceTree = "<group>"; };
 		C487E03A85E9B95AF5D1D564B5C9E340 /* ReaderCollections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderCollections.swift; path = sources/imperative/reader/ReaderCollections.swift; sourceTree = "<group>"; };
 		C58B1B9A60DE0BEC0F568B7170FAAC03 /* GradientStrokeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStrokeRenderer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/Renderables/GradientStrokeRenderer.swift"; sourceTree = "<group>"; };
@@ -378,6 +401,7 @@
 		CB00C850BADC49D613900367BA6B960D /* GradientStroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStroke.swift; path = "lottie-swift/src/Private/Model/ShapeItems/GradientStroke.swift"; sourceTree = "<group>"; };
 		CDDE80B0C25E416672AF6DAD9EBDB94B /* ReaderEncodings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderEncodings.swift; path = sources/imperative/reader/internal/ReaderEncodings.swift; sourceTree = "<group>"; };
 		CE9B3742EE57D4831C85D3A36A18DB69 /* LayerTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTextProvider.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/LayerTextProvider.swift"; sourceTree = "<group>"; };
+		D16B050E834C48B94AB98CCB9901996C /* Pods-ThreeDaysWidgetExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ThreeDaysWidgetExtension-dummy.m"; sourceTree = "<group>"; };
 		D4230922939E301EE5213AFD8155E639 /* CodableCSV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CodableCSV-dummy.m"; sourceTree = "<group>"; };
 		D46655C1BF4B2EEE66BBA3F67EA13B27 /* EncoderLazy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncoderLazy.swift; path = sources/declarative/encodable/EncoderLazy.swift; sourceTree = "<group>"; };
 		D61975F26C01DB05618AAB190E8FF2D8 /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Trim.swift"; sourceTree = "<group>"; };
@@ -400,7 +424,6 @@
 		E4B7CF9E95C75734F2C30717D03E8C8F /* Sink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sink.swift; path = sources/declarative/encodable/internal/Sink.swift; sourceTree = "<group>"; };
 		E4BD6C161C6B044091E37A4BB2D73D32 /* TextLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextLayer.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/TextLayer.swift"; sourceTree = "<group>"; };
 		E8D0E6427865056558184AF70C976DBC /* RenderNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RenderNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Protocols/RenderNode.swift"; sourceTree = "<group>"; };
-		E90F63E44A6BA6AAE911B4A2BAFCBAA9 /* Pods-ThreeDays-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ThreeDays-frameworks.sh"; sourceTree = "<group>"; };
 		E94D60BCF55438A4B4A8AEB16DE87FA2 /* NodeProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NodeProperty.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/NodeProperty.swift"; sourceTree = "<group>"; };
 		EA158083492A51F26D3742DEB3BE5E04 /* lottie-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-prefix.pch"; sourceTree = "<group>"; };
 		EAC81F716C74FF34BA9A5705FC41F499 /* AnyNodeProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyNodeProperty.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/Protocols/AnyNodeProperty.swift"; sourceTree = "<group>"; };
@@ -411,9 +434,12 @@
 		F733F34F9D4C2B71C12E8D8D8EAD844C /* ReaderBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderBuffer.swift; path = sources/imperative/reader/internal/ReaderBuffer.swift; sourceTree = "<group>"; };
 		F75A6058AD5885F0D10D2F97C035E398 /* CodableCSV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CodableCSV.release.xcconfig; sourceTree = "<group>"; };
 		F772821A999357DA57BA38CE9F94A2C8 /* GradientFillRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFillRenderer.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/OutputNodes/Renderables/GradientFillRenderer.swift"; sourceTree = "<group>"; };
+		FA952B227AEAD916CBCD2D9DCCA772FF /* Pods-ThreeDaysWidgetExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThreeDaysWidgetExtension-Info.plist"; sourceTree = "<group>"; };
 		FD402BEA91BC0F555901C8F62785BD58 /* LRUAnimationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LRUAnimationCache.swift; path = "lottie-swift/src/Public/AnimationCache/LRUAnimationCache.swift"; sourceTree = "<group>"; };
+		FDA4513A7DB8C654096D065AFB56972F /* Pods-ThreeDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThreeDays.release.xcconfig"; sourceTree = "<group>"; };
 		FDD74C6BBAA14244C6BD1A187975E981 /* GroupInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupInterpolator.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/ValueProviders/GroupInterpolator.swift"; sourceTree = "<group>"; };
 		FE2B993CF359B24B45E314FDB95D5B01 /* KeyframeInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeInterpolator.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/ValueProviders/KeyframeInterpolator.swift"; sourceTree = "<group>"; };
+		FF469BF16735F4C6DF9ADAF738D8E200 /* Pods-ThreeDaysWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThreeDaysWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +470,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A23FFB79517206BF9ECF3171566B77FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF5D6D95BF43AF76015334211E0C6A3F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -462,22 +496,21 @@
 			path = "../Target Support Files/CodableCSV";
 			sourceTree = "<group>";
 		};
-		12BFC12266AF306FE8EF913B700525DD /* Targets Support Files */ = {
+		2C6A1E9139CBED3FB10D1AA8E4CAD192 /* Pods-ThreeDays */ = {
 			isa = PBXGroup;
 			children = (
-				E3BAF8BBB099DC7B903FBB104FE6DC67 /* Pods-ThreeDays */,
+				79F1C22C30FDB182CC9AA4387EFFA75C /* Pods-ThreeDays.modulemap */,
+				12F38B75A99173984CC5110F582E6AB3 /* Pods-ThreeDays-acknowledgements.markdown */,
+				0735EE39B64D29C732319DF10BAAA09A /* Pods-ThreeDays-acknowledgements.plist */,
+				A445B6F6A8E6E318B57A40E2FA706E9F /* Pods-ThreeDays-dummy.m */,
+				9FE87B9A2D07C9AF0CF1512C3BEDABA0 /* Pods-ThreeDays-frameworks.sh */,
+				B966B369D27B672085E1FD2AB69E7EFC /* Pods-ThreeDays-Info.plist */,
+				4A59443F23CBEFC5848EA3E9B61CF904 /* Pods-ThreeDays-umbrella.h */,
+				583596659EFCCA710C83143734302B4A /* Pods-ThreeDays.debug.xcconfig */,
+				FDA4513A7DB8C654096D065AFB56972F /* Pods-ThreeDays.release.xcconfig */,
 			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		16541E1B72C781D9DD84C1C1290C6AB7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				43C20AAB556056350788E6B79C5793C9 /* CodableCSV.framework */,
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
-				381AD52E09F47562E88D930EBFB8C060 /* Pods_ThreeDays.framework */,
-			);
-			name = Products;
+			name = "Pods-ThreeDays";
+			path = "Target Support Files/Pods-ThreeDays";
 			sourceTree = "<group>";
 		};
 		4360C3D7FBF17022731BE8CDCDFF1E52 /* lottie-ios */ = {
@@ -633,6 +666,15 @@
 			path = "../Target Support Files/lottie-ios";
 			sourceTree = "<group>";
 		};
+		9938B42524B05E86A69E45DFD470740E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A1E9139CBED3FB10D1AA8E4CAD192 /* Pods-ThreeDays */,
+				F10BB20E286BD52DC05F595F4F9DF83F /* Pods-ThreeDaysWidgetExtension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		99A0E8E76FF63234E3ABA4F213D7868B /* CodableCSV */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +725,17 @@
 			path = CodableCSV;
 			sourceTree = "<group>";
 		};
+		AB20933E2A340DB213D5C1B3DBCDF9C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43C20AAB556056350788E6B79C5793C9 /* CodableCSV.framework */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				381AD52E09F47562E88D930EBFB8C060 /* Pods_ThreeDays.framework */,
+				14124A7AC16211309F46F1CFE889B8C1 /* Pods_ThreeDaysWidgetExtension.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,26 +759,25 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				C37E84AEFCF79E03258DAC2686ABD759 /* Pods */,
-				16541E1B72C781D9DD84C1C1290C6AB7 /* Products */,
-				12BFC12266AF306FE8EF913B700525DD /* Targets Support Files */,
+				AB20933E2A340DB213D5C1B3DBCDF9C2 /* Products */,
+				9938B42524B05E86A69E45DFD470740E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		E3BAF8BBB099DC7B903FBB104FE6DC67 /* Pods-ThreeDays */ = {
+		F10BB20E286BD52DC05F595F4F9DF83F /* Pods-ThreeDaysWidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
-				51403D275C59BF34B74EE8594AE383D4 /* Pods-ThreeDays.modulemap */,
-				175798DB3A65C53B205B97A3726CC75D /* Pods-ThreeDays-acknowledgements.markdown */,
-				7A749C3ECA9ABF555DCF188D342A0DBE /* Pods-ThreeDays-acknowledgements.plist */,
-				8F5AA7191CC8227F88F3628B2ED38502 /* Pods-ThreeDays-dummy.m */,
-				E90F63E44A6BA6AAE911B4A2BAFCBAA9 /* Pods-ThreeDays-frameworks.sh */,
-				8F988BDEEF5DB3F7974C72A8CB72D2E8 /* Pods-ThreeDays-Info.plist */,
-				C01EE66183B0BB3D2B5C92B188C8ECD9 /* Pods-ThreeDays-umbrella.h */,
-				7C5A9351524182210BDFD3BAA7C972DA /* Pods-ThreeDays.debug.xcconfig */,
-				84B23D6B41F2A20D92FB8628BBACCAE0 /* Pods-ThreeDays.release.xcconfig */,
+				3A2B379383C3B7CCA406279F3B850366 /* Pods-ThreeDaysWidgetExtension.modulemap */,
+				3C1867CEA66AA4C844E7AC90F606BA8F /* Pods-ThreeDaysWidgetExtension-acknowledgements.markdown */,
+				C348C1144F666D84F54DD459BFF8C103 /* Pods-ThreeDaysWidgetExtension-acknowledgements.plist */,
+				D16B050E834C48B94AB98CCB9901996C /* Pods-ThreeDaysWidgetExtension-dummy.m */,
+				FA952B227AEAD916CBCD2D9DCCA772FF /* Pods-ThreeDaysWidgetExtension-Info.plist */,
+				59B93D17825EC0C573586682B6E54C1E /* Pods-ThreeDaysWidgetExtension-umbrella.h */,
+				95384D68E4C0788BFFA7BC3DA5E51B51 /* Pods-ThreeDaysWidgetExtension.debug.xcconfig */,
+				FF469BF16735F4C6DF9ADAF738D8E200 /* Pods-ThreeDaysWidgetExtension.release.xcconfig */,
 			);
-			name = "Pods-ThreeDays";
-			path = "Target Support Files/Pods-ThreeDays";
+			name = "Pods-ThreeDaysWidgetExtension";
+			path = "Target Support Files/Pods-ThreeDaysWidgetExtension";
 			sourceTree = "<group>";
 		};
 		F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */ = {
@@ -755,6 +807,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96C2A5401E5F4E96D3AB280716AFFAA /* Pods-ThreeDays-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8FFF8EF4AD425026D3722C41D25D801 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609B4E2369043AE0352039BF5C1D66F6 /* Pods-ThreeDaysWidgetExtension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +865,26 @@
 			productReference = 43C20AAB556056350788E6B79C5793C9 /* CodableCSV.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B18698764553332CAEEEE59AE4C6BBCC /* Pods-ThreeDaysWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C9927C950D8F054BBC84DC9CE862808 /* Build configuration list for PBXNativeTarget "Pods-ThreeDaysWidgetExtension" */;
+			buildPhases = (
+				A8FFF8EF4AD425026D3722C41D25D801 /* Headers */,
+				0531250EE88ED474EBADEABD05D6EE5F /* Sources */,
+				A23FFB79517206BF9ECF3171566B77FD /* Frameworks */,
+				A951BC29F991A320C10276A5E3854A38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DF6EFDC2B7BAE6F48C60F0AB245BFF6 /* PBXTargetDependency */,
+				4F5FF687D403A4CF5EA266067F2DE5EF /* PBXTargetDependency */,
+			);
+			name = "Pods-ThreeDaysWidgetExtension";
+			productName = "Pods-ThreeDaysWidgetExtension";
+			productReference = 14124A7AC16211309F46F1CFE889B8C1 /* Pods_ThreeDaysWidgetExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		B1D5875E43EEA3448C76C8225FA82042 /* Pods-ThreeDays */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B179D5F8CCDB295CA67F021B2B203DE /* Build configuration list for PBXNativeTarget "Pods-ThreeDays" */;
@@ -843,13 +923,14 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 16541E1B72C781D9DD84C1C1290C6AB7 /* Products */;
+			productRefGroup = AB20933E2A340DB213D5C1B3DBCDF9C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				72D0020C75B9C252464AADF0A9A776B9 /* CodableCSV */,
 				0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */,
 				B1D5875E43EEA3448C76C8225FA82042 /* Pods-ThreeDays */,
+				B18698764553332CAEEEE59AE4C6BBCC /* Pods-ThreeDaysWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -869,6 +950,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A951BC29F991A320C10276A5E3854A38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6EFE2D4C5A72636E7F972E5964F7707 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -879,6 +967,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0531250EE88ED474EBADEABD05D6EE5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D425CE7E4425BDF008244801FFDB90CE /* Pods-ThreeDaysWidgetExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46010A4D1B5A84E2437F6D486879CA48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1084,6 +1180,18 @@
 			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
 			targetProxy = 7A5E7607E6919F99D952130637F80E2C /* PBXContainerItemProxy */;
 		};
+		4F5FF687D403A4CF5EA266067F2DE5EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "lottie-ios";
+			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
+			targetProxy = 4B5BCD9770AF0270739D6FDD5BBCA95F /* PBXContainerItemProxy */;
+		};
+		5DF6EFDC2B7BAE6F48C60F0AB245BFF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CodableCSV;
+			target = 72D0020C75B9C252464AADF0A9A776B9 /* CodableCSV */;
+			targetProxy = CEE09660FF6CF8D5399011897EEE438D /* PBXContainerItemProxy */;
+		};
 		6712D9E347414571B709C16F9D7572CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CodableCSV;
@@ -1093,7 +1201,44 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
+		001D920701EEB46E6A48F2FB10AED145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 583596659EFCCA710C83143734302B4A /* Pods-ThreeDays.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1146,7 +1291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1193,45 +1338,7 @@
 			};
 			name = Debug;
 		};
-		6F1C8A902E2C39BE5D6AA4C77FD1B91A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84B23D6B41F2A20D92FB8628BBACCAE0 /* Pods-ThreeDays.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1281,7 +1388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1292,6 +1399,81 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		7F74F2557A3114FF745EECFB1C0A487D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDA4513A7DB8C654096D065AFB56972F /* Pods-ThreeDays.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C107A144373DDF1D94DB04DE3603D80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95384D68E4C0788BFFA7BC3DA5E51B51 /* Pods-ThreeDaysWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ThreeDaysWidgetExtension/Pods-ThreeDaysWidgetExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ThreeDaysWidgetExtension/Pods-ThreeDaysWidgetExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		A5E5868843DAD6C01EA3932BBC501A5D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1362,9 +1544,9 @@
 			};
 			name = Release;
 		};
-		C44611C68987E7A128F2CD4D72B86098 /* Debug */ = {
+		C4F114E21BE0CEEE2D5E1590CC1BD9C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C5A9351524182210BDFD3BAA7C972DA /* Pods-ThreeDays.debug.xcconfig */;
+			baseConfigurationReference = FF469BF16735F4C6DF9ADAF738D8E200 /* Pods-ThreeDaysWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1376,16 +1558,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ThreeDaysWidgetExtension/Pods-ThreeDaysWidgetExtension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-ThreeDaysWidgetExtension/Pods-ThreeDaysWidgetExtension.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1394,10 +1576,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		E34221DA0F39E2D9D6C175CE8D37984E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1449,8 +1632,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
-				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1458,8 +1641,17 @@
 		5B179D5F8CCDB295CA67F021B2B203DE /* Build configuration list for PBXNativeTarget "Pods-ThreeDays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C44611C68987E7A128F2CD4D72B86098 /* Debug */,
-				6F1C8A902E2C39BE5D6AA4C77FD1B91A /* Release */,
+				001D920701EEB46E6A48F2FB10AED145 /* Debug */,
+				7F74F2557A3114FF745EECFB1C0A487D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C9927C950D8F054BBC84DC9CE862808 /* Build configuration list for PBXNativeTarget "Pods-ThreeDaysWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C107A144373DDF1D94DB04DE3603D80 /* Debug */,
+				C4F114E21BE0CEEE2D5E1590CC1BD9C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

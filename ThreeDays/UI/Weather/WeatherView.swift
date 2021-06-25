@@ -66,13 +66,13 @@ struct WeatherView: View {
             }
             
             
-            if let dailyWeather = viewModel.weatherDaily?.daily[self.activeDay] {
+            if let dailyWeather = viewModel.weatherDaily?.daily[self.activeDay], let nowWeather = viewModel.weatherNow?.now {
                 VStack(alignment: .center, spacing: 15) {
                     if !showDailyPreview {
                         VStack {
                             LottieView(
                                 isWeather: true,
-                                weatherCode: theme.isDaytime ? dailyWeather.iconDay : dailyWeather.iconNight
+                                weatherCode: activeDay == 0 ? nowWeather.icon : (theme.isDaytime ? dailyWeather.iconDay : dailyWeather.iconNight)
                             )
                             .frame(width: 160, height: 160)
                             .padding(.bottom, 10)
@@ -85,12 +85,12 @@ struct WeatherView: View {
                     }
                     
                     VStack(alignment: .center, spacing: 0) {
-                        Text("\(Description.weatherDesc(theme.isDaytime ? dailyWeather.textDay : dailyWeather.textNight))")
+                        Text("\(Description.weatherDesc(activeDay == 0 ? nowWeather.text : (theme.isDaytime ? dailyWeather.textDay : dailyWeather.textNight)))")
                             .font(.custom(theme.font, size: showDailyPreview ? 48 : 62))
                             .frame(maxWidth: showDailyPreview ? 60 : .infinity)
                             .frame(height: showDailyPreview ? 240 : nil)
                         
-                        if !showDailyPreview, activeDay == 0, let nowWeather = viewModel.weatherNow?.now {
+                        if !showDailyPreview, activeDay == 0 {
                             Text("\(nowWeather.temp)°")
                                 .font(.custom(theme.font, size: 60))
                                 .offset(x: 10)

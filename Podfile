@@ -1,13 +1,18 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.0'
 
-target 'ThreeDays' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+use_frameworks!
 
-  # Pods for ThreeDays
-
+def libs
   pod 'lottie-ios'
   pod 'CodableCSV', '~> 0.6.6'
 end
 
+target 'ThreeDays' do
+  libs
+end
+
+
+target 'ThreeDaysWidgetExtension' do
+  libs
+end

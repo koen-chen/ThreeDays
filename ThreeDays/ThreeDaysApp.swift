@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct ThreeDaysApp: App {
-    let persistenceProvider = PersistenceService.shared
+    let persistenceService = PersistenceService.shared
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceProvider.managedObjectContext)
+                .environment(\.managedObjectContext, persistenceService.managedObjectContext)
                 .environmentObject(Theme())
                 .environmentObject(WeatherViewModel())
                 .environmentObject(PlaceListViewModel())

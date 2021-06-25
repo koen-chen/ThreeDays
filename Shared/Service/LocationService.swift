@@ -46,7 +46,6 @@ class LocationService<T>: NSObject, CLLocationManagerDelegate, ObservableObject 
         
         locationSubject = PassthroughSubject<T?, Never>()
         locationPublisher = locationSubject.eraseToAnyPublisher()
-        
         super.init()
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
@@ -74,12 +73,16 @@ class LocationService<T>: NSObject, CLLocationManagerDelegate, ObservableObject 
                     let result = ChinaPlace.shared.searchPlace(city, field: "city")
                     appPlace = result.first as? T
                 }
-                
+            
                 self.locationSubject.send(appPlace)
                 self.locationSubject.send(completion: .finished)
             }
         }
         
         cancelLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("location error:", error)
     }
 }

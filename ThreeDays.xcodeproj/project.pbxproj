@@ -41,14 +41,8 @@
 		44453BA3265B62C50060EFD7 /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44453BA2265B62C50060EFD7 /* PlaceListViewModel.swift */; };
 		4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */; };
 		4453CA612667691800C5DECB /* WeatherHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CA602667691800C5DECB /* WeatherHourlyModel.swift */; };
+		44561CED2684C31E00CB17A6 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561CEC2684C31E00CB17A6 /* UserDefaultsService.swift */; };
 		4477746C26724B67001E0CED /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477746B26724B67001E0CED /* Extension.swift */; };
-		44959CE4268330570079D97C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44959CE3268330570079D97C /* WidgetKit.framework */; };
-		44959CE6268330570079D97C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44959CE5268330570079D97C /* SwiftUI.framework */; };
-		44959CE9268330570079D97C /* ThreeDaysWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44959CE8268330570079D97C /* ThreeDaysWidget.swift */; };
-		44959CEC2683305A0079D97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44959CEB2683305A0079D97C /* Assets.xcassets */; };
-		44959CEE2683305A0079D97C /* ThreeDaysWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 44959CEA268330570079D97C /* ThreeDaysWidget.intentdefinition */; };
-		44959CEF2683305A0079D97C /* ThreeDaysWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 44959CEA268330570079D97C /* ThreeDaysWidget.intentdefinition */; };
-		44959CF22683305A0079D97C /* ThreeDaysWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 44959CE2268330570079D97C /* ThreeDaysWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */; };
 		449D3E1A263AF3B10095DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D3E19263AF3B10095DC12 /* ContentView.swift */; };
 		449D3E1C263AF3B20095DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D3E1B263AF3B20095DC12 /* Assets.xcassets */; };
@@ -71,16 +65,6 @@
 		44FEBAED264392EB00DD785C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEBAEC264392EB00DD785C /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		44959CF02683305A0079D97C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 449D3E0C263AF3B10095DC12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 44959CE1268330570079D97C;
-			remoteInfo = ThreeDaysWidgetExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		44959CF62683305A0079D97C /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -88,7 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				44959CF22683305A0079D97C /* ThreeDaysWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,15 +113,10 @@
 		44453BA2265B62C50060EFD7 /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		4445862C2647B2CB007E87C3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		4453CA602667691800C5DECB /* WeatherHourlyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHourlyModel.swift; sourceTree = "<group>"; };
-		446B2C842663C1870032F83C /* release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = release.plist; sourceTree = "<group>"; };
+		44561CEC2684C31E00CB17A6 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		4477746B26724B67001E0CED /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		44959CE2268330570079D97C /* ThreeDaysWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThreeDaysWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44959CE3268330570079D97C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		44959CE5268330570079D97C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		44959CE8268330570079D97C /* ThreeDaysWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysWidget.swift; sourceTree = "<group>"; };
-		44959CEA268330570079D97C /* ThreeDaysWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ThreeDaysWidget.intentdefinition; sourceTree = "<group>"; };
-		44959CEB2683305A0079D97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		44959CED2683305A0079D97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449D3E14263AF3B10095DC12 /* ThreeDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysApp.swift; sourceTree = "<group>"; };
 		449D3E19263AF3B10095DC12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,19 +140,13 @@
 		44F999172652702A00F6D646 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		44FEBAEC264392EB00DD785C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6338727A07B14A491FD6F1E3 /* Pods-ThreeDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDays.debug.xcconfig"; path = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.debug.xcconfig"; sourceTree = "<group>"; };
+		749AC85AEE1B0778A9394BB2 /* Pods-ThreeDaysWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDaysWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-ThreeDaysWidgetExtension/Pods-ThreeDaysWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		77A516C04DE7912FAC46D66A /* Pods_ThreeDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A875F02391FFA93BA1773DAE /* Pods-ThreeDaysWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDaysWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-ThreeDaysWidgetExtension/Pods-ThreeDaysWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		DD2D540D7F5E41E78DB591BA /* Pods_ThreeDaysWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeDaysWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		44959CDF268330570079D97C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				44959CE6268330570079D97C /* SwiftUI.framework in Frameworks */,
-				44959CE4268330570079D97C /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		449D3E11263AF3B10095DC12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,12 +166,11 @@
 				44B8C5F82665BDA900066AAF /* Weather */,
 				44B8C5F92665BDBB00066AAF /* Place */,
 				44B8C5FE2665C3CB00066AAF /* Day */,
-				4445862E2647B339007E87C3 /* Helper */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		4445862E2647B339007E87C3 /* Helper */ = {
+		4445862E2647B339007E87C3 /* ViewHelper */ = {
 			isa = PBXGroup;
 			children = (
 				44FEBAEC264392EB00DD785C /* LottieView.swift */,
@@ -207,7 +178,7 @@
 				44B4A5D3265F3F2500D9101D /* LaunchView.swift */,
 				44D49F4D26725B4600FECB7F /* ShareSheetView.swift */,
 			);
-			path = Helper;
+			path = ViewHelper;
 			sourceTree = "<group>";
 		};
 		44867D0C26595D9000BFFA51 /* Resources */ = {
@@ -221,22 +192,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		44959CE7268330570079D97C /* ThreeDaysWidget */ = {
+		44959D0B2683372A0079D97C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				44959CE8268330570079D97C /* ThreeDaysWidget.swift */,
-				44959CEA268330570079D97C /* ThreeDaysWidget.intentdefinition */,
-				44959CEB2683305A0079D97C /* Assets.xcassets */,
-				44959CED2683305A0079D97C /* Info.plist */,
+				440C95C3265A4C91002BB5AD /* ThreeDays.xcdatamodeld */,
+				44C727E42647ADB800F83303 /* Model */,
+				44B8C5FA2665BFA000066AAF /* Tools */,
+				44C727E32647AA6500F83303 /* Service */,
+				4445862E2647B339007E87C3 /* ViewHelper */,
 			);
-			path = ThreeDaysWidget;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		449D3E0B263AF3B10095DC12 = {
 			isa = PBXGroup;
 			children = (
+				44959D0B2683372A0079D97C /* Shared */,
 				449D3E16263AF3B10095DC12 /* ThreeDays */,
-				44959CE7268330570079D97C /* ThreeDaysWidget */,
 				449D3E15263AF3B10095DC12 /* Products */,
 				EFBA9DBAC076B035134D4767 /* Pods */,
 				6B6903C4C18C80AFC57DD431 /* Frameworks */,
@@ -247,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				449D3E14263AF3B10095DC12 /* ThreeDays.app */,
-				44959CE2268330570079D97C /* ThreeDaysWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,13 +228,8 @@
 			children = (
 				449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */,
 				442B0AAF264E6EF200E6B6D7 /* UI */,
-				44C727E32647AA6500F83303 /* Service */,
-				44C727E42647ADB800F83303 /* Model */,
-				44B8C5FA2665BFA000066AAF /* Tools */,
 				44867D0C26595D9000BFFA51 /* Resources */,
-				440C95C3265A4C91002BB5AD /* ThreeDays.xcdatamodeld */,
 				449D3E20263AF3B20095DC12 /* Info.plist */,
-				446B2C842663C1870032F83C /* release.plist */,
 				449D3E1D263AF3B20095DC12 /* Preview Content */,
 				443B48A42673130E0017AE1B /* Launch Screen.storyboard */,
 			);
@@ -351,6 +317,7 @@
 				44C727DF26463FF600F83303 /* LocationService.swift */,
 				44C727E126465FF100F83303 /* NetworkService.swift */,
 				44B1CDDD2657B8E800DC5502 /* PersistenceService.swift */,
+				44561CEC2684C31E00CB17A6 /* UserDefaultsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -398,6 +365,7 @@
 				77A516C04DE7912FAC46D66A /* Pods_ThreeDays.framework */,
 				44959CE3268330570079D97C /* WidgetKit.framework */,
 				44959CE5268330570079D97C /* SwiftUI.framework */,
+				DD2D540D7F5E41E78DB591BA /* Pods_ThreeDaysWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -407,6 +375,8 @@
 			children = (
 				6338727A07B14A491FD6F1E3 /* Pods-ThreeDays.debug.xcconfig */,
 				3BB50EAA629702D42777EEA3 /* Pods-ThreeDays.release.xcconfig */,
+				A875F02391FFA93BA1773DAE /* Pods-ThreeDaysWidgetExtension.debug.xcconfig */,
+				749AC85AEE1B0778A9394BB2 /* Pods-ThreeDaysWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -414,23 +384,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		44959CE1268330570079D97C /* ThreeDaysWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 44959CF32683305A0079D97C /* Build configuration list for PBXNativeTarget "ThreeDaysWidgetExtension" */;
-			buildPhases = (
-				44959CDE268330570079D97C /* Sources */,
-				44959CDF268330570079D97C /* Frameworks */,
-				44959CE0268330570079D97C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ThreeDaysWidgetExtension;
-			productName = ThreeDaysWidgetExtension;
-			productReference = 44959CE2268330570079D97C /* ThreeDaysWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		449D3E13263AF3B10095DC12 /* ThreeDays */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 449D3E23263AF3B20095DC12 /* Build configuration list for PBXNativeTarget "ThreeDays" */;
@@ -445,7 +398,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				44959CF12683305A0079D97C /* PBXTargetDependency */,
 			);
 			name = ThreeDays;
 			productName = ThreeDays;
@@ -461,9 +413,6 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					44959CE1268330570079D97C = {
-						CreatedOnToolsVersion = 12.5.1;
-					};
 					449D3E13263AF3B10095DC12 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -483,20 +432,11 @@
 			projectRoot = "";
 			targets = (
 				449D3E13263AF3B10095DC12 /* ThreeDays */,
-				44959CE1268330570079D97C /* ThreeDaysWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		44959CE0268330570079D97C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				44959CEC2683305A0079D97C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		449D3E12263AF3B10095DC12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,15 +514,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		44959CDE268330570079D97C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				44959CEE2683305A0079D97C /* ThreeDaysWidget.intentdefinition in Sources */,
-				44959CE9268330570079D97C /* ThreeDaysWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		449D3E10263AF3B10095DC12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -607,6 +538,7 @@
 				440C95C5265A4C91002BB5AD /* ThreeDays.xcdatamodeld in Sources */,
 				44453BA3265B62C50060EFD7 /* PlaceListViewModel.swift in Sources */,
 				44B1CDE02657FD8700DC5502 /* PlaceSearchView.swift in Sources */,
+				44561CED2684C31E00CB17A6 /* UserDefaultsService.swift in Sources */,
 				449D3E18263AF3B10095DC12 /* ThreeDaysApp.swift in Sources */,
 				4453CA612667691800C5DECB /* WeatherHourlyModel.swift in Sources */,
 				44B1CDDE2657B8E800DC5502 /* PersistenceService.swift in Sources */,
@@ -615,66 +547,13 @@
 				441526C3265C93D200FD0700 /* Theme.swift in Sources */,
 				44FEBAED264392EB00DD785C /* LottieView.swift in Sources */,
 				44F999182652702A00F6D646 /* PlaceListView.swift in Sources */,
-				44959CEF2683305A0079D97C /* ThreeDaysWidget.intentdefinition in Sources */,
 				44B8C60C2665D89800066AAF /* WeatherDailyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		44959CF12683305A0079D97C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 44959CE1268330570079D97C /* ThreeDaysWidgetExtension */;
-			targetProxy = 44959CF02683305A0079D97C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		44959CF42683305A0079D97C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PN847NX57;
-				INFOPLIST_FILE = ThreeDaysWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = koen.chen.ThreeDays.ThreeDaysWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		44959CF52683305A0079D97C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PN847NX57;
-				INFOPLIST_FILE = ThreeDaysWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = koen.chen.ThreeDays.ThreeDaysWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		449D3E21263AF3B20095DC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -847,15 +726,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		44959CF32683305A0079D97C /* Build configuration list for PBXNativeTarget "ThreeDaysWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				44959CF42683305A0079D97C /* Debug */,
-				44959CF52683305A0079D97C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		449D3E0F263AF3B10095DC12 /* Build configuration list for PBXProject "ThreeDays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

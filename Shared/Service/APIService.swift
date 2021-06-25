@@ -86,6 +86,7 @@ class APIService {
     private let queue = DispatchQueue(label: "WeatherService", qos: .default, attributes: .concurrent)
     
     func getWeatherNow(_ location: String) -> AnyPublisher<WeatherNowModel, Error> {
+        print("Now URL: ", EndPoint.getWeatherNow(location).url)
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker
@@ -105,6 +106,7 @@ class APIService {
     }
     
     func getWeatherDaily(_ location: String, daily: String = "3d") -> AnyPublisher<WeatherDailyModel, Error> {
+        print("Daily URL: ", EndPoint.getWeatherDaily(location, daily: daily).url)
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker

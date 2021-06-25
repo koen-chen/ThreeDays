@@ -33,6 +33,8 @@ class WeatherViewModel: ObservableObject {
             .sink { completion in
             } receiveValue: { value in
                 self.weatherNow = value
+    
+                UserDefaultsService.shared.save(weatherNow: self.weatherNow)
             }
             .store(in: &subscriptions)
     }
@@ -43,6 +45,8 @@ class WeatherViewModel: ObservableObject {
             .sink { completion in
             } receiveValue: { value in
                 self.weatherDaily = value
+                
+                UserDefaultsService.shared.save(weatherDaily: self.weatherDaily)
             }
             .store(in: &subscriptions)
     }
@@ -53,6 +57,8 @@ class WeatherViewModel: ObservableObject {
             .sink { completion in
             } receiveValue: { value in
                 self.weatherHourly = value
+                
+                UserDefaultsService.shared.save(weatherHourly: self.weatherHourly)
             }
             .store(in: &subscriptions)
     }

@@ -39,6 +39,7 @@ class PlaceListViewModel: ObservableObject {
     }
     
     func changeActivePlace(_ place: Place) -> Void {
+        UserDefaultsService.shared.save(activePlace: place.placeID!)
         self.activePlace = place
         Self.placeSubject.send(self.activePlace?.placeID)
     }
@@ -54,13 +55,11 @@ class PlaceListViewModel: ObservableObject {
         place.createdAt = Date()
         place.isAppLocation = true
         
-        let defaults = UserDefaults.standard
-        
-        if let code = defaults.string(forKey: "activedPlaceID") {
+        if let code = UserDefaultsService.shared.fetchActivePlace() {
             let result = PersistenceService.shared.fetchDataForEntity(NSPredicate(format: "placeID == %@", code))
             self.activePlace = result.count == 0 ? place : result[0]
         } else {
-            defaults.set(placeID, forKey: "activedPlaceID")
+            UserDefaultsService.shared.save(activePlace: placeID)
             self.activePlace = place
         }
         

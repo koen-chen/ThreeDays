@@ -127,7 +127,6 @@ struct PlaceListView: View {
     
     func chooseCity (_ item: Place) {
         if showRemoveBtn == false {
-            UserDefaults.standard.set(item.placeID, forKey: "activedPlaceID")
             viewModel.changeActivePlace(item)
             showCityList.toggle()
         } else if showRemoveBtn && !item.isAppLocation {
@@ -142,7 +141,6 @@ struct PlaceListView: View {
         
         if viewModel.activePlace == item {
             viewModel.changeActivePlace(dbPlaceList[0])
-            UserDefaults.standard.set(dbPlaceList[0].placeID, forKey: "activedPlaceID")
         }
         
         DispatchQueue.main.async {
