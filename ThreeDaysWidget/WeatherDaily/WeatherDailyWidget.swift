@@ -1,0 +1,22 @@
+//
+//  WeatherDailyWidget.swift
+//  ThreeDaysWidgetExtension
+//
+//  Created by koen.chen on 2021/6/25.
+//
+
+import SwiftUI
+import WidgetKit
+
+struct WeatherDailyWidget: Widget {
+    let kind: String = "WeatherDailyWidget"
+
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: WidgetTimelineProvider()) { entry in
+            WeatherDailyWidgetView(entry: entry)
+        }
+        .configurationDisplayName("3日天气")
+        .description("青山一道同云雨，明月何曾是两乡")
+        .supportedFamilies([.systemLarge])
+    }
+}

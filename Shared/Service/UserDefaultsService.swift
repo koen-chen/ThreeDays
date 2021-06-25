@@ -9,7 +9,7 @@ import Foundation
 
 class UserDefaultsService {
     static let shared = UserDefaultsService()
-    private let userDefaults: UserDefaults
+    let userDefaults: UserDefaults
     
     private let activePlaceKey = "active_place_key"
     private let weatherNowKey = "now_weather_key"
@@ -17,7 +17,7 @@ class UserDefaultsService {
     private let weatherHourlyKey = "hourly_weather_key"
     
     init () {
-        if let userDefaults = UserDefaults(suiteName: "koen.chen.threedays-weather") {
+        if let userDefaults = UserDefaults(suiteName: "group.koen.chen.ThreeDays") {
             self.userDefaults = userDefaults
         } else {
             self.userDefaults = UserDefaults.standard

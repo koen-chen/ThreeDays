@@ -33,7 +33,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SourceHanSerifCN-SemiBold.otf</string>
-		<string>ZhuoJianGanLanJianTi-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -35,6 +35,37 @@
 		441F2C7C26628232003828DB /* weather-night-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6926628232003828DB /* weather-night-wind.json */; };
 		441F2C7D26628232003828DB /* weather-day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C6A26628232003828DB /* weather-day-clear-sky.json */; };
 		442B0AB1264E6F0800E6B6D7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */; };
+		4430A9BA26857A5A00702552 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44959CE3268330570079D97C /* WidgetKit.framework */; };
+		4430A9BB26857A5A00702552 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44959CE5268330570079D97C /* SwiftUI.framework */; };
+		4430A9C126857A5C00702552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4430A9C026857A5C00702552 /* Assets.xcassets */; };
+		4430A9C726857A5C00702552 /* ThreeDaysWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4430A9B926857A5900702552 /* ThreeDaysWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4430A9CD26857E4E00702552 /* ThreeDaysWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9CB26857E4E00702552 /* ThreeDaysWidget.intentdefinition */; };
+		4430A9CE26857E4E00702552 /* ThreeDaysWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9CC26857E4E00702552 /* ThreeDaysWidget.swift */; };
+		4430A9D026857EE700702552 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9CF26857EE700702552 /* WidgetTimelineProvider.swift */; };
+		4430A9D226857F2400702552 /* WidgetNotAvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9D126857F2400702552 /* WidgetNotAvailableView.swift */; };
+		4430A9D32685804E00702552 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561CEC2684C31E00CB17A6 /* UserDefaultsService.swift */; };
+		4430A9D4268581BE00702552 /* WeatherNowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FE2644CCF600105EB7 /* WeatherNowModel.swift */; };
+		4430A9D5268581C000702552 /* WeatherDailyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C60B2665D89800066AAF /* WeatherDailyModel.swift */; };
+		4430A9D6268581C200702552 /* WeatherHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CA602667691800C5DECB /* WeatherHourlyModel.swift */; };
+		4430A9D7268581C400702552 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441526C2265C93D200FD0700 /* Theme.swift */; };
+		4430A9D8268581C500702552 /* ChinaPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C6052665C67B00066AAF /* ChinaPlace.swift */; };
+		4430A9D9268581C700702552 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C5FB2665BFEC00066AAF /* Description.swift */; };
+		4430A9DA268581C900702552 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477746B26724B67001E0CED /* Extension.swift */; };
+		4430A9DB268581CB00702552 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FC26440E1E00105EB7 /* APIService.swift */; };
+		4430A9DC268581CC00702552 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727DF26463FF600F83303 /* LocationService.swift */; };
+		4430A9DD268581D100702552 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727E126465FF100F83303 /* NetworkService.swift */; };
+		4430A9DE268581D200702552 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1CDDD2657B8E800DC5502 /* PersistenceService.swift */; };
+		4430A9E0268581D600702552 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78EC2643E60300105EB7 /* BlurView.swift */; };
+		4430A9E1268581D800702552 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5D3265F3F2500D9101D /* LaunchView.swift */; };
+		4430A9E2268581DA00702552 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D49F4D26725B4600FECB7F /* ShareSheetView.swift */; };
+		4430A9E3268581DE00702552 /* ThreeDays.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 440C95C3265A4C91002BB5AD /* ThreeDays.xcdatamodeld */; };
+		4430A9E4268582E900702552 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEBAEC264392EB00DD785C /* LottieView.swift */; };
+		4430A9E8268598E000702552 /* WeatherNowWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9E7268598E000702552 /* WeatherNowWidget.swift */; };
+		4430A9EB268598FE00702552 /* WeatherDailyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9EA268598FE00702552 /* WeatherDailyWidget.swift */; };
+		4430A9EE2685A9A700702552 /* WeatherDailyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9ED2685A9A700702552 /* WeatherDailyWidgetView.swift */; };
+		4430A9F02685A9D300702552 /* WeatherNowWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9EF2685A9D300702552 /* WeatherNowWidgetView.swift */; };
+		4430A9F22685AA3A00702552 /* WeatherEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430A9F12685AA3A00702552 /* WeatherEntry.swift */; };
+		4430A9F32685B52D00702552 /* SourceHanSerifCN-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */; };
 		44376C3D2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */; };
 		443B48A52673130E0017AE1B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443B48A42673130E0017AE1B /* Launch Screen.storyboard */; };
 		4440F80E26677C7E0027D647 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440F80D26677C7E0027D647 /* WeatherDetailView.swift */; };
@@ -63,7 +94,18 @@
 		44D49F4E26725B4600FECB7F /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D49F4D26725B4600FECB7F /* ShareSheetView.swift */; };
 		44F999182652702A00F6D646 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F999172652702A00F6D646 /* PlaceListView.swift */; };
 		44FEBAED264392EB00DD785C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEBAEC264392EB00DD785C /* LottieView.swift */; };
+		BDE283A0E9571F6FF86D002E /* Pods_ThreeDaysWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D540D7F5E41E78DB591BA /* Pods_ThreeDaysWidgetExtension.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4430A9C526857A5C00702552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 449D3E0C263AF3B10095DC12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4430A9B826857A5900702552;
+			remoteInfo = ThreeDaysWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		44959CF62683305A0079D97C /* Embed App Extensions */ = {
@@ -72,6 +114,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				4430A9C726857A5C00702552 /* ThreeDaysWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +150,20 @@
 		441F2C6926628232003828DB /* weather-night-wind.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-wind.json"; sourceTree = "<group>"; };
 		441F2C6A26628232003828DB /* weather-day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-clear-sky.json"; sourceTree = "<group>"; };
 		442B0AB0264E6F0800E6B6D7 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		4430A9B926857A5900702552 /* ThreeDaysWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThreeDaysWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4430A9C026857A5C00702552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4430A9C226857A5C00702552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4430A9CB26857E4E00702552 /* ThreeDaysWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = ThreeDaysWidget.intentdefinition; sourceTree = "<group>"; };
+		4430A9CC26857E4E00702552 /* ThreeDaysWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDaysWidget.swift; sourceTree = "<group>"; };
+		4430A9CF26857EE700702552 /* WidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineProvider.swift; sourceTree = "<group>"; };
+		4430A9D126857F2400702552 /* WidgetNotAvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNotAvailableView.swift; sourceTree = "<group>"; };
+		4430A9E526858A5800702552 /* ThreeDays.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThreeDays.entitlements; sourceTree = "<group>"; };
+		4430A9E626858BB700702552 /* ThreeDaysWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThreeDaysWidgetExtension.entitlements; sourceTree = "<group>"; };
+		4430A9E7268598E000702552 /* WeatherNowWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowWidget.swift; sourceTree = "<group>"; };
+		4430A9EA268598FE00702552 /* WeatherDailyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyWidget.swift; sourceTree = "<group>"; };
+		4430A9ED2685A9A700702552 /* WeatherDailyWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyWidgetView.swift; sourceTree = "<group>"; };
+		4430A9EF2685A9D300702552 /* WeatherNowWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowWidgetView.swift; sourceTree = "<group>"; };
+		4430A9F12685AA3A00702552 /* WeatherEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntry.swift; sourceTree = "<group>"; };
 		44376C3C2660CB870051C145 /* SourceHanSerifCN-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSerifCN-SemiBold.otf"; sourceTree = "<group>"; };
 		443B48A42673130E0017AE1B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4440F80D26677C7E0027D647 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
@@ -147,6 +204,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4430A9B626857A5900702552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4430A9BB26857A5A00702552 /* SwiftUI.framework in Frameworks */,
+				4430A9BA26857A5A00702552 /* WidgetKit.framework in Frameworks */,
+				BDE283A0E9571F6FF86D002E /* Pods_ThreeDaysWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449D3E11263AF3B10095DC12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,6 +235,40 @@
 				44B8C5FE2665C3CB00066AAF /* Day */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		4430A9BC26857A5A00702552 /* ThreeDaysWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4430A9CB26857E4E00702552 /* ThreeDaysWidget.intentdefinition */,
+				4430A9CC26857E4E00702552 /* ThreeDaysWidget.swift */,
+				4430A9EC2685990100702552 /* WeatherDaily */,
+				4430A9E9268598E500702552 /* WeatherNow */,
+				4430A9CF26857EE700702552 /* WidgetTimelineProvider.swift */,
+				4430A9F12685AA3A00702552 /* WeatherEntry.swift */,
+				4430A9D126857F2400702552 /* WidgetNotAvailableView.swift */,
+				4430A9C026857A5C00702552 /* Assets.xcassets */,
+				4430A9C226857A5C00702552 /* Info.plist */,
+			);
+			path = ThreeDaysWidget;
+			sourceTree = "<group>";
+		};
+		4430A9E9268598E500702552 /* WeatherNow */ = {
+			isa = PBXGroup;
+			children = (
+				4430A9E7268598E000702552 /* WeatherNowWidget.swift */,
+				4430A9EF2685A9D300702552 /* WeatherNowWidgetView.swift */,
+			);
+			path = WeatherNow;
+			sourceTree = "<group>";
+		};
+		4430A9EC2685990100702552 /* WeatherDaily */ = {
+			isa = PBXGroup;
+			children = (
+				4430A9EA268598FE00702552 /* WeatherDailyWidget.swift */,
+				4430A9ED2685A9A700702552 /* WeatherDailyWidgetView.swift */,
+			);
+			path = WeatherDaily;
 			sourceTree = "<group>";
 		};
 		4445862E2647B339007E87C3 /* ViewHelper */ = {
@@ -207,8 +308,10 @@
 		449D3E0B263AF3B10095DC12 = {
 			isa = PBXGroup;
 			children = (
+				4430A9E626858BB700702552 /* ThreeDaysWidgetExtension.entitlements */,
 				44959D0B2683372A0079D97C /* Shared */,
 				449D3E16263AF3B10095DC12 /* ThreeDays */,
+				4430A9BC26857A5A00702552 /* ThreeDaysWidget */,
 				449D3E15263AF3B10095DC12 /* Products */,
 				EFBA9DBAC076B035134D4767 /* Pods */,
 				6B6903C4C18C80AFC57DD431 /* Frameworks */,
@@ -219,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				449D3E14263AF3B10095DC12 /* ThreeDays.app */,
+				4430A9B926857A5900702552 /* ThreeDaysWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,12 +330,13 @@
 		449D3E16263AF3B10095DC12 /* ThreeDays */ = {
 			isa = PBXGroup;
 			children = (
+				4430A9E526858A5800702552 /* ThreeDays.entitlements */,
 				449D3E17263AF3B10095DC12 /* ThreeDaysApp.swift */,
 				442B0AAF264E6EF200E6B6D7 /* UI */,
 				44867D0C26595D9000BFFA51 /* Resources */,
 				449D3E20263AF3B20095DC12 /* Info.plist */,
-				449D3E1D263AF3B20095DC12 /* Preview Content */,
 				443B48A42673130E0017AE1B /* Launch Screen.storyboard */,
+				449D3E1D263AF3B20095DC12 /* Preview Content */,
 			);
 			path = ThreeDays;
 			sourceTree = "<group>";
@@ -384,6 +489,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4430A9B826857A5900702552 /* ThreeDaysWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4430A9CA26857A5C00702552 /* Build configuration list for PBXNativeTarget "ThreeDaysWidgetExtension" */;
+			buildPhases = (
+				D60E6BFB4B851FC8087BC854 /* [CP] Check Pods Manifest.lock */,
+				4430A9B526857A5900702552 /* Sources */,
+				4430A9B626857A5900702552 /* Frameworks */,
+				4430A9B726857A5900702552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThreeDaysWidgetExtension;
+			productName = ThreeDaysWidgetExtension;
+			productReference = 4430A9B926857A5900702552 /* ThreeDaysWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		449D3E13263AF3B10095DC12 /* ThreeDays */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 449D3E23263AF3B20095DC12 /* Build configuration list for PBXNativeTarget "ThreeDays" */;
@@ -398,6 +521,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4430A9C626857A5C00702552 /* PBXTargetDependency */,
 			);
 			name = ThreeDays;
 			productName = ThreeDays;
@@ -413,6 +537,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					4430A9B826857A5900702552 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					449D3E13263AF3B10095DC12 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -432,11 +559,21 @@
 			projectRoot = "";
 			targets = (
 				449D3E13263AF3B10095DC12 /* ThreeDays */,
+				4430A9B826857A5900702552 /* ThreeDaysWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4430A9B726857A5900702552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4430A9F32685B52D00702552 /* SourceHanSerifCN-SemiBold.otf in Resources */,
+				4430A9C126857A5C00702552 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449D3E12263AF3B10095DC12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,9 +648,64 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D60E6BFB4B851FC8087BC854 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThreeDaysWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4430A9B526857A5900702552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4430A9DC268581CC00702552 /* LocationService.swift in Sources */,
+				4430A9EE2685A9A700702552 /* WeatherDailyWidgetView.swift in Sources */,
+				4430A9E3268581DE00702552 /* ThreeDays.xcdatamodeld in Sources */,
+				4430A9E2268581DA00702552 /* ShareSheetView.swift in Sources */,
+				4430A9D7268581C400702552 /* Theme.swift in Sources */,
+				4430A9D226857F2400702552 /* WidgetNotAvailableView.swift in Sources */,
+				4430A9D5268581C000702552 /* WeatherDailyModel.swift in Sources */,
+				4430A9E0268581D600702552 /* BlurView.swift in Sources */,
+				4430A9E8268598E000702552 /* WeatherNowWidget.swift in Sources */,
+				4430A9DA268581C900702552 /* Extension.swift in Sources */,
+				4430A9E1268581D800702552 /* LaunchView.swift in Sources */,
+				4430A9D4268581BE00702552 /* WeatherNowModel.swift in Sources */,
+				4430A9CE26857E4E00702552 /* ThreeDaysWidget.swift in Sources */,
+				4430A9E4268582E900702552 /* LottieView.swift in Sources */,
+				4430A9EB268598FE00702552 /* WeatherDailyWidget.swift in Sources */,
+				4430A9F22685AA3A00702552 /* WeatherEntry.swift in Sources */,
+				4430A9D8268581C500702552 /* ChinaPlace.swift in Sources */,
+				4430A9D9268581C700702552 /* Description.swift in Sources */,
+				4430A9DE268581D200702552 /* PersistenceService.swift in Sources */,
+				4430A9D32685804E00702552 /* UserDefaultsService.swift in Sources */,
+				4430A9DD268581D100702552 /* NetworkService.swift in Sources */,
+				4430A9DB268581CB00702552 /* APIService.swift in Sources */,
+				4430A9F02685A9D300702552 /* WeatherNowWidgetView.swift in Sources */,
+				4430A9CD26857E4E00702552 /* ThreeDaysWidget.intentdefinition in Sources */,
+				4430A9D026857EE700702552 /* WidgetTimelineProvider.swift in Sources */,
+				4430A9D6268581C200702552 /* WeatherHourlyModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449D3E10263AF3B10095DC12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,7 +745,63 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4430A9C626857A5C00702552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4430A9B826857A5900702552 /* ThreeDaysWidgetExtension */;
+			targetProxy = 4430A9C526857A5C00702552 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4430A9C826857A5C00702552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A875F02391FFA93BA1773DAE /* Pods-ThreeDaysWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ThreeDaysWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PN847NX57;
+				INFOPLIST_FILE = ThreeDaysWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = koen.chen.ThreeDays.ThreeDaysWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4430A9C926857A5C00702552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 749AC85AEE1B0778A9394BB2 /* Pods-ThreeDaysWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ThreeDaysWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PN847NX57;
+				INFOPLIST_FILE = ThreeDaysWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = koen.chen.ThreeDays.ThreeDaysWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		449D3E21263AF3B20095DC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -682,6 +930,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ThreeDays/ThreeDays.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ThreeDays/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PN847NX57;
@@ -706,6 +955,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ThreeDays/ThreeDays.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ThreeDays/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PN847NX57;
@@ -726,6 +976,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4430A9CA26857A5C00702552 /* Build configuration list for PBXNativeTarget "ThreeDaysWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4430A9C826857A5C00702552 /* Debug */,
+				4430A9C926857A5C00702552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		449D3E0F263AF3B10095DC12 /* Build configuration list for PBXProject "ThreeDays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
