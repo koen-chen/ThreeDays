@@ -83,9 +83,11 @@ struct NowWeatherSmallView: View {
                                     .font(.custom(theme.font, size: 22))
                                    
                                 HStack(spacing: 5) {
-                                    TempLimitView(label: "", value: dailyWeather.tempMin)
+                                    Text("\(dailyWeather.tempMin)°")
+                                        .font(.custom(theme.font, size: 12))
                                     Text("/").font(.system(size: 10))
-                                    TempLimitView(label: "", value: dailyWeather.tempMax)
+                                    Text("\(dailyWeather.tempMax)°")
+                                        .font(.custom(theme.font, size: 12))
                                 }
             
                             }

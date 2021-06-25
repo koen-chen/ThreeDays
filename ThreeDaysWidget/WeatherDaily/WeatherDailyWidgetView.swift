@@ -12,8 +12,6 @@ struct WeatherDailyWidgetView: View {
     @EnvironmentObject var theme: Theme
     var entry: WidgetTimelineProvider.Entry
     
-
-    
     var body: some View {
         ZStack {
             theme.backgroundColor.opacity(0.2).ignoresSafeArea()
@@ -110,6 +108,7 @@ struct WeatherItem: View {
                             .font(.custom(theme.font, size: 10))
                             .offset(y: 15)
                         }
+                        .padding(.trailing, 5)
                     }
                     
                     Spacer()
@@ -122,9 +121,11 @@ struct WeatherItem: View {
                         .frame(height: 120)
                         
                     VStack(alignment: .center, spacing: 5) {
-                        TempLimitView(label: "", value: dailyWeather.tempMax)
+                        Text("\(dailyWeather.tempMax)°")
+                            .font(.custom(theme.font, size: 14))
                         Divider().background(theme.backgroundColor).padding(.horizontal, 35)
-                        TempLimitView(label: "", value: dailyWeather.tempMin)
+                        Text("\(dailyWeather.tempMin)°")
+                            .font(.custom(theme.font, size: 14))
                     }
                 
                 }
@@ -141,7 +142,7 @@ struct WeatherItem: View {
                 }
             }
         }
-        .shadow(color: theme.backgroundColor.opacity(0.6), radius: 10, x: 0, y: 0)
+        .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
         .padding(.all, 10)
     }
 }

@@ -14,6 +14,7 @@ struct WeatherDailyWidget: Widget {
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: WidgetTimelineProvider()) { entry in
             WeatherDailyWidgetView(entry: entry)
+                .environmentObject(Theme())
         }
         .configurationDisplayName("3日天气")
         .description("青山一道同云雨，明月何曾是两乡")
