@@ -24,7 +24,7 @@ struct WeatherDailyWidgetView: View {
                 )
                 .frame(maxWidth: theme.screen.width / 3)
                 
-                Divider().background(theme.backgroundColor)
+                Divider().background(theme.backgroundColor.opacity(0.4))
                 
                 WeatherItem(
                     activeDay: 1,
@@ -33,7 +33,7 @@ struct WeatherDailyWidgetView: View {
                 )
                 .frame(maxWidth: theme.screen.width / 3)
                 
-                Divider().background(theme.backgroundColor)
+                Divider().background(theme.backgroundColor.opacity(0.4))
                
                 WeatherItem(
                     activeDay: 2,
@@ -77,12 +77,6 @@ struct WeatherItem: View {
         let temp = daily.fxDate.components(separatedBy: "-")
         
         return (Int(temp[1])!, Int(temp[2])!)
-    }
-    
-    var Line: some View {
-        VStack {
-            Divider().background(theme.backgroundColor)
-        }
     }
     
     var body: some View {
