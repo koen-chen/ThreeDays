@@ -17,9 +17,9 @@ struct WeatherNowWidgetView: View {
             case .systemLarge:
                 WidgetNotAvailableView()
             case .systemSmall:
-                NowWeatherSmallView(nowWeather: entry.nowWeather, dailyWeather: entry.dailyWeather)
+                WeatherNowSmallView(nowWeather: entry.nowWeather, dailyWeather: entry.dailyWeather)
             case .systemMedium:
-                NowWeatherMediumView()
+                WeatherNowMediumView()
             @unknown default:
                 WidgetNotAvailableView()
         }

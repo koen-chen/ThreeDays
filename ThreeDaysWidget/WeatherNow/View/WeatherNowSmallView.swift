@@ -1,5 +1,5 @@
 //
-//  NowWeatherSmallView.swift
+//  WeatherNowSmallView.swift
 //  ThreeDaysWidgetExtension
 //
 //  Created by koen.chen on 2021/6/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NowWeatherSmallView: View {
+struct WeatherNowSmallView: View {
     @EnvironmentObject var theme: Theme
     let nowWeather: WeatherNowModel?
     let dailyWeather: WeatherDailyModel?

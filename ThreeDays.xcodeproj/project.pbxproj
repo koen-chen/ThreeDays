@@ -94,8 +94,9 @@
 		44C727E226465FF100F83303 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727E126465FF100F83303 /* NetworkService.swift */; };
 		44CBC1072668F07700F53F88 /* weather-night-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CBC1062668F07700F53F88 /* weather-night-rain.json */; };
 		44D49F4E26725B4600FECB7F /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D49F4D26725B4600FECB7F /* ShareSheetView.swift */; };
-		44EBEC2D26872B1A0026FA73 /* NowWeatherMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC2C26872B1A0026FA73 /* NowWeatherMediumView.swift */; };
-		44EBEC2F26872B370026FA73 /* NowWeatherSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC2E26872B370026FA73 /* NowWeatherSmallView.swift */; };
+		44EBEC2D26872B1A0026FA73 /* WeatherNowMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC2C26872B1A0026FA73 /* WeatherNowMediumView.swift */; };
+		44EBEC2F26872B370026FA73 /* WeatherNowSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC2E26872B370026FA73 /* WeatherNowSmallView.swift */; };
+		44EBEC3226872C0F0026FA73 /* WeatherDailyLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC3126872C0F0026FA73 /* WeatherDailyLargeView.swift */; };
 		44F999182652702A00F6D646 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F999172652702A00F6D646 /* PlaceListView.swift */; };
 		44FEBAED264392EB00DD785C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEBAEC264392EB00DD785C /* LottieView.swift */; };
 		BDE283A0E9571F6FF86D002E /* Pods_ThreeDaysWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D540D7F5E41E78DB591BA /* Pods_ThreeDaysWidgetExtension.framework */; };
@@ -200,8 +201,9 @@
 		44C727E126465FF100F83303 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		44CBC1062668F07700F53F88 /* weather-night-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-rain.json"; sourceTree = "<group>"; };
 		44D49F4D26725B4600FECB7F /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
-		44EBEC2C26872B1A0026FA73 /* NowWeatherMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowWeatherMediumView.swift; sourceTree = "<group>"; };
-		44EBEC2E26872B370026FA73 /* NowWeatherSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowWeatherSmallView.swift; sourceTree = "<group>"; };
+		44EBEC2C26872B1A0026FA73 /* WeatherNowMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowMediumView.swift; sourceTree = "<group>"; };
+		44EBEC2E26872B370026FA73 /* WeatherNowSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowSmallView.swift; sourceTree = "<group>"; };
+		44EBEC3126872C0F0026FA73 /* WeatherDailyLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyLargeView.swift; sourceTree = "<group>"; };
 		44F999172652702A00F6D646 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		44FEBAEC264392EB00DD785C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6338727A07B14A491FD6F1E3 /* Pods-ThreeDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDays.debug.xcconfig"; path = "Target Support Files/Pods-ThreeDays/Pods-ThreeDays.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,9 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				4430A9E7268598E000702552 /* WeatherNowWidget.swift */,
-				4430A9EF2685A9D300702552 /* WeatherNowWidgetView.swift */,
-				44EBEC2E26872B370026FA73 /* NowWeatherSmallView.swift */,
-				44EBEC2C26872B1A0026FA73 /* NowWeatherMediumView.swift */,
+				44EBEC3026872BE50026FA73 /* View */,
 			);
 			path = WeatherNow;
 			sourceTree = "<group>";
@@ -277,6 +277,7 @@
 			children = (
 				4430A9EA268598FE00702552 /* WeatherDailyWidget.swift */,
 				4430A9ED2685A9A700702552 /* WeatherDailyWidgetView.swift */,
+				44EBEC3126872C0F0026FA73 /* WeatherDailyLargeView.swift */,
 			);
 			path = WeatherDaily;
 			sourceTree = "<group>";
@@ -445,6 +446,16 @@
 				4453CA602667691800C5DECB /* WeatherHourlyModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		44EBEC3026872BE50026FA73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4430A9EF2685A9D300702552 /* WeatherNowWidgetView.swift */,
+				44EBEC2E26872B370026FA73 /* WeatherNowSmallView.swift */,
+				44EBEC2C26872B1A0026FA73 /* WeatherNowMediumView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		44FEBAEB2643929600DD785C /* Lottie */ = {
@@ -699,7 +710,7 @@
 				4430A9D226857F2400702552 /* WidgetNotAvailableView.swift in Sources */,
 				4430A9D5268581C000702552 /* WeatherDailyModel.swift in Sources */,
 				4430A9E0268581D600702552 /* BlurView.swift in Sources */,
-				44EBEC2F26872B370026FA73 /* NowWeatherSmallView.swift in Sources */,
+				44EBEC2F26872B370026FA73 /* WeatherNowSmallView.swift in Sources */,
 				4430A9E8268598E000702552 /* WeatherNowWidget.swift in Sources */,
 				4430A9DA268581C900702552 /* Extension.swift in Sources */,
 				4430A9E1268581D800702552 /* DisconnectedView.swift in Sources */,
@@ -714,11 +725,12 @@
 				4430A9D32685804E00702552 /* UserDefaultsService.swift in Sources */,
 				4430A9DD268581D100702552 /* NetworkService.swift in Sources */,
 				4430A9DB268581CB00702552 /* APIService.swift in Sources */,
+				44EBEC3226872C0F0026FA73 /* WeatherDailyLargeView.swift in Sources */,
 				4430A9F02685A9D300702552 /* WeatherNowWidgetView.swift in Sources */,
 				4430A9CD26857E4E00702552 /* ThreeDaysWidget.intentdefinition in Sources */,
 				4430A9D026857EE700702552 /* WidgetTimelineProvider.swift in Sources */,
 				4430A9D6268581C200702552 /* WeatherHourlyModel.swift in Sources */,
-				44EBEC2D26872B1A0026FA73 /* NowWeatherMediumView.swift in Sources */,
+				44EBEC2D26872B1A0026FA73 /* WeatherNowMediumView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
