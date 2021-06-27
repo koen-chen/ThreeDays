@@ -11,6 +11,7 @@ struct WeatherDailyLargeView: View {
     @EnvironmentObject var theme: Theme
     let nowWeather: WeatherNowModel?
     let dailyWeather: WeatherDailyModel?
+    let activePlaceName: String?
     
     var body: some View {
         ZStack {
@@ -20,7 +21,8 @@ struct WeatherDailyLargeView: View {
                 WeatherItem(
                     activeDay: 0,
                     nowWeather: nowWeather,
-                    dailyWeather: dailyWeather
+                    dailyWeather: dailyWeather,
+                    activePlaceName: activePlaceName
                 )
                 .frame(maxWidth: theme.screen.width / 3)
                 
@@ -29,7 +31,8 @@ struct WeatherDailyLargeView: View {
                 WeatherItem(
                     activeDay: 1,
                     nowWeather: nowWeather,
-                    dailyWeather: dailyWeather
+                    dailyWeather: dailyWeather,
+                    activePlaceName: activePlaceName
                 )
                 .frame(maxWidth: theme.screen.width / 3)
                 
@@ -38,7 +41,8 @@ struct WeatherDailyLargeView: View {
                 WeatherItem(
                     activeDay: 2,
                     nowWeather: nowWeather,
-                    dailyWeather: dailyWeather
+                    dailyWeather: dailyWeather,
+                    activePlaceName: activePlaceName
                 )
                 .frame(maxWidth: theme.screen.width / 3)
             }
@@ -54,6 +58,7 @@ struct WeatherItem: View {
     let activeDay: Int
     let nowWeather: WeatherNowModel?
     let dailyWeather: WeatherDailyModel?
+    let activePlaceName: String?
     
     var dateText: (Int, Int) {
         guard let daily = dailyWeather?.daily[activeDay] else {
@@ -128,7 +133,7 @@ struct WeatherItem: View {
                         Spacer()
                         
                         HStack {
-                            Text("呼和浩特")
+                            Text(activePlaceName ?? "未知")
                         }
                     }
                 }

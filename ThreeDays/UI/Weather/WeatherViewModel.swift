@@ -14,7 +14,7 @@ class WeatherViewModel: ObservableObject {
     @Published var weatherHourly: WeatherHourlyModel? 
     
     private let API = APIService()
-    private var subscriptions = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         PlaceListViewModel.placePublisher.sink { completion in
@@ -24,7 +24,7 @@ class WeatherViewModel: ObservableObject {
                 self.getWeatherDaily(location: id, daily: "10d")
                 self.getWeatherHourly(location: id)
             }
-        }.store(in: &subscriptions)
+        }.store(in: &cancellables)
     }
     
     func getWeatherNow (location: String) {
@@ -36,7 +36,7 @@ class WeatherViewModel: ObservableObject {
     
                 UserDefaultsService.shared.save(weatherNow: self.weatherNow)
             }
-            .store(in: &subscriptions)
+            .store(in: &cancellables)
     }
     
     func getWeatherDaily (location: String, daily: String = "3d") {
@@ -48,7 +48,7 @@ class WeatherViewModel: ObservableObject {
                 
                 UserDefaultsService.shared.save(weatherDaily: self.weatherDaily)
             }
-            .store(in: &subscriptions)
+            .store(in: &cancellables)
     }
     
     func getWeatherHourly (location: String) {
@@ -60,6 +60,6 @@ class WeatherViewModel: ObservableObject {
                 
                 UserDefaultsService.shared.save(weatherHourly: self.weatherHourly)
             }
-            .store(in: &subscriptions)
+            .store(in: &cancellables)
     }
 }

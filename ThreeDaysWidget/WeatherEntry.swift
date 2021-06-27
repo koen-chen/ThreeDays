@@ -11,4 +11,6 @@ struct WeatherEntry: TimelineEntry {
     let date: Date
     let nowWeather: WeatherNowModel?
     let dailyWeather: WeatherDailyModel?
+    let activePlaceId: String?
+    let activePlaceName: String?
 }

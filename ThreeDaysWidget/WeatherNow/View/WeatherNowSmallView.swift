@@ -11,6 +11,7 @@ struct WeatherNowSmallView: View {
     @EnvironmentObject var theme: Theme
     let nowWeather: WeatherNowModel?
     let dailyWeather: WeatherDailyModel?
+    let activePlaceName: String?
     
     var dateText: (Int, Int) {
         guard let daily = dailyWeather?.daily[0] else {
@@ -90,7 +91,7 @@ struct WeatherNowSmallView: View {
                             Image(systemName: "circle.lefthalf.fill")
                                 .font(.system(size: 10))
                             
-                            Text("长沙")
+                            Text(activePlaceName ?? "未知")
                             
                             Spacer()
                         }

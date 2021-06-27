@@ -11,7 +11,8 @@ class UserDefaultsService {
     static let shared = UserDefaultsService()
     let userDefaults: UserDefaults
     
-    private let activePlaceKey = "active_place_key"
+    private let activePlaceIdKey = "active_place_id_key"
+    private let activePlaceNameKey = "active_place_name_key"
     private let weatherNowKey = "now_weather_key"
     private let weatherDailyKey = "daily_weather_key"
     private let weatherHourlyKey = "hourly_weather_key"
@@ -24,8 +25,12 @@ class UserDefaultsService {
         }
     }
     
-    func save(activePlace: String) {
-        userDefaults.setValue(activePlace, forKey: activePlaceKey)
+    func save(activePlaceId: String) {
+        userDefaults.setValue(activePlaceId, forKey: activePlaceIdKey)
+    }
+    
+    func save(activePlaceName: String) {
+        userDefaults.setValue(activePlaceName, forKey: activePlaceNameKey)
     }
     
     func save(weatherNow: WeatherNowModel?) {
@@ -46,8 +51,14 @@ class UserDefaultsService {
         userDefaults.setValue(encodeedObjet, forKey: weatherHourlyKey)
     }
     
-    func fetchActivePlace() -> String? {
-        guard let result = userDefaults.string(forKey: activePlaceKey) else { return nil }
+    func fetchActivePlaceId() -> String? {
+        guard let result = userDefaults.string(forKey: activePlaceIdKey) else { return nil }
+        
+        return result
+    }
+    
+    func fetchActivePlaceName() -> String? {
+        guard let result = userDefaults.string(forKey: activePlaceNameKey) else { return nil }
         
         return result
     }
