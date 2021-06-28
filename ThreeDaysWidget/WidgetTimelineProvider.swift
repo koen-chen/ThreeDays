@@ -45,25 +45,40 @@ class WidgetTimelineProvider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        getWeatherNow(location: self.activePlaceId!) { entry in
-            let refreshDate = Calendar.current.date(byAdding: .hour, value: 6, to: Date())
-            let timeline = Timeline(entries: [entry], policy: .after(refreshDate!))
-            completion(timeline)
+        let callback = completion
+        getWeatherNow(location: self.activePlaceId!) { weatherNow in
+            self.getWeatherDaily(location: self.activePlaceId!) { weatherDaily in
+                let entry = Entry(
+                    date: Date(),
+                    nowWeather: weatherNow,
+                    dailyWeather: weatherDaily,
+                    activePlaceId: self.activePlaceId,
+                    activePlaceName: self.activePlaceName
+                )
+                let midnight = Calendar.current.startOfDay(for: Date())
+                let refreshDate = Calendar.current.date(byAdding: .hour, value: 6, to: midnight)
+                let timeline = Timeline(entries: [entry], policy: .after(refreshDate!))
+                callback(timeline)
+            }
         }
     }
     
-    func getWeatherNow (location: String, completion: @escaping (Entry) -> Void) {
+    private func getWeatherNow (location: String, completion: @escaping (WeatherNowModel) -> Void) {
         API.getWeatherNow(location)
             .receive(on: DispatchQueue.main)
             .sink { completion in
             } receiveValue: { value in
-                completion(Entry(
-                    date: Date(),
-                    nowWeather: value,
-                    dailyWeather: self.dailyWeather,
-                    activePlaceId: self.activePlaceId,
-                    activePlaceName: self.activePlaceName
-                ))
+                completion(value)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func getWeatherDaily (location: String, daily: String = "3d", completion: @escaping (WeatherDailyModel) -> Void) {
+        API.getWeatherDaily(location, daily: daily)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+            } receiveValue: { value in
+                completion(value)
             }
             .store(in: &cancellables)
     }

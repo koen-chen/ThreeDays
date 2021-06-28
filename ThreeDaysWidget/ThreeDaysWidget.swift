@@ -15,6 +15,6 @@ struct ThreeDaysWidget: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
         WeatherNowWidget()
-        //WeatherDailyWidget()
+        WeatherDailyWidget()
     }
 }

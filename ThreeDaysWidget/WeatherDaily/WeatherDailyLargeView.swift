@@ -53,7 +53,7 @@ struct WeatherDailyLargeView: View {
 }
 
 
-struct WeatherItem: View {
+private struct WeatherItem: View {
     @EnvironmentObject var theme: Theme
     let activeDay: Int
     let nowWeather: WeatherNowModel?
