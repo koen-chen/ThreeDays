@@ -56,7 +56,7 @@ class WidgetTimelineProvider: IntentTimelineProvider {
                     activePlaceName: self.activePlaceName
                 )
                 let midnight = Calendar.current.startOfDay(for: Date())
-                let refreshDate = Calendar.current.date(byAdding: .hour, value: 6, to: midnight)
+                let refreshDate = Calendar.current.date(byAdding: .hour, value: 2, to: midnight)
                 let timeline = Timeline(entries: [entry], policy: .after(refreshDate!))
                 callback(timeline)
             }

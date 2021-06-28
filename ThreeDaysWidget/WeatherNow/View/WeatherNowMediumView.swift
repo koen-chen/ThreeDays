@@ -47,7 +47,6 @@ struct WeatherNowMediumView: View {
                     .padding(.vertical, 5)
                     
                     Divider().background(theme.backgroundColor.opacity(0.1))
-                        //.padding(.vertical, 10)
                     
                     HStack {
                         WeatherItem(
@@ -124,16 +123,19 @@ private struct WeatherItem: View {
     
     var body: some View {
         if let dailyW = dailyWeather?.daily[activeDay], let nowW = nowWeather?.now {
-            HStack(alignment: .top, spacing: 5) {
+            HStack(alignment: .top, spacing: 0) {
                 VStack(spacing: 5) {
+                    //Text("暴风雨")
                     Text("\(Description.weatherDesc(activeDay == 0 ? nowW.text : (theme.isDaytime ? dailyW.textDay : dailyW.textNight)))")
-                        .font(.custom(theme.font, size: 16))
+                        .font(.custom(theme.font, size: 14))
                     
-                    HStack(spacing: 2) {
-                        Text("\(dailyW.tempMin)°")
-                            .font(.custom(theme.font, size: 10))
-                        Text("/")
+                    VStack(spacing: 2) {
                         Text("\(dailyW.tempMax)°")
+                            .font(.custom(theme.font, size: 10))
+                        
+                        Divider().background(theme.backgroundColor.opacity(0.1)).padding(.horizontal, 10)
+                       
+                        Text("\(dailyW.tempMin)°")
                             .font(.custom(theme.font, size: 10))
                     }
                 }
@@ -142,6 +144,7 @@ private struct WeatherItem: View {
                 
                 Text(Description.dayDesc(activeDay))
                     .font(.custom(theme.font, size: 12))
+                    .padding(.trailing, 4)
                 
                 VStack(spacing: 0) {
                     Text("\(dateText.0)")
