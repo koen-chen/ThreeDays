@@ -12,7 +12,7 @@ struct WeatherDailyWidget: Widget {
     let kind: String = "WeatherDailyWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: WidgetTimelineProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: WidgetTimelineProvider()) { entry in
             WeatherDailyWidgetView(entry: entry)
                 .environmentObject(Theme())
         }

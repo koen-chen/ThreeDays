@@ -8,7 +8,7 @@
 import WidgetKit
 import Combine
 
-class WidgetTimelineProvider: IntentTimelineProvider {
+class WidgetTimelineProvider: TimelineProvider {
     typealias Entry = WeatherEntry
     
     private let API = APIService()
@@ -35,7 +35,7 @@ class WidgetTimelineProvider: IntentTimelineProvider {
        placeholderEntry()
     }
     
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Entry) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
         let entry = Entry(
             date: Date(),
             nowWeather: nowWeather,
@@ -46,7 +46,7 @@ class WidgetTimelineProvider: IntentTimelineProvider {
         completion(entry)
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let callback = completion
         
         getWeatherNow(location: self.activePlaceId!) { weatherNow in
