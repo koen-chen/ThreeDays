@@ -18,16 +18,24 @@ struct WeatherNowMediumView: View {
         ZStack {
             theme.backgroundColor.opacity(0.2).ignoresSafeArea()
             
-            if let nowW = nowWeather?.now {
+            if let dailyW = dailyWeather?.daily[0], let nowW = nowWeather?.now {
                 VStack(spacing: 0) {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading) {
-                            HStack(alignment: .top) {
-                        
+                            HStack(alignment: .center) {
                                 Text("\(Description.weatherDesc(nowW.text))")
                                     .font(.custom(theme.font, size: 28))
                                 Text("\(nowW.temp)°")
                                     .font(.custom(theme.font, size: 28))
+                                
+                                HStack(spacing: 5) {
+                                    Text("\(dailyW.windDirDay)")
+                                    Image(systemName: "circlebadge.fill")
+                                        .font(.system(size: 6))
+                                        .opacity(0.9)
+                                    Text("\(dailyW.windSpeedDay)级")
+                                }
+                                .padding(.leading, 10)
                             }
                             
                             HStack(alignment: .center) {
@@ -125,7 +133,6 @@ private struct WeatherItem: View {
         if let dailyW = dailyWeather?.daily[activeDay], let nowW = nowWeather?.now {
             HStack(alignment: .top, spacing: 0) {
                 VStack(spacing: 5) {
-                    //Text("暴风雨")
                     Text("\(Description.weatherDesc(activeDay == 0 ? nowW.text : (theme.isDaytime ? dailyW.textDay : dailyW.textNight)))")
                         .font(.custom(theme.font, size: 14))
                     
@@ -133,7 +140,7 @@ private struct WeatherItem: View {
                         Text("\(dailyW.tempMax)°")
                             .font(.custom(theme.font, size: 10))
                         
-                        Divider().background(theme.backgroundColor.opacity(0.1)).padding(.horizontal, 10)
+                        Divider().background(theme.backgroundColor.opacity(0.1)).padding(.horizontal, 15)
                        
                         Text("\(dailyW.tempMin)°")
                             .font(.custom(theme.font, size: 10))

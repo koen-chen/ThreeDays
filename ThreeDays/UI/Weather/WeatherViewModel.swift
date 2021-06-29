@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import WidgetKit
 
 class WeatherViewModel: ObservableObject {
     @Published var weatherNow: WeatherNowModel?
@@ -23,6 +24,9 @@ class WeatherViewModel: ObservableObject {
                 self.getWeatherNow(location: id)
                 self.getWeatherDaily(location: id, daily: "10d")
                 self.getWeatherHourly(location: id)
+                
+            
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }.store(in: &cancellables)
     }

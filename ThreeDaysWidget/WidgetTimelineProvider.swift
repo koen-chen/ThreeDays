@@ -22,6 +22,8 @@ class WidgetTimelineProvider: IntentTimelineProvider {
     var timelineWeatherNow: WeatherNowModel?
     var timelineWeatherDaily: WeatherDailyModel?
     
+    var refreshDate: Date?
+    
     init() {
         nowWeather = userDefaultsService.fetchWeatherNow()
         dailyWeather = userDefaultsService.fetchWeatherDaily()
@@ -46,18 +48,43 @@ class WidgetTimelineProvider: IntentTimelineProvider {
     
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let callback = completion
+        
         getWeatherNow(location: self.activePlaceId!) { weatherNow in
             self.getWeatherDaily(location: self.activePlaceId!) { weatherDaily in
+                let currentDate = Date()
+                let midnightDate = Calendar.current.startOfDay(for: currentDate)
+                
+                let diffComponents = Calendar.current.dateComponents([.hour], from: currentDate, to: midnightDate)
+                let hours = abs(diffComponents.hour ?? 0)
+                
+                let restHours = 24 - hours
+                
+                if (1...5).contains(restHours) {
+                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: restHours, to: currentDate)
+                }
+                
+                if (6...12).contains(restHours) {
+                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: (restHours - 6), to: currentDate)
+                }
+                
+                if (13...18).contains(restHours) {
+                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: (restHours - 12), to: currentDate)
+                }
+                
+                if (19...24).contains(restHours) {
+                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: (restHours - 18), to: currentDate)
+                }
+
                 let entry = Entry(
-                    date: Date(),
+                    date: currentDate,
                     nowWeather: weatherNow,
                     dailyWeather: weatherDaily,
                     activePlaceId: self.activePlaceId,
                     activePlaceName: self.activePlaceName
                 )
-                let midnight = Calendar.current.startOfDay(for: Date())
-                let refreshDate = Calendar.current.date(byAdding: .hour, value: 2, to: midnight)
-                let timeline = Timeline(entries: [entry], policy: .after(refreshDate!))
+                
+                let timeline = Timeline(entries: [entry], policy: .after(self.refreshDate!))
+                
                 callback(timeline)
             }
         }
