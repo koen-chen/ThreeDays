@@ -29,13 +29,14 @@ struct WeatherNowSmallView: View {
             
             ZStack {
                 if let dailyWeather = dailyWeather?.daily[0], let nowWeather = nowWeather?.now {
-                    VStack {
-                        HStack(alignment: .firstTextBaseline) {
+                    VStack(spacing: 0) {
+                        HStack {
                             Spacer()
                             
                             HStack(alignment: .top) {
                                 Text("今\n日")
                                     .font(.custom(theme.font, size: 16))
+                                    .offset(y: 4)
                                 
                                 VStack(spacing: 0) {
                                     Image(systemName: "circle.righthalf.fill")
@@ -47,7 +48,7 @@ struct WeatherNowSmallView: View {
                                     Text("日")
                                 }
                                 .font(.custom(theme.font, size: 10))
-                                .offset(y: 10)
+                                .offset(y: 15)
                             }
                         }
                         
@@ -95,6 +96,7 @@ struct WeatherNowSmallView: View {
                             
                             Spacer()
                         }
+                        .offset(x: 10)
                     }
                     
                 } else {

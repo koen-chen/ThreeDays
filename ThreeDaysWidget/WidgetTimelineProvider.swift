@@ -59,20 +59,10 @@ class WidgetTimelineProvider: TimelineProvider {
                 
                 let restHours = 24 - hours
                 
-                if (1...5).contains(restHours) {
+                if (1...3).contains(restHours) {
                     self.refreshDate = Calendar.current.date(byAdding: .hour, value: restHours, to: currentDate)
-                }
-                
-                if (6...12).contains(restHours) {
-                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: (restHours - 6), to: currentDate)
-                }
-                
-                if (13...18).contains(restHours) {
-                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: (restHours - 12), to: currentDate)
-                }
-                
-                if (19...24).contains(restHours) {
-                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: (restHours - 18), to: currentDate)
+                } else {
+                    self.refreshDate = Calendar.current.date(byAdding: .hour, value: 4, to: currentDate)
                 }
 
                 let entry = Entry(

@@ -21,12 +21,12 @@ struct WeatherNowMediumView: View {
             if let dailyW = dailyWeather?.daily[0], let nowW = nowWeather?.now {
                 VStack(spacing: 0) {
                     HStack(alignment: .center) {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 4) {
                             HStack(alignment: .center) {
                                 Text("\(Description.weatherDesc(nowW.text))")
-                                    .font(.custom(theme.font, size: 28))
+                                    .font(.custom(theme.font, size: 22))
                                 Text("\(nowW.temp)°")
-                                    .font(.custom(theme.font, size: 28))
+                                    .font(.custom(theme.font, size: 22))
                                 
                                 HStack(spacing: 5) {
                                     Text("\(dailyW.windDirDay)")
@@ -38,7 +38,7 @@ struct WeatherNowMediumView: View {
                                 .padding(.leading, 10)
                             }
                             
-                            HStack(alignment: .center) {
+                            HStack(alignment: .center, spacing: 2) {
                                 Image(systemName: "circle.lefthalf.fill")
                                     .font(.system(size: 10))
                                 Text(activePlaceName ?? "未知")

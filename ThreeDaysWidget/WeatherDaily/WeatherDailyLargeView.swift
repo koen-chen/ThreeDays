@@ -72,7 +72,7 @@ private struct WeatherItem: View {
     
     var body: some View {
         ZStack {
-            if let dailyWeather = dailyWeather?.daily[0], let nowWeather = nowWeather?.now {
+            if let dailyWeather = dailyWeather?.daily[activeDay], let nowWeather = nowWeather?.now {
                 VStack {
                     HStack(alignment: .firstTextBaseline) {
                         Spacer()
