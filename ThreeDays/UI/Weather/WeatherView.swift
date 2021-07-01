@@ -104,7 +104,7 @@ struct WeatherView: View {
                     
                     Spacer()
                 }
-                .padding(.top, 30)
+                .padding(.top, 40)
                 .onAppear {
                     self.animateAndDelayWithSeconds(2) { self.showWarning = true }
                 }
@@ -118,7 +118,7 @@ struct WeatherView: View {
                         Image(systemName: "circle.bottomhalf.fill")
                             .font(.system(size: 18))
                             .padding(.all, 30)
-                            .offset(y: 20)
+                            .offset(y: 15)
                     })
                     
                     Spacer()
