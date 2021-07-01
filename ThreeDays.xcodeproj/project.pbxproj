@@ -14,6 +14,8 @@
 		440E78ED2643E60300105EB7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78EC2643E60300105EB7 /* BlurView.swift */; };
 		440E78FD26440E1E00105EB7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FC26440E1E00105EB7 /* APIService.swift */; };
 		440E78FF2644CCF600105EB7 /* WeatherNowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E78FE2644CCF600105EB7 /* WeatherNowModel.swift */; };
+		440F9C46268DA0B500196BA4 /* WeatherWarningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F9C45268DA0B500196BA4 /* WeatherWarningModel.swift */; };
+		440F9C47268DA0B500196BA4 /* WeatherWarningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F9C45268DA0B500196BA4 /* WeatherWarningModel.swift */; };
 		441526C3265C93D200FD0700 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441526C2265C93D200FD0700 /* Theme.swift */; };
 		441F2C6B26628232003828DB /* weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5826628231003828DB /* weather-day-snow.json */; };
 		441F2C6C26628232003828DB /* weather-day-mist.json in Resources */ = {isa = PBXBuildFile; fileRef = 441F2C5926628231003828DB /* weather-day-mist.json */; };
@@ -133,6 +135,7 @@
 		440E78EC2643E60300105EB7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		440E78FC26440E1E00105EB7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		440E78FE2644CCF600105EB7 /* WeatherNowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowModel.swift; sourceTree = "<group>"; };
+		440F9C45268DA0B500196BA4 /* WeatherWarningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWarningModel.swift; sourceTree = "<group>"; };
 		441526C2265C93D200FD0700 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		441F2C5826628231003828DB /* weather-day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-snow.json"; sourceTree = "<group>"; };
 		441F2C5926628231003828DB /* weather-day-mist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-day-mist.json"; sourceTree = "<group>"; };
@@ -439,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				440E78FE2644CCF600105EB7 /* WeatherNowModel.swift */,
+				440F9C45268DA0B500196BA4 /* WeatherWarningModel.swift */,
 				44B8C60B2665D89800066AAF /* WeatherDailyModel.swift */,
 				4453CA602667691800C5DECB /* WeatherHourlyModel.swift */,
 			);
@@ -707,6 +711,7 @@
 				4430A9D226857F2400702552 /* WidgetNotAvailableView.swift in Sources */,
 				4430A9D5268581C000702552 /* WeatherDailyModel.swift in Sources */,
 				4430A9E0268581D600702552 /* BlurView.swift in Sources */,
+				440F9C47268DA0B500196BA4 /* WeatherWarningModel.swift in Sources */,
 				44EBEC2F26872B370026FA73 /* WeatherNowSmallView.swift in Sources */,
 				4430A9E8268598E000702552 /* WeatherNowWidget.swift in Sources */,
 				4430A9DA268581C900702552 /* Extension.swift in Sources */,
@@ -737,6 +742,7 @@
 				44B1CDE2265805FB00DC5502 /* PlaceSearchViewModel.swift in Sources */,
 				4402EC9E266E67DF006ACF9C /* ProfileView.swift in Sources */,
 				44B4A5D4265F3F2500D9101D /* DisconnectedView.swift in Sources */,
+				440F9C46268DA0B500196BA4 /* WeatherWarningModel.swift in Sources */,
 				4445862D2647B2CB007E87C3 /* WeatherViewModel.swift in Sources */,
 				44B8C6032665C43300066AAF /* DayView.swift in Sources */,
 				44B8C5FC2665BFEC00066AAF /* Description.swift in Sources */,

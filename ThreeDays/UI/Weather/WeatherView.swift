@@ -17,7 +17,26 @@ struct WeatherView: View {
     @Binding var showWeatherDetail: Bool
     @Binding var showDailyPreview: Bool
     @Binding var showProfileView: Bool
-
+    
+    @State var showWarning: Bool = false
+    @State var showAlert: Bool = false
+    @State var alertContent: String = ""
+   
+    func getAlertColor(_ text: String) -> Color {
+        switch text {
+            case "红色":
+                return Color.red
+            case "橙色":
+                return Color.orange
+            case "黄色":
+                return Color.yellow
+            case "蓝色":
+                return Color.blue
+            default:
+                return Color.white
+        }
+    }
+    
     var dateText: (Int, Int) {
         guard let daily = viewModel.weatherDaily?.daily[self.activeDay] else {
             return (1, 1)
@@ -26,6 +45,14 @@ struct WeatherView: View {
         let temp = daily.fxDate.components(separatedBy: "-")
         
         return (Int(temp[1])!, Int(temp[2])!)
+    }
+    
+    func animateAndDelayWithSeconds(_ seconds: TimeInterval, action: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            withAnimation {
+                action()
+            }
+        }
     }
     
     var body: some View {
@@ -42,6 +69,46 @@ struct WeatherView: View {
             }
             .opacity(showDayList ? 1 : 0)
             
+            if let weatherWarning = viewModel.weatherWarning?.warning {
+                VStack(spacing: 20) {
+                    ForEach(weatherWarning.indices, id: \.self) { index in
+                        if showWarning, let item = weatherWarning[index], let alertColor = getAlertColor(item.level) {
+                            Button(action: {
+                                alertContent = item.text
+                                showAlert.toggle()
+                            }) {
+                                HStack {
+                                    Image(systemName: "exclamationmark.circle")
+                                        .foregroundColor(alertColor)
+                                    Text(item.typeName)
+                                        .font(.system(size: 14))
+                                }
+                                .padding(.vertical, 6)
+                                .padding(.horizontal, 12)
+                                .cornerRadius(6)
+                                .background(alertColor.opacity(0.1))
+                                .foregroundColor(alertColor)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6).stroke(alertColor.opacity(0.8), lineWidth: 1)
+                                )
+                            }
+                            .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                            .alert(isPresented: $showAlert, content: {
+                                Alert(
+                                    title: Text(alertContent),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                            })
+                        }
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.top, 30)
+                .onAppear {
+                    self.animateAndDelayWithSeconds(2) { self.showWarning = true }
+                }
+            }
            
             HStack(alignment: showDailyPreview ? .center : .firstTextBaseline) {
                 if !showDailyPreview {
@@ -134,6 +201,13 @@ struct WeatherView: View {
         .foregroundColor(theme.textColor)
         .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)
  
+    }
+}
+
+
+extension AnyTransition {
+    static var fadeAndSlide: AnyTransition {
+        AnyTransition.move(edge: .top)
     }
 }
 

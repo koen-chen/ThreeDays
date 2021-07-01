@@ -12,7 +12,8 @@ import WidgetKit
 class WeatherViewModel: ObservableObject {
     @Published var weatherNow: WeatherNowModel?
     @Published var weatherDaily: WeatherDailyModel?
-    @Published var weatherHourly: WeatherHourlyModel? 
+    @Published var weatherHourly: WeatherHourlyModel?
+    @Published var weatherWarning: WeatherWarningModel?
     
     private let API = APIService()
     private var cancellables = Set<AnyCancellable>()
@@ -24,7 +25,7 @@ class WeatherViewModel: ObservableObject {
                 self.getWeatherNow(location: id)
                 self.getWeatherDaily(location: id, daily: "10d")
                 self.getWeatherHourly(location: id)
-                
+                self.getWeatherWarning(location: id)
             
                 WidgetCenter.shared.reloadAllTimelines()
             }
@@ -63,6 +64,16 @@ class WeatherViewModel: ObservableObject {
                 self.weatherHourly = value
                 
                 UserDefaultsService.shared.save(weatherHourly: self.weatherHourly)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getWeatherWarning (location: String) {
+        API.getWeatherWarning(location)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+            } receiveValue: { value in
+                self.weatherWarning = value
             }
             .store(in: &cancellables)
     }

@@ -41,6 +41,7 @@ class APIService {
         case getWeatherNow(_ location: String)
         case getWeatherDaily(_ location: String, daily: String = "3d")
         case getWeatherHourly(_ location: String, hour: String = "24h")
+        case getWeatherWarning(_ location: String)
         
         func getBaseUrl () -> URLComponents {
             var components = URLComponents()
@@ -74,6 +75,12 @@ class APIService {
                 case .getWeatherHourly(let location, let hour):
                     var components = getBaseUrl()
                     components.path = "/v7/weather/\(hour)"
+                    components.queryItems?.append(.init(name: "location", value: location))
+                    component = components
+                    
+                case .getWeatherWarning(let location):
+                    var components = getBaseUrl()
+                    components.path = "/v7/warning/now"
                     components.queryItems?.append(.init(name: "location", value: location))
                     component = components
             }
@@ -126,6 +133,7 @@ class APIService {
     }
     
     func getWeatherHourly(_ location: String) -> AnyPublisher<WeatherHourlyModel, Error> {
+        print("Hourly URL: ", EndPoint.getWeatherHourly(location).url)
         let config = URLSessionConfiguration.ephemeral
         let sessionWorker = URLSession(configuration: config)
         return sessionWorker
@@ -137,6 +145,26 @@ class APIService {
                 switch error {
                     case is URLError:
                         return Error.urlError(EndPoint.getWeatherHourly(location).url)
+                    default:
+                        return Error.invalidResponse
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func getWeatherWarning(_ location: String) -> AnyPublisher<WeatherWarningModel, Error> {
+        print("Warning URL: ", EndPoint.getWeatherWarning(location).url)
+        let config = URLSessionConfiguration.ephemeral
+        let sessionWorker = URLSession(configuration: config)
+        return sessionWorker
+            .dataTaskPublisher(for: EndPoint.getWeatherWarning(location).url)
+            .receive(on: queue)
+            .map { $0.0 }
+            .decode(type: WeatherWarningModel.self, decoder: decoder)
+            .mapError { error in
+                switch error {
+                    case is URLError:
+                        return Error.urlError(EndPoint.getWeatherWarning(location).url)
                     default:
                         return Error.invalidResponse
                 }
