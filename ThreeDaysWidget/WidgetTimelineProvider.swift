@@ -22,7 +22,7 @@ class WidgetTimelineProvider: TimelineProvider {
     var timelineWeatherNow: WeatherNowModel?
     var timelineWeatherDaily: WeatherDailyModel?
     
-    var refreshDate: Date?
+    var refreshDate: Date? = Calendar.current.date(byAdding: .hour, value: 4, to: Date())
     
     init() {
         nowWeather = userDefaultsService.fetchWeatherNow()

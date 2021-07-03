@@ -20,6 +20,8 @@ struct ProfileView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Button(action: {
+                showOperatetionGuide = false
+                showShareSheet = false
                 showProfileView.toggle()
             }, label: {
                 Image(systemName: "arrow.backward")

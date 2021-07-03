@@ -11,7 +11,7 @@ struct WeatherView: View {
     @EnvironmentObject var theme: Theme
     @EnvironmentObject var viewModel: WeatherViewModel
     
-    var activeDay: Int
+    var activeDay: Int = 0
     @Binding var showDayList: Bool
     @Binding var showCityList: Bool
     @Binding var showWeatherDetail: Bool
@@ -25,13 +25,13 @@ struct WeatherView: View {
     func getAlertColor(_ text: String) -> Color {
         switch text {
             case "红色":
-                return Color.red
+                return Color(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1))
             case "橙色":
-                return Color.orange
+                return Color(#colorLiteral(red: 1, green: 0.4487476945, blue: 0, alpha: 1))
             case "黄色":
-                return Color.yellow
+                return Color(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1))
             case "蓝色":
-                return Color.blue
+                return Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1))
             default:
                 return Color.white
         }
@@ -72,7 +72,7 @@ struct WeatherView: View {
             if let weatherWarning = viewModel.weatherWarning?.warning {
                 VStack(spacing: 20) {
                     ForEach(weatherWarning.indices, id: \.self) { index in
-                        if showWarning, let item = weatherWarning[index], let alertColor = getAlertColor(item.level) {
+                        if showWarning, !showDailyPreview, let item = weatherWarning[index], let alertColor = getAlertColor(item.level) {
                             Button(action: {
                                 alertContent = item.text
                                 showAlert.toggle()
@@ -89,7 +89,7 @@ struct WeatherView: View {
                                 .background(alertColor.opacity(0.1))
                                 .foregroundColor(alertColor)
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 6).stroke(alertColor.opacity(0.8), lineWidth: 1)
+                                    RoundedRectangle(cornerRadius: 6).stroke(alertColor.opacity(0.6), lineWidth: 1)
                                 )
                             }
                             .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
@@ -106,7 +106,9 @@ struct WeatherView: View {
                 }
                 .padding(.top, 40)
                 .onAppear {
-                    self.animateAndDelayWithSeconds(2) { self.showWarning = true }
+                    self.animateAndDelayWithSeconds(2) {
+                        self.showWarning = true
+                    }
                 }
             }
            
@@ -207,7 +209,7 @@ struct WeatherView: View {
 
 extension AnyTransition {
     static var fadeAndSlide: AnyTransition {
-        AnyTransition.move(edge: .top)
+        AnyTransition.move(edge: .top).combined(with: opacity)
     }
 }
 
