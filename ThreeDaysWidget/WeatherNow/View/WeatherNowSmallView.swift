@@ -13,14 +13,14 @@ struct WeatherNowSmallView: View {
     let dailyWeather: WeatherDailyModel?
     let activePlaceName: String?
     
-    var dateText: (Int, Int) {
+    var dateText: (Int, Int, Int) {
         guard let daily = dailyWeather?.daily[0] else {
-            return (1, 1)
+            return (0, 0, 0)
         }
         
         let temp = daily.fxDate.components(separatedBy: "-")
         
-        return (Int(temp[1])!, Int(temp[2])!)
+        return (Int(temp[0])!, Int(temp[1])!, Int(temp[2])!)
     }
     
     var body: some View {
@@ -42,9 +42,9 @@ struct WeatherNowSmallView: View {
                                     Image(systemName: "circle.righthalf.fill")
                                         .padding(.bottom, 2)
                                     
-                                    Text("\(dateText.0)")
-                                    Text("月")
                                     Text("\(dateText.1)")
+                                    Text("月")
+                                    Text("\(dateText.2)")
                                     Text("日")
                                 }
                                 .font(.custom(theme.font, size: 10))
@@ -100,7 +100,7 @@ struct WeatherNowSmallView: View {
                     }
                     
                 } else {
-                    Text("nnn")
+                    WidgetNotAvailableView()
                 }
             }
             .padding(.all, 10)

@@ -31,20 +31,20 @@ struct WeatherView: View {
             case "黄色":
                 return Color(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1))
             case "蓝色":
-                return Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1))
+                return Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1))
             default:
                 return Color.white
         }
     }
     
-    var dateText: (Int, Int) {
+    var dateText: (Int, Int, Int) {
         guard let daily = viewModel.weatherDaily?.daily[self.activeDay] else {
-            return (1, 1)
+            return (0, 0, 0)
         }
    
         let temp = daily.fxDate.components(separatedBy: "-")
         
-        return (Int(temp[1])!, Int(temp[2])!)
+        return (Int(temp[0])!, Int(temp[1])!, Int(temp[2])!)
     }
     
     func animateAndDelayWithSeconds(_ seconds: TimeInterval, action: @escaping () -> Void) {

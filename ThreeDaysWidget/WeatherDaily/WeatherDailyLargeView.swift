@@ -60,14 +60,19 @@ private struct WeatherItem: View {
     let dailyWeather: WeatherDailyModel?
     let activePlaceName: String?
     
-    var dateText: (Int, Int) {
+    var dateText: (Int, Int, Int) {
         guard let daily = dailyWeather?.daily[activeDay] else {
-            return (1, 1)
+            return (0, 0, 0)
         }
         
         let temp = daily.fxDate.components(separatedBy: "-")
         
-        return (Int(temp[1])!, Int(temp[2])!)
+        return (Int(temp[0])!, Int(temp[1])!, Int(temp[2])!)
+    }
+    
+    var lunarInfo: String? {
+        guard dateText != (0,0,0) else { return nil }
+        return LunarService.getLunarSpecialDate(iYear: dateText.0, iMonth: dateText.1, iDay: dateText.2)
     }
     
     var body: some View {
@@ -78,16 +83,31 @@ private struct WeatherItem: View {
                         Spacer()
                         
                         HStack(alignment: .top, spacing: 10) {
-                            Text(Description.dayDesc(activeDay))
-                                .font(.custom(theme.font, size: 20))
+                            HStack {
+                                if let lunarInfo = lunarInfo {
+                                    Text(lunarInfo)
+                                        .padding(.vertical, 4)
+                                        .frame(width: 20)
+                                        .cornerRadius(6)
+                                        .font(.custom(theme.font, size: 12))
+                                        .background(theme.backgroundColor.opacity(0.1))
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 6).stroke(theme.backgroundColor.opacity(0.6), lineWidth: 1)
+                                        )
+                                }
+                                
+                                Text(Description.dayDesc(activeDay))
+                                    .font(.custom(theme.font, size: 20))
+                                
+                            }
                             
                             VStack(spacing: 0) {
                                 Image(systemName: "circle.righthalf.fill")
                                     .padding(.bottom, 2)
                                 
-                                Text("\(dateText.0)")
-                                Text("月")
                                 Text("\(dateText.1)")
+                                Text("月")
+                                Text("\(dateText.2)")
                                 Text("日")
                             }
                             .font(.custom(theme.font, size: 10))
@@ -137,6 +157,8 @@ private struct WeatherItem: View {
                         }
                     }
                 }
+            } else {
+                WidgetNotAvailableView()
             }
         }
         .shadow(color: theme.textColor.opacity(0.3), radius: 3, x: 3, y: 3)

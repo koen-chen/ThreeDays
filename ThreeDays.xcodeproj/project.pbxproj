@@ -95,6 +95,8 @@
 		44C727E226465FF100F83303 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C727E126465FF100F83303 /* NetworkService.swift */; };
 		44CBC1072668F07700F53F88 /* weather-night-rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CBC1062668F07700F53F88 /* weather-night-rain.json */; };
 		44D49F4E26725B4600FECB7F /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D49F4D26725B4600FECB7F /* ShareSheetView.swift */; };
+		44D77B3D2692DDAA00735575 /* LunarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D77B3C2692DDAA00735575 /* LunarService.swift */; };
+		44D77B3E2692DDAA00735575 /* LunarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D77B3C2692DDAA00735575 /* LunarService.swift */; };
 		44EBEC2D26872B1A0026FA73 /* WeatherNowMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC2C26872B1A0026FA73 /* WeatherNowMediumView.swift */; };
 		44EBEC2F26872B370026FA73 /* WeatherNowSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC2E26872B370026FA73 /* WeatherNowSmallView.swift */; };
 		44EBEC3226872C0F0026FA73 /* WeatherDailyLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBEC3126872C0F0026FA73 /* WeatherDailyLargeView.swift */; };
@@ -202,6 +204,7 @@
 		44C727E126465FF100F83303 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		44CBC1062668F07700F53F88 /* weather-night-rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-night-rain.json"; sourceTree = "<group>"; };
 		44D49F4D26725B4600FECB7F /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
+		44D77B3C2692DDAA00735575 /* LunarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarService.swift; sourceTree = "<group>"; };
 		44EBEC2C26872B1A0026FA73 /* WeatherNowMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowMediumView.swift; sourceTree = "<group>"; };
 		44EBEC2E26872B370026FA73 /* WeatherNowSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowSmallView.swift; sourceTree = "<group>"; };
 		44EBEC3126872C0F0026FA73 /* WeatherDailyLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyLargeView.swift; sourceTree = "<group>"; };
@@ -434,6 +437,7 @@
 				44C727E126465FF100F83303 /* NetworkService.swift */,
 				44B1CDDD2657B8E800DC5502 /* PersistenceService.swift */,
 				44561CEC2684C31E00CB17A6 /* UserDefaultsService.swift */,
+				44D77B3C2692DDAA00735575 /* LunarService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -707,6 +711,7 @@
 				4430A9EE2685A9A700702552 /* WeatherDailyWidgetView.swift in Sources */,
 				4430A9E3268581DE00702552 /* ThreeDays.xcdatamodeld in Sources */,
 				4430A9E2268581DA00702552 /* ShareSheetView.swift in Sources */,
+				44D77B3E2692DDAA00735575 /* LunarService.swift in Sources */,
 				4430A9D7268581C400702552 /* Theme.swift in Sources */,
 				4430A9D226857F2400702552 /* WidgetNotAvailableView.swift in Sources */,
 				4430A9D5268581C000702552 /* WeatherDailyModel.swift in Sources */,
@@ -739,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D77B3D2692DDAA00735575 /* LunarService.swift in Sources */,
 				44B1CDE2265805FB00DC5502 /* PlaceSearchViewModel.swift in Sources */,
 				4402EC9E266E67DF006ACF9C /* ProfileView.swift in Sources */,
 				44B4A5D4265F3F2500D9101D /* DisconnectedView.swift in Sources */,

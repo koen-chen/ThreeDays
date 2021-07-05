@@ -26,9 +26,9 @@ class WeatherViewModel: ObservableObject {
                 self.getWeatherDaily(location: id, daily: "10d")
                 self.getWeatherHourly(location: id)
                 self.getWeatherWarning(location: id)
+                
+                WidgetCenter.shared.reloadAllTimelines()
             }
-            
-            WidgetCenter.shared.reloadAllTimelines()
         }.store(in: &cancellables)
     }
     
