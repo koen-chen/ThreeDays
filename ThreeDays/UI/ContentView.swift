@@ -123,9 +123,11 @@ struct ContentView: View {
                 }
                 .simultaneousGesture(
                     TapGesture().onEnded({ _ in
-                        if showDailyPreview {
-                            activeDay = 0
-                            showDailyPreview = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                            if showDailyPreview {
+                                activeDay = 0
+                                showDailyPreview = false
+                            }
                         }
                     })
                 )
@@ -147,10 +149,13 @@ struct ContentView: View {
                 .gesture(showPreviewGesture)
                 .simultaneousGesture(
                     TapGesture().onEnded({ _ in
-                        if showDailyPreview {
-                            activeDay = 1
-                            showDailyPreview = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                            if showDailyPreview {
+                                activeDay = 1
+                                showDailyPreview = false
+                            }
                         }
+
                     })
                 )
 
@@ -171,9 +176,11 @@ struct ContentView: View {
                 .gesture(showPreviewGesture)
                 .simultaneousGesture(
                     TapGesture().onEnded({ _ in
-                        if showDailyPreview {
-                            activeDay = 2
-                            showDailyPreview = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                            if showDailyPreview {
+                                activeDay = 2
+                                showDailyPreview = false
+                            }
                         }
                     })
                 )

@@ -69,8 +69,8 @@ struct WeatherView: View {
             }
             .opacity(showDayList ? 1 : 0)
             
-            if let weatherWarning = viewModel.weatherWarning?.warning {
-                VStack(spacing: 20) {
+            if let weatherWarning = viewModel.weatherWarning?.warning, activeDay == 0 {
+                VStack(spacing: 10) {
                     ForEach(weatherWarning.indices, id: \.self) { index in
                         if showWarning, !showDailyPreview, let item = weatherWarning[index], let alertColor = getAlertColor(item.level) {
                             Button(action: {
@@ -84,7 +84,7 @@ struct WeatherView: View {
                                         .font(.system(size: 14))
                                 }
                                 .padding(.vertical, 6)
-                                .padding(.horizontal, 12)
+                                .padding(.horizontal, 20)
                                 .cornerRadius(6)
                                 .background(alertColor.opacity(0.1))
                                 .foregroundColor(alertColor)
@@ -146,11 +146,6 @@ struct WeatherView: View {
                             .frame(width: 160, height: 160)
                             .padding(.bottom, 10)
                         }
-                        .onTapGesture(perform: {
-                            if !showDailyPreview {
-                                self.showWeatherDetail.toggle()
-                            }
-                        })
                     }
                     
                     VStack(alignment: .center, spacing: 0) {
@@ -189,6 +184,11 @@ struct WeatherView: View {
                 .offset(y: -20)
                 .padding(.top, showDailyPreview ? 60 : 0)
                 .padding(.bottom, showDailyPreview ? 20 : 0)
+                .onTapGesture(perform: {
+                    if !showDailyPreview {
+                        self.showWeatherDetail.toggle()
+                    }
+                })
             } else {
                 LottieView(name: "loading2-\(theme.iconText)")
                     .frame(width: 300, height: 300)
