@@ -102,6 +102,7 @@ class APIService {
             .map { $0.0 }
             .decode(type: WeatherNowModel.self, decoder: decoder)
             .mapError { error in
+                print(error)
                 switch error {
                     case is URLError:
                         return Error.urlError(EndPoint.getWeatherNow(location).url)
@@ -122,6 +123,7 @@ class APIService {
             .map { $0.0 }
             .decode(type: WeatherDailyModel.self, decoder: decoder)
             .mapError { error in
+                print(error)
                 switch error {
                     case is URLError:
                         return Error.urlError(EndPoint.getWeatherDaily(location, daily: daily).url)
@@ -142,6 +144,7 @@ class APIService {
             .map { $0.0 }
             .decode(type: WeatherHourlyModel.self, decoder: decoder)
             .mapError { error in
+                print(error)
                 switch error {
                     case is URLError:
                         return Error.urlError(EndPoint.getWeatherHourly(location).url)
