@@ -35,7 +35,7 @@ class LunarService {
         }
         var index = -1
         if iDay == day {
-            index = (iMonth-1) * 2 + (iDay > 15 ? 1: 0);
+            index = (iMonth - 1) * 2 + (iDay > 15 ? 1: 0);
         }
         
         if index >= 0 && index < chineseDays.count {

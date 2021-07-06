@@ -27,7 +27,7 @@ struct WeatherView: View {
             case "红色":
                 return Color(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1))
             case "橙色":
-                return Color(#colorLiteral(red: 1, green: 0.4487476945, blue: 0, alpha: 1))
+                return Color(#colorLiteral(red: 1, green: 0.4694583416, blue: 0.09561201185, alpha: 1))
             case "黄色":
                 return Color(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1))
             case "蓝色":
